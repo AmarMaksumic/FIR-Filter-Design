@@ -5,6 +5,9 @@ Running: D:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-2861] module 'fir_filter' does not have a parameter named IO_WIDTH [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sim_1/new/fir_filter_tb.sv:24]
+WARNING: [VRFC 10-2861] module 'fir_filter' does not have a parameter named COEFF_WIDTH [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sim_1/new/fir_filter_tb.sv:25]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 64 for port 'y_out' [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sim_1/new/fir_filter_tb.sv:30]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
