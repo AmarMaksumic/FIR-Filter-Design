@@ -74,7 +74,7 @@ I used MATLAB's built in ```fi``` function to convert from floating point repres
 
 The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1]. While it has some attenutation differences after the stopband compared to the original model, all attenuations are kept bellow -80dB.
 
-The filter coefficients are then stored into ```.mem``` files, with [decimal](Coefficients/fir_coeffs_decimal.mem) and [binary](Coefficients/fir_coeffs_binary.mem) representations. The mem files can later be loaded into the System Verilog code for the FIR filters.
+The filter coefficients are then stored into ```.mem``` files, with [decimal](fir_coeffs_decimal.mem) and [binary](fir_coeffs_binary.mem) representations. The mem files can later be loaded into the System Verilog code for the FIR filters.
 
 ### Filter Architecture Design
 
@@ -100,37 +100,72 @@ I did experiment with combining both methods above, but ran into issues with com
 <div align="center">
   <img src="README_resources/l2firfilter.png" alt="" width="500">
   <br>
-  <figcaption>Figure 5: 2-Parallel Fast FIR filter[^3]</figcaption>
+  <figcaption>Figure 5: 2-Parallel Reduced-Complexity Fast FIR filter[^3]</figcaption>
 </div>
 
 <br>
 <br>
 
-To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
-
-An alternative solution is to pipeline between the adders and multipliers. For future reference, I will call this horizontal pipelining of the filter. However, given that the input and output are registers, this would make the critical path 102 (the number of taps) multiplied by the time for one adder. This is a lot worse of a critical path than the proposed solution above, assuming that a multiplication operation does not take much longer than an addition (i.e. 8ns vs 20ns).
-
-I did experiment with combining both methods above, but ran into issues with combining horizontal direction and vertical direction pipelinig. In addition, this introduced extreme latency issues due to the number of delay blocks between ```x(n)``` and ```y(n)```. As such, I went with only vertical pipelining shown with red blocks in figure 4.
+To design the 2-Parallel Reduced-Complexity Fast filter, I followed the slides from Parhi's Chapter 9 lecture[^3], and took the design from there. This requires the generation of two sub filters, H0 and H1, with tap size of N/2, so 51 taps in our case. We split the coefficients up in an even-odd fashion (i.e. H0 = {h0, h2, h4, etc.} and H1 = {h1, h3, h5, etc.}). We generate the combined filter H0+H1 by combinging the coefficients at each index (i.e. H0+H1 = {h0+h1, h2+h3, h4+h5, etc.})/ Now that we have the sub filters, all that is needed is to copy the implementation provided by Parhi. Note that each "sub-filter" will be a non-pipelined filter.
 
 #### L3 Parallel FIR
 <div align="center">
   <img src="README_resources/l3firfilter.png" alt="" width="500">
   <br>
-  <figcaption>Figure 5: 3-Parallel Fast FIR filter[^3]</figcaption>
+  <figcaption>Figure 6: 3-Parallel Fast FIR filter[^3]</figcaption>
 </div>
 
 <br>
 <br>
 
-To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
-
-An alternative solution is to pipeline between the adders and multipliers. For future reference, I will call this horizontal pipelining of the filter. However, given that the input and output are registers, this would make the critical path 102 (the number of taps) multiplied by the time for one adder. This is a lot worse of a critical path than the proposed solution above, assuming that a multiplication operation does not take much longer than an addition (i.e. 8ns vs 20ns).
-
-I did experiment with combining both methods above, but ran into issues with combining horizontal direction and vertical direction pipelinig. In addition, this introduced extreme latency issues due to the number of delay blocks between ```x(n)``` and ```y(n)```. As such, I went with only vertical pipelining shown with red blocks in figure 4.
+Similar process to the 2-Parallel Reduced-Complexity Fast filter, but make three sub filters (H0, H1, H2) instead of taps N/3 => 34, and repeat the same process for combining and implementing.
 
 #### Pipelined, L3 Parallel FIR
 
+Similar process to the 3-Parallel Reduced-Complexity Fast filter, but use a pipelined filter within each "sub-filter."
+
 ### Filter Implementation and Testing
+
+#### Implementation
+
+All filter's were developed in AMD's Vivado software using System Verilog. ```.mem``` files are used to store coefficients, and to also store input data for testbench files. There are four folders above prefixed with "FIR," each of which contain implementation for the four filters mentioned in the previous section. Link to the system verilog files are listed below:
+
+* Pipelined FIR
+    * Implementation:
+    * Testbench: 
+* L2 Parallel FIR
+    * Implementation:
+    * Testbench: 
+* L3 Parallel FIR
+    * Implementation:
+    * Testbench: 
+* Pipelined, L3 Parallel FIR
+    * Implementation:
+    * Testbench: 
+
+Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-bit, as configured earlier. To maintain precision during filtering, each input sample is multiplied by a 24-bit coefficient, producing a 40-bit intermediate result (16-bit × 24-bit multiplication).
+
+Since multiple taps contribute to the final output, these 40-bit products are accumulated in a 40-bit register. To ensure the output remains in a 16-bit format, a 24-bit right shift is applied to remove excess precision and scale the result appropriately. This final step helps mitigate quantization effects while preserving signal integrity.
+
+#### Test Signal
+For the testbenches to work, they require an input signal. This input signal is generated using the script [wave_gen.py](wave_gen.py). This script has a function ```sine_wave_sweep``` which takes in the following and generates a trajectory for a logarithmically increasing sine wave:
+
+* File name
+* Start frequency
+* End frequency
+* Number of Steps (for generating the number of frequencies in logspace)
+* Samples per Frequency (for number of sample points per frequency in logspace)
+* Clock cycle in ns
+
+An input wave form sweeping 500Hz to 41.1kHz with 50 steps and 200 samples per frequencies is provided in the [input.mem](input.mem) file. 
+
+> [!NOTE]  
+> This file is intended to work with filters sampling at 44.1 kHz. If you are using a different sampling rate, you will need to produce a new file using the linked python script.
+
+#### Pipelined FIR Filter Results
+#### L2 Parallel FIR Filter Results
+#### L3 Parallel FIR Filter Results
+#### Pipelined, L3 Parallel FIR Filter Results
 
 ## Resources
 
