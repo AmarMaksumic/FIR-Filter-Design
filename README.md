@@ -47,20 +47,22 @@ From here, the built-in MATLAB function derives our filter coefficients. However
 
 I used MATLAB's built in ```fi``` function to convert from floating point representatio to fixed point. When quantizing the data, I tried using 16-bit vs 32-bit signed representation. Below are my graphs showing the results of each:
 
-<figure align="center">
-  <img src="README_resources/16bitfilter.png" alt="" width="500">
-  <figcaption>Figure 1: 16-bit quantizied 102-tap filter</figcaption>
-</figure>
+<center>
+  <figure align="center">
+    <img src="README_resources/16bitfilter.png" alt="" width="500">
+    <figcaption>Figure 1: 16-bit quantizied 102-tap filter</figcaption>
+  </figure>
 
-<figure align="center">
-  <img src="README_resources/24bitfilter.png" alt="" width="500">
-  <figcaption>Figure 2: 24-bit quantizied 102-tap filter</figcaption>
-</figure>
+  <figure align="center">
+    <img src="README_resources/24bitfilter.png" alt="" width="500">
+    <figcaption>Figure 2: 24-bit quantizied 102-tap filter</figcaption>
+  </figure>
 
-<figure align="center">
-  <img src="README_resources/32bitfilter.png" alt="" width="500">
-  <figcaption>Figure 3: 32-bit quantizied 102-tap filter</figcaption>
-</figure>
+  <figure align="center">
+    <img src="README_resources/32bitfilter.png" alt="" width="500">
+    <figcaption>Figure 3: 32-bit quantizied 102-tap filter</figcaption>
+  </figure>
+</center>
 
 <br>
 <br>
@@ -74,10 +76,12 @@ The filter coefficients are then stored into ```.mem``` files, with [decimal](Co
 In this section, I will go over the high-level design for the four filters created.
 
 #### Pipelined FIR
-<figure align="center">
-  <img src="README_resources/pipelinefirfilter.webp" alt="" width="500">
-  <figcaption>Figure 4: 32-bit quantizied 102-tap filter</figcaption>
-</figure>
+<center>
+  <figure>
+    <img src="README_resources/pipelinefirfilter.webp" alt="" width="500">
+    <figcaption>Figure 4: 32-bit quantizied 102-tap filter</figcaption>
+  </figure>
+</center>
 
 #### L2 Parallel FIR
 #### L3 Parallel FIR
