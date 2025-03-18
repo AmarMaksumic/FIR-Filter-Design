@@ -47,27 +47,32 @@ From here, the built-in MATLAB function derives our filter coefficients. However
 
 I used MATLAB's built in ```fi``` function to convert from floating point representatio to fixed point. When quantizing the data, I tried using 16-bit vs 32-bit signed representation. Below are my graphs showing the results of each:
 
-<center>
-  <figure align="center">
-    <img src="README_resources/16bitfilter.png" alt="" width="500">
-    <figcaption>Figure 1: 16-bit quantizied 102-tap filter</figcaption>
-  </figure>
+<div align="center">
+  <img src="README_resources/16bitfilter.png" width="500">
+  <br>
+  <figcaption>Figure 1: 16-bit quantizied 102-tap filter</figcaption>
+</div>
 
-  <figure align="center">
-    <img src="README_resources/24bitfilter.png" alt="" width="500">
-    <figcaption>Figure 2: 24-bit quantizied 102-tap filter</figcaption>
-  </figure>
+<br>
 
-  <figure align="center">
-    <img src="README_resources/32bitfilter.png" alt="" width="500">
-    <figcaption>Figure 3: 32-bit quantizied 102-tap filter</figcaption>
-  </figure>
-</center>
+<div align="center">
+  <img src="README_resources/24bitfilter.png" alt="" width="500">
+  <br>
+  <figcaption>Figure 2: 24-bit quantizied 102-tap filter</figcaption>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="README_resources/32bitfilter.png" alt="" width="500">
+  <br>
+  <figcaption>Figure 3: 32-bit quantizied 102-tap filter</figcaption>
+</div>
 
 <br>
 <br>
 
-The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1].
+The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1]. While it has some attenutation differences after the stopband compared to the original model, all attenuations are kept bellow -80dB.
 
 The filter coefficients are then stored into ```.mem``` files, with [decimal](Coefficients/fir_coeffs_decimal.mem) and [binary](Coefficients/fir_coeffs_binary.mem) representations. The mem files can later be loaded into the System Verilog code for the FIR filters.
 
@@ -76,15 +81,53 @@ The filter coefficients are then stored into ```.mem``` files, with [decimal](Co
 In this section, I will go over the high-level design for the four filters created.
 
 #### Pipelined FIR
-<center>
-  <figure>
-    <img src="README_resources/pipelinefirfilter.webp" alt="" width="500">
-    <figcaption>Figure 4: 32-bit quantizied 102-tap filter</figcaption>
-  </figure>
-</center>
+<div align="center">
+  <img src="README_resources/pipelinefirfilter.jpg" alt="" width="500">
+  <br>
+  <figcaption>Figure 4: Vertically Pipelined FIR filter[^2]</figcaption>
+</div>
+
+<br>
+<br>
+
+To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
+
+An alternative solution is to pipeline between the adders and multipliers. For future reference, I will call this horizontal pipelining of the filter. However, given that the input and output are registers, this would make the critical path 102 (the number of taps) multiplied by the time for one adder. This is a lot worse of a critical path than the proposed solution above, assuming that a multiplication operation does not take much longer than an addition (i.e. 8ns vs 20ns).
+
+I did experiment with combining both methods above, but ran into issues with combining horizontal direction and vertical direction pipelinig. In addition, this introduced extreme latency issues due to the number of delay blocks between ```x(n)``` and ```y(n)```. As such, I went with only vertical pipelining shown with red blocks in figure 4.
 
 #### L2 Parallel FIR
+<div align="center">
+  <img src="README_resources/l2firfilter.png" alt="" width="500">
+  <br>
+  <figcaption>Figure 5: 2-Parallel Fast FIR filter[^3]</figcaption>
+</div>
+
+<br>
+<br>
+
+To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
+
+An alternative solution is to pipeline between the adders and multipliers. For future reference, I will call this horizontal pipelining of the filter. However, given that the input and output are registers, this would make the critical path 102 (the number of taps) multiplied by the time for one adder. This is a lot worse of a critical path than the proposed solution above, assuming that a multiplication operation does not take much longer than an addition (i.e. 8ns vs 20ns).
+
+I did experiment with combining both methods above, but ran into issues with combining horizontal direction and vertical direction pipelinig. In addition, this introduced extreme latency issues due to the number of delay blocks between ```x(n)``` and ```y(n)```. As such, I went with only vertical pipelining shown with red blocks in figure 4.
+
 #### L3 Parallel FIR
+<div align="center">
+  <img src="README_resources/l3firfilter.png" alt="" width="500">
+  <br>
+  <figcaption>Figure 5: 3-Parallel Fast FIR filter[^3]</figcaption>
+</div>
+
+<br>
+<br>
+
+To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
+
+An alternative solution is to pipeline between the adders and multipliers. For future reference, I will call this horizontal pipelining of the filter. However, given that the input and output are registers, this would make the critical path 102 (the number of taps) multiplied by the time for one adder. This is a lot worse of a critical path than the proposed solution above, assuming that a multiplication operation does not take much longer than an addition (i.e. 8ns vs 20ns).
+
+I did experiment with combining both methods above, but ran into issues with combining horizontal direction and vertical direction pipelinig. In addition, this introduced extreme latency issues due to the number of delay blocks between ```x(n)``` and ```y(n)```. As such, I went with only vertical pipelining shown with red blocks in figure 4.
+
 #### Pipelined, L3 Parallel FIR
 
 ### Filter Implementation and Testing
@@ -92,7 +135,11 @@ In this section, I will go over the high-level design for the four filters creat
 ## Resources
 
 ### Sources:
-[^1]: D. Zaucha, “How many bits do you need? A discussion of precision for digital audio filters*,” EE Times, [https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/ (accessed Mar. 18, 2025). ](https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/)
+[^1]: D. Zaucha, “How many bits do you need? A discussion of precision for digital audio filters*,” EE Times, [https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/](https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/) (accessed Mar. 18, 2025). 
+
+[^2]: S. Arar, “Pipelined direct form FIR versus the transposed structure - technical articles,” All About Circuits, [https://www.allaboutcircuits.com/technical-articles/pipelined-direct-form-fir-versus-the-transposed-structure/](https://www.allaboutcircuits.com/technical-articles/pipelined-direct-form-fir-versus-the-transposed-structure/) (accessed Mar. 18, 2025). 
+
+[^3] K. Parhi, "Chapter 9: Algorithmic Strength Reduction in Filters and Transforms," [https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf](https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf) (accessed Mar. 18, 2025). 
 
 ### Textbook:
 
