@@ -47,22 +47,22 @@ From here, the built-in MATLAB function derives our filter coefficients. However
 
 I used MATLAB's built in ```fi``` function to convert from floating point representatio to fixed point. When quantizing the data, I tried using 16-bit vs 32-bit signed representation. Below are my graphs showing the results of each:
 
-<figure>
-  <img src="README_resources/16bitfilter.png" alt="">
+<figure style="padding: 20px;">
+  <img src="README_resources/16bitfilter.png" alt="" width="500">
   <figcaption>Figure 1: 16-bit quantizied 102-tap filter</figcaption>
 </figure>
 
-<figure>
-  <img src="README_resources/24bitfilter.png" alt="">
+<figure style="padding: 20px;">
+  <img src="README_resources/24bitfilter.png" alt="" width="500">
   <figcaption>Figure 2: 24-bit quantizied 102-tap filter</figcaption>
 </figure>
 
-<figure>
-  <img src="README_resources/32bitfilter.png" alt="">
+<figure style="padding: 20px;">
+  <img src="README_resources/32bitfilter.png" alt="" width="500">
   <figcaption>Figure 3: 32-bit quantizied 102-tap filter</figcaption>
 </figure>
 
-The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing [^1]
+The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1].
 
 I would have liked to experiment with more proprietary sizes (i.e. 24-bit). However, based off my light research, this would most likely require padding into 32-bit operations if we use standard hardware components. As such, it would have no efficiency gain to using the 32-bit representation on standard FPGA hardware.
 
@@ -73,7 +73,7 @@ I would have liked to experiment with more proprietary sizes (i.e. 24-bit). Howe
 ## Resources
 
 ### Sources:
-[^1] D. Zaucha, “How many bits do you need? A discussion of precision for digital audio filters*,” EE Times, [https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/ (accessed Mar. 18, 2025). ](https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/)
+[^1]: D. Zaucha, “How many bits do you need? A discussion of precision for digital audio filters*,” EE Times, [https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/ (accessed Mar. 18, 2025). ](https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/)
 
 ### Textbook:
 
