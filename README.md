@@ -78,6 +78,7 @@ In this section, I will go over the high-level design for the four filters creat
   <img src="README_resources/pipelinefirfilter.webp" alt="" width="500">
   <figcaption>Figure 4: 32-bit quantizied 102-tap filter</figcaption>
 </figure>
+
 #### L2 Parallel FIR
 #### L3 Parallel FIR
 #### Pipelined, L3 Parallel FIR
