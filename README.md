@@ -1,4 +1,6 @@
-# FIR-Filter-Design
+# FIR Filter Design
+
+## by &nbsp; <img src="README_resources/AmarRed.png" alt="signature" width="50"/>
 
 ## Intro
 This repository gives a walk through on the complete design process of a multi-tap low-pass FIR filter on an FPGA. Moving forward, the "multi-tap low-pass FIR filter" will be refered to as "filter." This report is divided into five sections:
