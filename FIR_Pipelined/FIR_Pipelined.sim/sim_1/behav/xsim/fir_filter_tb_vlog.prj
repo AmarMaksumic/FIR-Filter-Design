@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
+"../../../../FIR_Pipelined.srcs/sources_1/new/fir_filter.sv" \
 "../../../../FIR_Pipelined.srcs/sim_1/new/fir_filter_tb.sv" \
 
 # compile glbl module

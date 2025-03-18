@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Tue Mar 18 15:40:41 2025
+| Date             : Tue Mar 18 18:49:57 2025
 | Host             : Amars-XPS running 64-bit major release  (build 9200)
 | Command          : report_power -file fir_filter_power_routed.rpt -pb fir_filter_power_summary_routed.pb -rpx fir_filter_power_routed.rpx
 | Design           : fir_filter
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip      | Power (W) | Used     | Available | Utilization (%) |
 +--------------+-----------+----------+-----------+-----------------+
 | Clocks       |    <0.001 |        3 |       --- |             --- |
-| Slice Logic  |    <0.001 |     3236 |       --- |             --- |
-|   Register   |    <0.001 |     3232 |     82000 |            3.94 |
+| Slice Logic  |    <0.001 |       68 |       --- |             --- |
+|   Register   |    <0.001 |       64 |     82000 |            0.08 |
 |   Others     |     0.000 |        4 |       --- |             --- |
-| Signals      |    <0.001 |     8136 |       --- |             --- |
-| DSPs         |    <0.001 |      102 |       240 |           42.50 |
-| I/O          |    <0.001 |       82 |       300 |           27.33 |
+| Signals      |    <0.001 |      193 |       --- |             --- |
+| DSPs         |    <0.001 |        3 |       240 |            1.25 |
+| I/O          |    <0.001 |       34 |       300 |           11.33 |
 | Static Power |     0.081 |          |           |                 |
 | Total        |     0.081 |          |           |                 |
 +--------------+-----------+----------+-----------+-----------------+

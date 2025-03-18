@@ -1,6 +1,6 @@
 # FIR Filter Design
 
-### by &nbsp; <img src="README_resources/AmarRed.png" alt="signature" width="30"/>
+### by <img src="README_resources/AmarRed.png" alt="signature" width="30"/>
 
 ## Intro
 This repository gives a walk through on the complete design process of a multi-tap low-pass FIR filter on an FPGA for audio processing purposes. Moving forward, the "multi-tap low-pass FIR filter" will be refered to as "filter." This report is divided into five sections:
@@ -83,7 +83,7 @@ In this section, I will go over the high-level design for the four filters creat
 <div align="center">
   <img src="README_resources/pipelinefirfilter.jpg" alt="" width="500">
   <br>
-  <p>Figure 4: Vertically Pipelined FIR filter[^2]</p>
+  <p>Figure 4: Vertically Pipelined FIR filter[^2] </p>
 </div>
 
 <br>
@@ -127,17 +127,21 @@ Similar process to the 3-Parallel Reduced-Complexity Fast filter, but use a pipe
 All filter's were developed in AMD's Vivado software using System Verilog. ```.mem``` files are used to store coefficients, and to also store input data for testbench files. There are four folders above prefixed with "FIR," each of which contain implementation for the four filters mentioned in the previous section. Link to the system verilog files are listed below:
 
 * Pipelined FIR [FIR_Pipelined]
-    * Implementation: [fir_filter.sv](\FIR_Pipelined\FIR_Pipelined.srcs\sources_1\new\fir_filter.sv)
-    * Testbench: [fir_filter_tb.sv](\FIR_Pipelined\FIR_Pipelined.srcs\sim_1\new\fir_filter_tb.sv)
+    * Implementation: [fir_filter.sv](FIR_Pipelined\FIR_Pipelined.srcs\sources_1\new\fir_filter.sv)
+    * Testbench: [fir_filter_tb.sv](FIR_Pipelined\FIR_Pipelined.srcs\sim_1\new\fir_filter_tb.sv)
+    * RTL Schematic (reduced to 3 taps): ![](TEST_RESULTS/FIR_Pipelined/rtlschem.png)
 * L2 Parallel FIR [FIR_L2]
     * Implementation:
     * Testbench: 
+    * RTL Schematic (reduced to 6 taps): ![](TEST_RESULTS/FIR_Pipelined/rtlschem.png)
 * L3 Parallel FIR [FIR_L3]
     * Implementation:
     * Testbench: 
+    * RTL Schematic (reduced to 9 taps): 
 * Pipelined, L3 Parallel FIR [FIR_Pipelined_L3]
     * Implementation:
     * Testbench: 
+    * RTL Schematic (reduced to 9 taps): 
 
 Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-bit, as configured earlier. To maintain precision during filtering, each input sample is multiplied by a 24-bit coefficient, producing a 40-bit intermediate result (16-bit × 24-bit multiplication).
 
@@ -186,15 +190,31 @@ Four criteria will be tested for:
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/behavioralsim.png" alt="" width="500">
   <br>
-  <p>Figure 6: 3-Parallel Fast FIR filter[^3]</p>
+  <p>Figure 11: Pipelined FIR Filter Behavioral Sim</p>
 </div>
 
 <br>
 
-It is evident that the filter is operating as intended. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. As the input file is from logarithmic scale, the testing output looks compressed towards the right side compared to the linear scaled MATLAB graphs from the beginning.
+It is evident that the filter is operating as intended. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. As the input file is from logarithmic scale, the testing output looks compressed towards the right side compared to the linear scaled MATLAB graphs from the beginning. 
+
+There is a pretty significant delay of about 204 clock cycles before the filter starts outputing data. This is due to the doubly pipelined delay line. Thus, latency with this solution is pretty high.
 
 ##### Timing
+
+
+
 ##### Power
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_Pipelined/power.png" alt="" width="500">
+  <br>
+  <p>Figure 13: Pipelined FIR Filter Power</p>
+</div>
+
+<br>
+
+The total on-chip power shown is about 0.081 Watts, which is very good. Diging deeper it is clear that most power is consumed from device statics. After that, device I/O takes up the most power. Other components which are integral to the algorithm itself do not take up that much power in comparison to the I/O and statics. Choosing to go with only a 16-bit input and 24-bit coefficient size has definitely helped to save on power consumption; which will also hold true for the other implementations.
+
 ##### Area / Resource Utilization
 
 #### L2 Parallel FIR Filter Results
