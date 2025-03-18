@@ -47,26 +47,40 @@ From here, the built-in MATLAB function derives our filter coefficients. However
 
 I used MATLAB's built in ```fi``` function to convert from floating point representatio to fixed point. When quantizing the data, I tried using 16-bit vs 32-bit signed representation. Below are my graphs showing the results of each:
 
-<figure style="padding: 20px;">
+<figure align="center">
   <img src="README_resources/16bitfilter.png" alt="" width="500">
   <figcaption>Figure 1: 16-bit quantizied 102-tap filter</figcaption>
 </figure>
 
-<figure style="padding: 20px;">
+<figure align="center">
   <img src="README_resources/24bitfilter.png" alt="" width="500">
   <figcaption>Figure 2: 24-bit quantizied 102-tap filter</figcaption>
 </figure>
 
-<figure style="padding: 20px;">
+<figure align="center">
   <img src="README_resources/32bitfilter.png" alt="" width="500">
   <figcaption>Figure 3: 32-bit quantizied 102-tap filter</figcaption>
 </figure>
 
+<br>
+<br>
+
 The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1].
 
-I would have liked to experiment with more proprietary sizes (i.e. 24-bit). However, based off my light research, this would most likely require padding into 32-bit operations if we use standard hardware components. As such, it would have no efficiency gain to using the 32-bit representation on standard FPGA hardware.
+The filter coefficients are then stored into ```.mem``` files, with [decimal](Coefficients/fir_coeffs_decimal.mem) and [binary](Coefficients/fir_coeffs_binary.mem) representations. The mem files can later be loaded into the System Verilog code for the FIR filters.
 
 ### Filter Architecture Design
+
+In this section, I will go over the high-level design for the four filters created.
+
+#### Pipelined FIR
+<figure align="center">
+  <img src="README_resources/pipelinefirfilter.webp" alt="" width="500">
+  <figcaption>Figure 4: 32-bit quantizied 102-tap filter</figcaption>
+</figure>
+#### L2 Parallel FIR
+#### L3 Parallel FIR
+#### Pipelined, L3 Parallel FIR
 
 ### Filter Implementation and Testing
 
