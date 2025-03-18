@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.runs/impl_1/fir_filter.tcl"
+  variable script "C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.runs/impl_1/fir_filter.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -107,7 +108,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 5
-  set_param synth.incrementalSynthesisCache C:/Users/amarm/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-42284-Amars-XPS/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/amarm/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-56684-Amars-XPS/incrSyn
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param runs.launchOptions { -jobs 20  }
 OPTRACE "create in-memory project" START { }
@@ -116,15 +117,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.cache/wt [current_project]
-  set_property parent.project_path C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.xpr [current_project]
-  set_property ip_output_repo C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.cache/wt [current_project]
+  set_property parent.project_path C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.xpr [current_project]
+  set_property ip_output_repo C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.runs/synth_1/fir_filter.dcp
+  add_files -quiet C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.runs/synth_1/fir_filter.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/constrs_1/new/fir_filter.xdc
+  read_xdc C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/constrs_1/new/fir_filter.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.runs/impl_1'
+HD_PWD='C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

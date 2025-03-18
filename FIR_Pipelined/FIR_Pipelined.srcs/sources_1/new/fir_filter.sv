@@ -11,15 +11,15 @@ module fir_filter #(
 );
 
     // Registers for filter coefficients and shift register
-    logic signed [WIDTH-1:0] coeffs [N-1:0];      // Fixed-point coefficients
-    logic signed [WIDTH-1:0] delay_pipeline [N*2-1:0];  // Shift register for past inputs
-    logic signed [4*WIDTH-1:0] accumulator_pipeline [N-1:0];  // Shift register for past inputs
+    logic signed [23:0] coeffs [N-1:0];      // Fixed-point coefficients
+    logic signed [WIDTH-1:0] delay_pipeline [(N-1)*2-1:0];  // Shift register for past inputs
+    logic signed [39:0] accumulator_pipeline [N-1:0];  // Shift register for past inputs
     integer i;
     integer j;
 
     // Load coefficients from memory file
     initial begin
-        $readmemh("fir_coeffs_binary.mem", coeffs); // Load fixed-point coefficients
+        $readmemb("fir_coeffs_fixed.mem", coeffs); // Load fixed-point coefficients
     end
 
     always_ff @(posedge clk or posedge rst) begin
@@ -29,7 +29,7 @@ module fir_filter #(
             end
         end else begin
             // Shift delay line
-            for (i = N*2-1; i > 0; i--) begin
+            for (i = (N-1)*2-1; i > 0; i--) begin
                 delay_pipeline[i] <= delay_pipeline[i-1];
             end
             delay_pipeline[0] <= x_in;
@@ -40,7 +40,7 @@ module fir_filter #(
         // FIR filter computation (Multiply-Accumulate)
         if (rst) begin
             for (j = 0; j < N; j++) begin
-                accumulator_pipeline[j] <= 64'sd0;
+                accumulator_pipeline[j] <= 40'sd0;
             end
         end else begin
             accumulator_pipeline[0] <= (x_in * coeffs[0]);
@@ -50,6 +50,6 @@ module fir_filter #(
         end
     end
     
-    assign y_out = accumulator_pipeline[N-1];
+    assign y_out = accumulator_pipeline[N-1] >>> 23;
 
 endmodule

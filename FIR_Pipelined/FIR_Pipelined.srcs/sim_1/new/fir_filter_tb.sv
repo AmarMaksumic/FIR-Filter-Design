@@ -5,16 +5,17 @@ module fir_filter_tb;
     // Parameters
     parameter int N = 102;      // Number of taps
     parameter int WIDTH = 16;   // Bit width for fixed-point coefficients
+    parameter int INPUT_SIZE = 10000;
 
     // Testbench signals
     logic clk;
     logic rst;
-    logic signed [WIDTH-1:0] x_in;  // Input sample
-    logic signed [4*WIDTH-1:0] y_out; // Filtered output
+    logic signed [WIDTH-1:0] x_in;
+    logic signed [4*WIDTH-1:0] y_out;
 
-    // Array to store input samples
-    logic signed [WIDTH-1:0] input_samples [0:1999]; // Adjust size as needed
-    int input_count; // Number of input samples
+    
+    logic signed [WIDTH-1:0] input_samples [INPUT_SIZE-1:0];
+    int index;
 
     // Instantiate the FIR filter
     fir_filter #(
@@ -27,44 +28,31 @@ module fir_filter_tb;
         .y_out(y_out)
     );
 
-    // Clock generation
+    // Test signal generation
     initial begin
-        clk = 0;
-        forever #5 clk = ~clk; // 10 ns clock period (100 MHz)
-    end
+        // Load mem
+        $readmemb("input.mem", input_samples);
 
-    // Load input samples from file
-    initial begin
-        $readmemb("input.mem", input_samples); // Load input samples (binary format)
-        input_count = 0;
-        while (input_samples[input_count] !== 'x) begin
-            input_count = input_count + 1;
-        end
-        $display("Loaded %0d input samples.", input_count);
-    end
-
-    // Test sequence
-    initial begin
         // Initialize signals
+        clk = 0;
         rst = 1;
-        x_in = 0;
-        #20; // Hold reset for 20 ns
-
-        // Release reset
-        rst = 0;
-        #10;
-
-        // Apply input samples
-        for (int i = 0; i < input_count; i++) begin
-            x_in = input_samples[i]; // Apply input sample
-            #10; // Wait for one clock cycle
-        end
-
-        // End simulation
-        $display("Simulation complete.");
-        $stop;
+        index = 0;
+        #22676 rst = 0; // Deassert reset after one cycle
     end
 
+    // Update input on every clock cycle
+    always @(posedge clk) begin
+        x_in = input_samples[index];
+        if (index < INPUT_SIZE) begin
+            index += 1;
+        end
+    end
+
+    // Clock generation: For 44.1 KHz, we have period 22676 for one clock cycle.
+    // To achieve the positive/negative edge in that cycle, the clock techniclly
+    // operates at double speed
+    always #11338 clk = ~clk;
+    
     // Monitor output
     initial begin
         $monitor("Time: %0t | x_in = %b | y_out = %b", $time, x_in, y_out);

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1741853769" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Pipelined_FIR.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1742325648" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Pipelined_FIR.dcp">
+  <File Type="PA-TCL" Name="fir_filter.tcl"/>
   <File Type="REPORTS-TCL" Name="fir_filter_reports.tcl"/>
+  <File Type="RDS-RDS" Name="fir_filter.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="fir_filter_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="fir_filter_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="fir_filter_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="fir_filter.tcl"/>
-  <File Type="RDS-RDS" Name="fir_filter.vds"/>
   <File Type="RDS-DCP" Name="fir_filter.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="fir_filter_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="fir_filter_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/fir_filter.sv">
@@ -19,22 +22,6 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../fir_coeffs_fixed.mem"/>
         <Attr Name="ImportTime" Val="1741816764"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/FIR-Filter-Design/fir_coeffs_float.mem">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fir_coeffs_float.mem"/>
-        <Attr Name="ImportTime" Val="1741816764"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/FIR-Filter-Design/fir_coeffs_binary.mem">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../fir_coeffs_binary.mem"/>
-        <Attr Name="ImportTime" Val="1741842646"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -72,7 +59,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

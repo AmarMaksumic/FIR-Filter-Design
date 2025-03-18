@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.runs/synth_1/fir_filter.tcl"
+  variable script "C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.runs/synth_1/fir_filter.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,8 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
+set_param synth.incrementalSynthesisCache C:/Users/amarm/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-56684-Amars-XPS/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -66,20 +67,16 @@ create_project -in_memory -part xc7k70tfbv676-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.cache/wt [current_project]
-set_property parent.project_path C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.xpr [current_project]
+set_property webtalk.parent_dir C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.cache/wt [current_project]
+set_property parent.project_path C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.cache/ip [current_project]
+set_property ip_output_repo c:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem {
-  C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/sources_1/imports/FIR-Filter-Design/fir_coeffs_fixed.mem
-  C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/sources_1/imports/FIR-Filter-Design/fir_coeffs_float.mem
-  C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/sources_1/imports/FIR-Filter-Design/fir_coeffs_binary.mem
-}
-read_verilog -library xil_defaultlib -sv C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/sources_1/new/fir_filter.sv
+read_mem C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sources_1/imports/FIR-Filter-Design/fir_coeffs_fixed.mem
+read_verilog -library xil_defaultlib -sv C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sources_1/new/fir_filter.sv
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -89,12 +86,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/constrs_1/new/fir_filter.xdc
-set_property used_in_implementation false [get_files C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/constrs_1/new/fir_filter.xdc]
+read_xdc C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/constrs_1/new/fir_filter.xdc
+set_property used_in_implementation false [get_files C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/constrs_1/new/fir_filter.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/code/FIR-Filter-Design/AVLSI_FIR/AVLSI_FIR.srcs/utils_1/imports/synth_1/Pipelined_FIR.dcp
+read_checkpoint -auto_incremental -incremental C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/utils_1/imports/synth_1/Pipelined_FIR.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
