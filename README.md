@@ -3,7 +3,7 @@
 ### by <img src="README_resources/AmarRed.png" alt="signature" width="30"/>
 
 ## Intro
-This repository gives a walk through on the complete design process of a multi-tap low-pass FIR filter on an FPGA for audio processing purposes. Moving forward, the "multi-tap low-pass FIR filter" will be refered to as "filter." This report is divided into five sections:
+This repository gives a walk through on the complete design process of a multi-tap low-pass FIR filter on an FPGA for audio processing purposes. Moving forward, the "multi-tap low-pass FIR filter" will be refered to as "filter." This report is divided into several sections:
 
 0. [Necessary software and setup](#necessary-software-and-setup)
 1. [Filter Coefficient and Frequency Design](#filter-coefficient-and-frequency-design)
@@ -22,16 +22,19 @@ This repository gives a walk through on the complete design process of a multi-t
 5. [L2 Parallel FIR Filter Results](#l2-parallel-fir-filter-results)
 6. [L3 Parallel FIR Filter Results](#l3-parallel-fir-filter-results)
 7. [Pipelined, L3 Parallel FIR Filter Results](#pipelined-l3-parallel-fir-filter-results)
-8. [Comparison of all filters](#comparison-of-all-filters)
+8. [Comparison of Filters and Conclusion](#comparison-of-filters-and-conclusion)
+9. [Resources](#resources)
 
 > [!NOTE]  
 > If you do not know what an FIR filter is or the principles of pipelining and paralelization in DSP design, I would recommend touching up on that first. Some links are provided in the [Resources](#resources) section.
 
-## Report
+## Necessary software and setup
 
-### Necessary software and setup
+- [MATLAB](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html)
+- [AMD Vivado](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2024-2.html)
+- Python for running the coefficient splitting and input generation scripts
 
-### Filter Coefficient and Frequency Design
+## Filter Coefficient and Frequency Design
 
 First, we will start by selecting the operating frequency for this FIR Filter. As we are only given a general transition region (0.2 $\pi$ to 0.23 $\pi$ rad/sample), I will assume that it is fair game to arbitrarly choose the sampling frequency for this. As such, this filter will be operating inside of an audio filtering device of CD quality (sampling rate = 44.1kHz). It will remove high frequencies in the range of 4.41 kHz to 5.07 kHz from this audio file; so things like high pitched whines or electric noise. 
 
@@ -83,11 +86,11 @@ The 16-bit representation is more space efficient and maintains the integrity of
 
 The filter coefficients are then stored into ```.mem``` files, with [decimal](fir_coeffs_decimal.mem) and [binary](fir_coeffs_binary.mem) representations. The mem files can later be loaded into the System Verilog code for the FIR filters.
 
-### Filter Architecture Design
+## Filter Architecture Design
 
 In this section, I will go over the high-level design for the four filters created.
 
-#### Pipelined FIR
+### Pipelined FIR
 <div align="center">
   <img src="README_resources/pipelinefirfilter.jpg" alt="" width="500">
   <br>
@@ -96,13 +99,13 @@ In this section, I will go over the high-level design for the four filters creat
 
 <br>
 
-To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
+To design the pipelined filter, I simply added delay blocks onto each stage of the accumulator line of the filter[^2]. For future reference, I will call this vertical pipelining of the filter. This optimization reduced the critical path to the time of one addder plus time of one multiplier. For this to work, delay blocks must also be added onto the delay line, essentially doubing the delay of each step. 
 
 An alternative solution is to pipeline between the adders and multipliers. For future reference, I will call this horizontal pipelining of the filter. However, given that the input and output are registers, this would make the critical path 102 (the number of taps) multiplied by the time for one adder. This is a lot worse of a critical path than the proposed solution above, assuming that a multiplication operation does not take much longer than an addition (i.e. 8ns vs 20ns).
 
 I did experiment with combining both methods above, but ran into issues with combining horizontal direction and vertical direction pipelinig. In addition, this introduced extreme latency issues due to the number of delay blocks between ```x(n)``` and ```y(n)```. As such, I went with only vertical pipelining shown with red blocks in figure 4.
 
-#### L2 Parallel FIR
+### L2 Parallel FIR
 <div align="center">
   <img src="README_resources/l2firfilter.png" alt="" width="500">
   <br>
@@ -113,7 +116,7 @@ I did experiment with combining both methods above, but ran into issues with com
 
 To design the 2-Parallel Reduced-Complexity Fast filter, I followed the slides from Parhi's Chapter 9 lecture[^3], and took the design from there. This requires the generation of two sub filters, H0 and H1, with tap size of N/2, so 51 taps in our case. We split the coefficients up in an even-odd fashion (i.e. H0 = {h0, h2, h4, etc.} and H1 = {h1, h3, h5, etc.}). We generate the combined filter H0+H1 by combinging the coefficients at each index (i.e. H0+H1 = {h0+h1, h2+h3, h4+h5, etc.})/ Now that we have the sub filters, all that is needed is to copy the implementation provided by Parhi. Note that each "sub-filter" will be a non-pipelined filter.
 
-#### L3 Parallel FIR
+### L3 Parallel FIR
 <div align="center">
   <img src="README_resources/l3firfilter.png" alt="" width="500">
   <br>
@@ -124,13 +127,21 @@ To design the 2-Parallel Reduced-Complexity Fast filter, I followed the slides f
 
 Similar process to the 2-Parallel Reduced-Complexity Fast filter, but make three sub filters (H0, H1, H2) instead of taps N/3 => 34, and repeat the same process for combining and implementing.
 
-#### Pipelined, L3 Parallel FIR
+### Pipelined, L3 Parallel FIR
 
-Similar process to the 3-Parallel Reduced-Complexity Fast filter, but use a pipelined filter within each "sub-filter."
+div align="center">
+  <img src="README_resources/l3firfilterpiped.png" alt="" width="500">
+  <br>
+  <p>Figure 7: 3-Parallel Optimal Pipelined Fast FIR filter</p>
+</div>
 
-### Filter Implementation and Testing
+<br>
 
-#### Implementation
+Similar process to the 3-Parallel Reduced-Complexity Fast filter, but use a pipelined filter within each "sub-filter." Did not pipeline the input or output recommputation as worth critical path is 3*adder, which is less time than adder+multiplication. There would be no critical path benefit, and we would increase computation time by 3 cycles (one pipeline on input, two pipeline on output in image shown above).
+
+## Filter Implementation and Testing
+
+### Implementation
 
 All filter's were developed in AMD's Vivado software using System Verilog. ```.mem``` files are used to store coefficients, and to also store input data for testbench files. There are four folders above prefixed with "FIR," each of which contain implementation for the four filters mentioned in the previous section. Link to the system verilog files are listed below:
 
@@ -151,7 +162,7 @@ Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-
 
 For implementing the parallelized filters, I made a system verilog file with a basic, non-pipelined filter implementation. From here, I made a wrapper system verilog file to create instances of these filters as needed and use them in the higher level DFGs from earlier. For the pipelined L3 parallelized filter, I replace the basic, non-pipelined filter implementation with the pipelined filter from ```Pipelined FIR```. To support this, the coefficients file is separated as needed for h0, h1, h0+h1, etc. sub-filters for parallelization using the scripts in ```coeff_splitter```.
 
-#### Test Signal
+### Test Signal
 For the testbenches to work, they require an input signal. This input signal is generated using the script [wave_gen.py](wave_gen.py). This script has a function ```sine_wave_sweep``` which takes in the following and generates a trajectory for a logarithmically increasing sine wave:
 
 * File name
@@ -166,7 +177,7 @@ An input wave form sweeping 500Hz to 41.1kHz with 50 steps and 200 samples per f
 > [!NOTE]  
 > This file is intended to work with filters sampling at 44.1 kHz. If you are using a different sampling rate, you will need to produce a new file using the linked python script.
 
-#### Testing criteria (and how to derive)
+### Testing criteria (and how to derive)
 Two schematics and Four criteria will be tested for:
 * Filter Schematic
     * Question: What does our filter schematic look like? Does it match our design schematic?
@@ -202,7 +213,7 @@ Two schematics and Four criteria will be tested for:
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/rtlschem.png" alt="" width="1000">
   <br>
-  <p>Figure 7: Pipelined FIR Filter RTL Schematic</p>
+  <p>Figure 8: Pipelined FIR Filter RTL Schematic</p>
 </div>
 
 <br>
@@ -214,7 +225,7 @@ This schematic has been reduced to only 3 taps, but it looks like this implement
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/device.png" alt="" height="500">
   <br>
-  <p>Figure 8: Pipelined FIR Filter on FPGA</p>
+  <p>Figure 9: Pipelined FIR Filter on FPGA</p>
 </div>
 
 <br>
@@ -226,7 +237,7 @@ No major comments. Resource utilization from this device layout seems minimal, a
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/behavioralsim.png" alt="" width="1000">
   <br>
-  <p>Figure 9: Pipelined FIR Filter Behavioral Sim</p>
+  <p>Figure 10: Pipelined FIR Filter Behavioral Sim</p>
 </div>
 
 <br>
@@ -427,7 +438,7 @@ From the above report, we can also see that the resource utilization across the 
 
 <br>
 
-#### L3 Parallel FIR Filter Results
+## L3 Parallel FIR Filter Results
 
 ### Circuit Schematic
 
@@ -517,7 +528,7 @@ From the above report, we can also see that the resource utilization across the 
 ### Circuit Schematic
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_PIPELINED_L3/rtlschem.png" alt="" width="1000">
+  <img src="TEST_RESULTS/FIR_Pipelined_L3/rtlschem.png" alt="" width="1000">
   <br>
   <p>Figure 28: Pipelined L3 Parallel FIR Filter RTL Schematic, High-Level</p>
 </div>
@@ -529,7 +540,7 @@ The high-level schematic exactly replicates the proposed implementation from ear
 ### Device Layout on FPGA
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_PIPELINED_L3/device.png" alt="" height="500">
+  <img src="TEST_RESULTS/FIR_Pipelined_L3/device.png" alt="" height="500">
   <br>
   <p>Figure 29: Pipelined L3 Parallel FIR Filter on FPGA</p>
 </div>
@@ -546,7 +557,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 ### Behavioral Sim
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_PIPELINED_L3/behavioralsim.png" alt="" width="1000">
+  <img src="TEST_RESULTS/FIR_Pipelined_L3/behavioralsim.png" alt="" width="1000">
   <br>
   <p>Figure 30: Pipelined L3 Parallel FIR Filter Behavioral Sim</p>
 </div>
@@ -559,12 +570,12 @@ There is a small delay of about 68 clock cycles before the filter starts outputi
 
 ### Timing
 
-I have linked the output file [here](TEST_RESULTS/FIR_PIPELINED_L3/timing.txt) for the timing results. The critical path for this filter is relatively small at 11.881ns, with the logic delay being smaller than the route delay. The logic delay is 4.324ns, with the route delay being 7.668ns. From the contents of the output file, it looks like this occurs after the output of the H-filters, and along the recomposition into ```y_out_1```. In this path, there are multiplier adders without any pipelining on them. There is definitely some way to pipeline this output to optimize it, but I did not have the time to do so. With this pipelining on the recomposition part of the output leading to all ```y_out```s, this filter could have the same critical path as the pipelined-only filter.
+I have linked the output file [here](TEST_RESULTS/FIR_Pipelined_L3/timing.txt) for the timing results. The critical path for this filter is relatively small at 11.881ns, with the logic delay being smaller than the route delay. The logic delay is 4.324ns, with the route delay being 7.668ns. From the contents of the output file, it looks like this occurs after the output of the H-filters, and along the recomposition into ```y_out_1```. In this path, there are multiplier adders without any pipelining on them. There is definitely some way to pipeline this output to optimize it, but I did not have the time to do so. With this pipelining on the recomposition part of the output leading to all ```y_out```s, this filter could have the same critical path as the pipelined-only filter.
 
 ### Power
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_PIPELINED_L3/power.png" alt="" width="500">
+  <img src="TEST_RESULTS/FIR_Pipelined_L3/power.png" alt="" width="500">
   <br>
   <p>Figure 31: Pipelined L3 Parallel FIR Filter Power</p>
 </div>
@@ -576,7 +587,7 @@ The total on-chip power shown is about 0.081 Watts, which is very good. Diging d
 ### Area / Resource Utilization
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_PIPELINED_L3/util.png" alt="" width="500">
+  <img src="TEST_RESULTS/FIR_Pipelined_L3/util.png" alt="" width="500">
   <br>
   <p>Figure 32: Pipelined L3 Parallel FIR Filter Resource Utilization</p>
 </div>
@@ -588,7 +599,7 @@ Using our equation from above, we derive: $A_{\text{FPGA}} \approx (0.0002 \time
 Like before, there is a reasonable amount of DSP units as we have 6 * (N/3) DSPs, which is 204 DPS. the amount of other resources also increased by reasonable amounts, with flip-flop count almost doubling because of pipelining, and aligns to theories for I/O proposed in the L2 Parallel analysis.
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_PIPELINED_L3/util2.png" alt="" width="500">
+  <img src="TEST_RESULTS/FIR_Pipelined_L3/util2.png" alt="" width="500">
   <br>
   <p>Figure 33: Pipelined L3 Parallel FIR Filter Resource Utilization</p>
 </div>
@@ -596,6 +607,124 @@ Like before, there is a reasonable amount of DSP units as we have 6 * (N/3) DSPs
 From the above report, we can also see that the resource utilization across the six filters is almost identical; minus some trading of SLICE LUTs, Slice Registers, Slice, and LUT for logic across the filters.
 
 <br>
+
+## Comparison of Filters and Conclusion
+
+To compare the different FIR filter implementations, we analyze key resource utilization metrics and performance characteristics. The table below provides a summary of the resource usage for each filter.
+
+| Filter Type                   | LUT  |  FF  | DSP  | IO  | Area (mm²) | Critical Path (ns) | Logic Delay | Cycle Time (clk) | Power (W) |
+|-------------------------------|------|------|------|-----|------------|--------------------|-------------|------------------|-----------|
+| **Pipelined FIR**             |    0 | 3232 |  102 |  34 |     4.0632 |              8.663 |       2.852 |              204 |     0.081 |
+| **L2 Parallel FIR**           |   49 | 2416 |  153 | 114 |     7.1214 |             80.171 |      74.571 |               51 |     0.081 |
+| **L3 Parallel FIR**           |  230 | 3200 |  204 | 170 |      9.886 |             56.794 |      50.536 |               34 |     0.081 |
+| **Pipelined L3 Parallel FIR** |  230 | 6368 |  240 | 170 |    10.2028 |             11.881 |       4.324 |               68 |     0.081 |
+
+As seen in the table above, with variations in parallelization along with pipelining implementation, we can derive FIR filters with various critical paths and latency. It seems that for improved latency, it is better to perform parallelization since it reduces the number of clock cycles needed for an output. However, to have the best throughput, it is better to pipeline since it reduces the critical path. Power consumption was the same across all filters, although further simulation should be done to support this claim as it seems odd. 
+
+Given better fixed point quantization or maybe an increase in taps, the Pipelined L3 Parallel FIR filter could excel in this scenario. It would provide us with the best of both throughput and latency. However, this does come with the tradeoff of resource utilization and area. An abundance of flip flops and DSP units were used to support this configuration, and it had the largest potential silicone area. In addition, it also had some weird output behavior on the tail end of the frequency response. This could be attributed to the taps and quantizied coefficients that I have developed, but I am not sure. More study into the effect of the number of taps and the scale of the quantizied coefficients will need to be done to support that (i.e. 24-bit vs 32-bit).
+
+This got me thinking that with the FIR filter coefficients I have developed, a pipelined L2 Parallel FIR filter might excel. It could give us the best of throughput, latency, area, and also precision. The behavioral simulation and timing analysis is attached bellow, and updated table of information right after:
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_Pipelined_L2/behavioralsim.png" alt="" width="1000">
+  <br>
+  <p>Figure 34: Pipelined L2 Parallel FIR Filter Behavioral Simulation</p>
+</div>
+
+<br>
+
+
+```
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 05:24:19 2025
+| Host         : Amars-XPS running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -path_type full
+| Design       : l2_wrapper
+| Device       : 7k70t-fbv676
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             22659.512ns  (required time - arrival time)
+  Source:                 y2k_pipeline_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Destination:            y_out_0[16]
+                            (output port clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Path Group:             clk
+  Path Type:              Max at Slow Process Corner
+  Requirement:            22676.000ns  (clk rise@22676.000ns - clk rise@0.000ns)
+  Data Path Delay:        8.895ns  (logic 3.506ns (39.415%)  route 5.389ns (60.585%))
+  Logic Levels:           7  (CARRY4=5 LUT2=1 OBUF=1)
+  Output Delay:           3.000ns
+  Clock Path Skew:        -4.561ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.000ns = ( 22676.000 - 22676.000 ) 
+    Source Clock Delay      (SCD):    4.561ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                         propagated clock network latency
+                                                      4.561     4.561    
+    SLICE_X5Y148         FDRE                         0.000     4.561 r  y2k_pipeline_reg[2]/C
+    SLICE_X5Y148         FDRE (Prop_fdre_C_Q)         0.269     4.830 r  y2k_pipeline_reg[2]/Q
+                         net (fo=3, routed)           1.036     5.866    y2k_pipeline_reg_n_0_[2]
+    SLICE_X4Y137         LUT2 (Prop_lut2_I0_O)        0.053     5.919 r  y_out_0_OBUF[3]_inst_i_3/O
+                         net (fo=1, routed)           0.000     5.919    y_out_0_OBUF[3]_inst_i_3_n_0
+    SLICE_X4Y137         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.235     6.154 r  y_out_0_OBUF[3]_inst_i_1/CO[3]
+                         net (fo=1, routed)           0.000     6.154    y_out_0_OBUF[3]_inst_i_1_n_0
+    SLICE_X4Y138         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     6.212 r  y_out_0_OBUF[7]_inst_i_1/CO[3]
+                         net (fo=1, routed)           0.000     6.212    y_out_0_OBUF[7]_inst_i_1_n_0
+    SLICE_X4Y139         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     6.270 r  y_out_0_OBUF[11]_inst_i_1/CO[3]
+                         net (fo=1, routed)           0.000     6.270    y_out_0_OBUF[11]_inst_i_1_n_0
+    SLICE_X4Y140         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     6.328 r  y_out_0_OBUF[15]_inst_i_1/CO[3]
+                         net (fo=1, routed)           0.000     6.328    y_out_0_OBUF[15]_inst_i_1_n_0
+    SLICE_X4Y141         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.139     6.467 r  y_out_0_OBUF[39]_inst_i_1/O[0]
+                         net (fo=24, routed)          4.353    10.820    y_out_0_OBUF[16]
+    F25                  OBUF (Prop_obuf_I_O)         2.636    13.456 r  y_out_0_OBUF[16]_inst/O
+                         net (fo=0)                   0.000    13.456    y_out_0[16]
+    F25                                                               r  y_out_0[16] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)    22676.000 22676.000 r  
+                         propagated clock network latency
+                                                      0.000 22676.000    
+                         clock pessimism              0.000 22676.000    
+                         clock uncertainty           -0.035 22675.965    
+                         output delay                -3.000 22672.965    
+  -------------------------------------------------------------------
+                         required time                      22672.967    
+                         arrival time                         -13.456    
+  -------------------------------------------------------------------
+                         slack                              22659.512    
+```
+
+| Filter Type                   | LUT  |  FF  | DSP  | IO  | Area (mm²) | Critical Path (ns) | Logic Delay | Cycle Time (clk) | Power (W) |
+|-------------------------------|------|------|------|-----|------------|--------------------|-------------|------------------|-----------|
+| **Pipelined FIR**             |    0 | 3232 |  102 |  34 |     4.0632 |              8.663 |       2.852 |              204 |     0.081 |
+| **L2 Parallel FIR**           |   49 | 2416 |  153 | 114 |     7.1214 |             80.171 |      74.571 |               51 |     0.081 |
+| **L3 Parallel FIR**           |  230 | 3200 |  204 | 170 |      9.886 |             56.794 |      50.536 |               34 |     0.081 |
+| **Pipelined L2 Parallel FIR** |  230 | 6368 |  240 | 170 |     7.3694 |             11.881 |       4.324 |              103 |     0.081 |
+| **Pipelined L3 Parallel FIR** |   65 | 4864 |  153 | 114 |    10.2028 |              8.895 |       3.506 |               68 |     0.081 |
+
+While the pipelined L2 Parallel FIR filter does take a few more clock cycles to update than the pipelined L3 Parallel FIR filter, it is still very low latency with high throughput. It uses less silicon and hardware components than the pipelined L3 Parallel FIR filter, and takes up a smaller area. Overall, I think this is a worthy tradeoff: especially considering the behavioral sim for the pipelined L2 Parallel FIR filter is more true to our desired response than the pipelined L3 Parallel FIR filter which suffered on the higher frequency end.
+
+<br>
+
 
 ## Resources
 
@@ -606,6 +735,11 @@ From the above report, we can also see that the resource utilization across the 
 
 [^3]: K. Parhi, "Chapter 9: Algorithmic Strength Reduction in Filters and Transforms," [https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf](https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf) (accessed Mar. 18, 2025). 
 
-### Textbook:
+### Textbook: 
+[VLSI Digital Signal Processing Systems: Design and Implementation](https://www.amazon.com/VLSI-Digital-Signal-Processing-Systems/dp/0471241865)
 
 ### Youtube Videos:
+- [Introduction to FIR Filters](https://www.youtube.com/watch?v=NvRKtdrssFA)
+- [Pipelining Principles](https://www.youtube.com/watch?v=zPmfprtdzCE)
+- [Parallel Computing Explained in 3 Minutes](https://www.youtube.com/watch?v=q7sgzDH1cR8)
+- [Pipelining FIR Filter](https://www.youtube.com/watch?v=ClBw7TxUDM4)
