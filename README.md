@@ -612,12 +612,12 @@ From the above report, we can also see that the resource utilization across the 
 
 To compare the different FIR filter implementations, we analyze key resource utilization metrics and performance characteristics. The table below provides a summary of the resource usage for each filter.
 
-| Filter Type                   | LUT  |  FF  | DSP  | IO  | Area (mm²) | Critical Path (ns) | Logic Delay | Cycle Time (clk) | Power (W) |
-|-------------------------------|------|------|------|-----|------------|--------------------|-------------|------------------|-----------|
-| **Pipelined FIR**             |    0 | 3232 |  102 |  34 |     4.0632 |              8.663 |       2.852 |              204 |     0.081 |
-| **L2 Parallel FIR**           |   49 | 2416 |  153 | 114 |     7.1214 |             80.171 |      74.571 |               51 |     0.081 |
-| **L3 Parallel FIR**           |  230 | 3200 |  204 | 170 |      9.886 |             56.794 |      50.536 |               34 |     0.081 |
-| **Pipelined L3 Parallel FIR** |  230 | 6368 |  240 | 170 |    10.2028 |             11.881 |       4.324 |               68 |     0.081 |
+| Filter Type                   | LUT  |  FF  | DSP  | IO  | Area (mm²) | Critical Path (ns) | Logic Delay | Cycle Time (clk) | Max clk (MHz) | Power (W) |
+|-------------------------------|------|------|------|-----|------------|--------------------|-------------|------------------|---------------|-----------|
+| **Pipelined FIR**             |    0 | 3232 |  102 |  34 |     4.0632 |              8.663 |       2.852 |              204 |         115.4 |     0.081 |
+| **L2 Parallel FIR**           |   49 | 2416 |  153 | 114 |     7.1214 |             80.171 |      74.571 |               51 |          12.5 |     0.081 |
+| **L3 Parallel FIR**           |  230 | 3200 |  204 | 170 |      9.886 |             56.794 |      50.536 |               34 |          17.6 |     0.081 |
+| **Pipelined L3 Parallel FIR** |  230 | 6368 |  240 | 170 |    10.2028 |             11.881 |       4.324 |               68 |          84.2 |     0.081 |
 
 As seen in the table above, with variations in parallelization along with pipelining implementation, we can derive FIR filters with various critical paths and latency. It seems that for improved latency, it is better to perform parallelization since it reduces the number of clock cycles needed for an output. However, to have the best throughput, it is better to pipeline since it reduces the critical path. Power consumption was the same across all filters, although further simulation should be done to support this claim as it seems odd. 
 
@@ -713,15 +713,15 @@ Slack (MET) :             22659.512ns  (required time - arrival time)
                          slack                              22659.512    
 ```
 
-| Filter Type                   | LUT  |  FF  | DSP  | IO  | Area (mm²) | Critical Path (ns) | Logic Delay | Cycle Time (clk) | Power (W) |
-|-------------------------------|------|------|------|-----|------------|--------------------|-------------|------------------|-----------|
-| **Pipelined FIR**             |    0 | 3232 |  102 |  34 |     4.0632 |              8.663 |       2.852 |              204 |     0.081 |
-| **L2 Parallel FIR**           |   49 | 2416 |  153 | 114 |     7.1214 |             80.171 |      74.571 |               51 |     0.081 |
-| **L3 Parallel FIR**           |  230 | 3200 |  204 | 170 |      9.886 |             56.794 |      50.536 |               34 |     0.081 |
-| **Pipelined L2 Parallel FIR** |  230 | 6368 |  240 | 170 |     7.3694 |             11.881 |       4.324 |              103 |     0.081 |
-| **Pipelined L3 Parallel FIR** |   65 | 4864 |  153 | 114 |    10.2028 |              8.895 |       3.506 |               68 |     0.081 |
+| Filter Type                   | LUT  |  FF  | DSP  | IO  | Area (mm²) | Critical Path (ns) | Logic Delay | Cycle Time (clk) | Max clk (MHz) | Power (W) |
+|-------------------------------|------|------|------|-----|------------|--------------------|-------------|------------------|---------------|-----------|
+| **Pipelined FIR**             |    0 | 3232 |  102 |  34 |     4.0632 |              8.663 |       2.852 |              204 |         115.4 |     0.081 |
+| **L2 Parallel FIR**           |   49 | 2416 |  153 | 114 |     7.1214 |             80.171 |      74.571 |               51 |          12.5 |     0.081 |
+| **L3 Parallel FIR**           |  230 | 3200 |  204 | 170 |      9.886 |             56.794 |      50.536 |               34 |          17.6 |     0.081 |
+| **Pipelined L2 Parallel FIR** |   65 | 4864 |  153 | 114 |     7.3694 |              8.895 |       3.506 |              102 |         112.4 |     0.081 |
+| **Pipelined L3 Parallel FIR** |  230 | 6368 |  240 | 170 |    10.2028 |             11.881 |       4.324 |               68 |          84.2 |     0.081 |
 
-While the pipelined L2 Parallel FIR filter does take a few more clock cycles to update than the pipelined L3 Parallel FIR filter, it is still very low latency with high throughput. It uses less silicon and hardware components than the pipelined L3 Parallel FIR filter, and takes up a smaller area. Overall, I think this is a worthy tradeoff: especially considering the behavioral sim for the pipelined L2 Parallel FIR filter is more true to our desired response than the pipelined L3 Parallel FIR filter which suffered on the higher frequency end.
+While the pipelined L2 Parallel FIR filter does take a few more clock cycles to update than the pipelined L3 Parallel FIR filter resulting in about 100ns extra of processing time per input (102 x 8.895 - 68 x 11.881), it is still very low latency with higher throughput. It uses less silicon and hardware components than the pipelined L3 Parallel FIR filter, and takes up a smaller area. Overall, I think this is a worthy tradeoff: especially considering the behavioral sim for the pipelined L2 Parallel FIR filter is more true to our desired response than the pipelined L3 Parallel FIR filter which suffered on the higher frequency end.
 
 <br>
 
