@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module fir_filter #(
-    parameter int N = 3,            // Number of taps
+    parameter int N = 102,            // Number of taps
     parameter int IO_WIDTH = 16,       // Bit width for I/O
     parameter int COEFF_WIDTH = 24    // Bit width for fixed-point coefficients
 ) (

@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue Mar 18 18:47:58 2025
+  **** Start of session at: Tue Mar 18 19:23:32 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -25,26 +25,26 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 43960
+INFO: [Synth 8-7075] Helper process launched with PID 7144
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1024.914 ; gain = 469.883
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.172 ; gain = 467.863
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'fir_filter' [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sources_1/new/fir_filter.sv:3]
 INFO: [Synth 8-3876] $readmem data file 'fir_coeffs_fixed.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sources_1/new/fir_filter.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'fir_filter' (0#1) [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/sources_1/new/fir_filter.sv:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1129.027 ; gain = 573.996
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1143.629 ; gain = 587.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1129.027 ; gain = 573.996
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1143.629 ; gain = 587.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1129.027 ; gain = 573.996
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1143.629 ; gain = 587.320
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1129.027 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1143.629 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -53,39 +53,39 @@ Parsing XDC File [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/con
 Finished Parsing XDC File [C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.srcs/constrs_1/new/fir_filter.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1214.895 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1221.996 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1214.895 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1221.996 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1214.895 ; gain = 659.863
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1221.996 ; gain = 665.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k70tfbv676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1214.895 ; gain = 659.863
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1221.996 ; gain = 665.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1214.895 ; gain = 659.863
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1221.996 ; gain = 665.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1214.895 ; gain = 659.863
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1221.996 ; gain = 665.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	               40 Bit    Registers := 2     
-	               16 Bit    Registers := 4     
+	               40 Bit    Registers := 71    
+	               16 Bit    Registers := 202   
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -113,24 +113,1127 @@ DSP Report: Generating DSP accumulator_pipeline_reg[2], operation Mode is: PCIN+
 DSP Report: register accumulator_pipeline_reg[2] is absorbed into DSP accumulator_pipeline_reg[2].
 DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[2].
 DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[2].
+DSP Report: Generating DSP accumulator_pipeline_reg[3], operation Mode is: (PCIN+(A:0x3fff5e22)*B)'.
+DSP Report: register accumulator_pipeline_reg[3] is absorbed into DSP accumulator_pipeline_reg[3].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[3].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[3].
+DSP Report: Generating DSP accumulator_pipeline_reg[4], operation Mode is: (PCIN+(A:0x3ffed69f)*B)'.
+DSP Report: register accumulator_pipeline_reg[4] is absorbed into DSP accumulator_pipeline_reg[4].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[4].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[4].
+DSP Report: Generating DSP accumulator_pipeline_reg[5], operation Mode is: (PCIN+(A:0x3ffe1ac3)*B)'.
+DSP Report: register accumulator_pipeline_reg[5] is absorbed into DSP accumulator_pipeline_reg[5].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[5].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[5].
+DSP Report: Generating DSP accumulator_pipeline_reg[6], operation Mode is: (PCIN+(A:0x3ffd3523)*B)'.
+DSP Report: register accumulator_pipeline_reg[6] is absorbed into DSP accumulator_pipeline_reg[6].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[6].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[6].
+DSP Report: Generating DSP accumulator_pipeline_reg[7], operation Mode is: (PCIN+(A:0x3ffc414c)*B)'.
+DSP Report: register accumulator_pipeline_reg[7] is absorbed into DSP accumulator_pipeline_reg[7].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[7].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[7].
+DSP Report: Generating DSP accumulator_pipeline_reg[8], operation Mode is: (PCIN+(A:0x3ffb6b35)*B)'.
+DSP Report: register accumulator_pipeline_reg[8] is absorbed into DSP accumulator_pipeline_reg[8].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[8].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[8].
+DSP Report: Generating DSP accumulator_pipeline_reg[9], operation Mode is: (PCIN+(A:0x3ffae924)*B)'.
+DSP Report: register accumulator_pipeline_reg[9] is absorbed into DSP accumulator_pipeline_reg[9].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[9].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[9].
+DSP Report: Generating DSP accumulator_pipeline_reg[10], operation Mode is: (PCIN+(A:0x3ffaf014)*B)'.
+DSP Report: register accumulator_pipeline_reg[10] is absorbed into DSP accumulator_pipeline_reg[10].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[10].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[10].
+DSP Report: Generating DSP accumulator_pipeline_reg[11], operation Mode is: (PCIN+(A:0x3ffba4a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[11] is absorbed into DSP accumulator_pipeline_reg[11].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[11].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[11].
+DSP Report: Generating DSP accumulator_pipeline_reg[12], operation Mode is: (PCIN+(A:0x3ffd0c8e)*B)'.
+DSP Report: register accumulator_pipeline_reg[12] is absorbed into DSP accumulator_pipeline_reg[12].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[12].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[12].
+DSP Report: Generating DSP accumulator_pipeline_reg[13], operation Mode is: (PCIN+(A:0x3fff0559)*B)'.
+DSP Report: register accumulator_pipeline_reg[13] is absorbed into DSP accumulator_pipeline_reg[13].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[13].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[13].
+DSP Report: Generating DSP accumulator_pipeline_reg[14], operation Mode is: (PCIN+(A:0x144c4)*B)'.
+DSP Report: register accumulator_pipeline_reg[14] is absorbed into DSP accumulator_pipeline_reg[14].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[14].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[14].
+DSP Report: Generating DSP accumulator_pipeline_reg[15], operation Mode is: (PCIN+(A:0x364e2)*B)'.
+DSP Report: register accumulator_pipeline_reg[15] is absorbed into DSP accumulator_pipeline_reg[15].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[15].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[15].
+DSP Report: Generating DSP accumulator_pipeline_reg[16], operation Mode is: (PCIN+(A:0x4fa9d)*B)'.
+DSP Report: register accumulator_pipeline_reg[16] is absorbed into DSP accumulator_pipeline_reg[16].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[16].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[16].
+DSP Report: Generating DSP accumulator_pipeline_reg[17], operation Mode is: (PCIN+(A:0x5b190)*B)'.
+DSP Report: register accumulator_pipeline_reg[17] is absorbed into DSP accumulator_pipeline_reg[17].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[17].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[17].
+DSP Report: Generating DSP accumulator_pipeline_reg[18], operation Mode is: (PCIN+(A:0x56581)*B)'.
+DSP Report: register accumulator_pipeline_reg[18] is absorbed into DSP accumulator_pipeline_reg[18].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[18].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[18].
+DSP Report: Generating DSP accumulator_pipeline_reg[19], operation Mode is: (PCIN+(A:0x4311c)*B)'.
+DSP Report: register accumulator_pipeline_reg[19] is absorbed into DSP accumulator_pipeline_reg[19].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[19].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[19].
+DSP Report: Generating DSP accumulator_pipeline_reg[20], operation Mode is: (PCIN+(A:0x26bd5)*B)'.
+DSP Report: register accumulator_pipeline_reg[20] is absorbed into DSP accumulator_pipeline_reg[20].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[20].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[20].
+DSP Report: Generating DSP accumulator_pipeline_reg[21], operation Mode is: (PCIN+(A:0x9568)*B)'.
+DSP Report: register accumulator_pipeline_reg[21] is absorbed into DSP accumulator_pipeline_reg[21].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[21].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[21].
+DSP Report: Generating DSP accumulator_pipeline_reg[22], operation Mode is: (PCIN+(A:0x3fff3353)*B)'.
+DSP Report: register accumulator_pipeline_reg[22] is absorbed into DSP accumulator_pipeline_reg[22].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[22].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[22].
+DSP Report: Generating DSP accumulator_pipeline_reg[23], operation Mode is: (PCIN+(A:0x3ffea9a9)*B)'.
+DSP Report: register accumulator_pipeline_reg[23] is absorbed into DSP accumulator_pipeline_reg[23].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[23].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[23].
+DSP Report: Generating DSP accumulator_pipeline_reg[24], operation Mode is: (PCIN+(A:0x3fff1b70)*B)'.
+DSP Report: register accumulator_pipeline_reg[24] is absorbed into DSP accumulator_pipeline_reg[24].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[24].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[24].
+DSP Report: Generating DSP accumulator_pipeline_reg[25], operation Mode is: PCIN+A*(B:0x5d57).
+DSP Report: register accumulator_pipeline_reg[25] is absorbed into DSP accumulator_pipeline_reg[25].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[25].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[25].
+DSP Report: Generating DSP accumulator_pipeline_reg[26], operation Mode is: (PCIN+(A:0x200c1)*B)'.
+DSP Report: register accumulator_pipeline_reg[26] is absorbed into DSP accumulator_pipeline_reg[26].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[26].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[26].
+DSP Report: Generating DSP accumulator_pipeline_reg[27], operation Mode is: (PCIN+(A:0x37555)*B)'.
+DSP Report: register accumulator_pipeline_reg[27] is absorbed into DSP accumulator_pipeline_reg[27].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[27].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[27].
+DSP Report: Generating DSP accumulator_pipeline_reg[28], operation Mode is: (PCIN+(A:0x437a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[28] is absorbed into DSP accumulator_pipeline_reg[28].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[28].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[28].
+DSP Report: Generating DSP accumulator_pipeline_reg[29], operation Mode is: (PCIN+(A:0x3fe2a)*B)'.
+DSP Report: register accumulator_pipeline_reg[29] is absorbed into DSP accumulator_pipeline_reg[29].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[29].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[29].
+DSP Report: Generating DSP accumulator_pipeline_reg[30], operation Mode is: (PCIN+(A:0x2d515)*B)'.
+DSP Report: register accumulator_pipeline_reg[30] is absorbed into DSP accumulator_pipeline_reg[30].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[30].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[30].
+DSP Report: Generating DSP accumulator_pipeline_reg[31], operation Mode is: (PCIN+(A:0x11e51)*B)'.
+DSP Report: register accumulator_pipeline_reg[31] is absorbed into DSP accumulator_pipeline_reg[31].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[31].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[31].
+DSP Report: Generating DSP accumulator_pipeline_reg[32], operation Mode is: (PCIN+(A:0x3fff7383)*B)'.
+DSP Report: register accumulator_pipeline_reg[32] is absorbed into DSP accumulator_pipeline_reg[32].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[32].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[32].
+DSP Report: Generating DSP accumulator_pipeline_reg[33], operation Mode is: (PCIN+(A:0x3ffe7278)*B)'.
+DSP Report: register accumulator_pipeline_reg[33] is absorbed into DSP accumulator_pipeline_reg[33].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[33].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[33].
+DSP Report: Generating DSP accumulator_pipeline_reg[34], operation Mode is: (PCIN+(A:0x3ffe8461)*B)'.
+DSP Report: register accumulator_pipeline_reg[34] is absorbed into DSP accumulator_pipeline_reg[34].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[34].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[34].
+DSP Report: Generating DSP accumulator_pipeline_reg[35], operation Mode is: PCIN+A*(B:0x3b388).
+DSP Report: register accumulator_pipeline_reg[35] is absorbed into DSP accumulator_pipeline_reg[35].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[35].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[35].
+DSP Report: Generating DSP accumulator_pipeline_reg[36], operation Mode is: (PCIN+(A:0x19faf)*B)'.
+DSP Report: register accumulator_pipeline_reg[36] is absorbed into DSP accumulator_pipeline_reg[36].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[36].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[36].
+DSP Report: Generating DSP accumulator_pipeline_reg[37], operation Mode is: (PCIN+(A:0x397db)*B)'.
+DSP Report: register accumulator_pipeline_reg[37] is absorbed into DSP accumulator_pipeline_reg[37].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[37].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[37].
+DSP Report: Generating DSP accumulator_pipeline_reg[38], operation Mode is: (PCIN+(A:0x4d3b7)*B)'.
+DSP Report: register accumulator_pipeline_reg[38] is absorbed into DSP accumulator_pipeline_reg[38].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[38].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[38].
+DSP Report: Generating DSP accumulator_pipeline_reg[39], operation Mode is: (PCIN+(A:0x4bb4c)*B)'.
+DSP Report: register accumulator_pipeline_reg[39] is absorbed into DSP accumulator_pipeline_reg[39].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[39].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[39].
+DSP Report: Generating DSP accumulator_pipeline_reg[40], operation Mode is: (PCIN+(A:0x32544)*B)'.
+DSP Report: register accumulator_pipeline_reg[40] is absorbed into DSP accumulator_pipeline_reg[40].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[40].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[40].
+DSP Report: Generating DSP accumulator_pipeline_reg[41], operation Mode is: PCIN+A*(B:0x754e).
+DSP Report: register accumulator_pipeline_reg[41] is absorbed into DSP accumulator_pipeline_reg[41].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[41].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[41].
+DSP Report: Generating DSP accumulator_pipeline_reg[42], operation Mode is: (PCIN+(A:0x3ffd8d22)*B)'.
+DSP Report: register accumulator_pipeline_reg[42] is absorbed into DSP accumulator_pipeline_reg[42].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[42].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[42].
+DSP Report: Generating DSP accumulator_pipeline_reg[43], operation Mode is: (PCIN+(A:0x3ffb9123)*B)'.
+DSP Report: register accumulator_pipeline_reg[43] is absorbed into DSP accumulator_pipeline_reg[43].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[43].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[43].
+DSP Report: Generating DSP accumulator_pipeline_reg[44], operation Mode is: (PCIN+(A:0x3ffb9060)*B)'.
+DSP Report: register accumulator_pipeline_reg[44] is absorbed into DSP accumulator_pipeline_reg[44].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[44].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[44].
+DSP Report: Generating DSP accumulator_pipeline_reg[45], operation Mode is: (PCIN+(A:0x3ffe2a88)*B)'.
+DSP Report: register accumulator_pipeline_reg[45] is absorbed into DSP accumulator_pipeline_reg[45].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[45].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[45].
+DSP Report: Generating DSP accumulator_pipeline_reg[46], operation Mode is: (PCIN+(A:0x350ac)*B)'.
+DSP Report: register accumulator_pipeline_reg[46] is absorbed into DSP accumulator_pipeline_reg[46].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[46].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[46].
+DSP Report: Generating DSP accumulator_pipeline_reg[47], operation Mode is: (PCIN+(A:0xa36d7)*B)'.
+DSP Report: register accumulator_pipeline_reg[47] is absorbed into DSP accumulator_pipeline_reg[47].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[47].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[47].
+DSP Report: Generating DSP accumulator_pipeline_reg[48], operation Mode is: (PCIN+(A:0x117e0c)*B)'.
+DSP Report: register accumulator_pipeline_reg[48] is absorbed into DSP accumulator_pipeline_reg[48].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[48].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[48].
+DSP Report: Generating DSP accumulator_pipeline_reg[49], operation Mode is: (PCIN+(A:0x178ca4)*B)'.
+DSP Report: register accumulator_pipeline_reg[49] is absorbed into DSP accumulator_pipeline_reg[49].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[49].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[49].
+DSP Report: Generating DSP accumulator_pipeline_reg[50], operation Mode is: (PCIN+(A:0x1afc21)*B)'.
+DSP Report: register accumulator_pipeline_reg[50] is absorbed into DSP accumulator_pipeline_reg[50].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[50].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[50].
+DSP Report: Generating DSP accumulator_pipeline_reg[51], operation Mode is: (PCIN+(A:0x1afc21)*B)'.
+DSP Report: register accumulator_pipeline_reg[51] is absorbed into DSP accumulator_pipeline_reg[51].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[51].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[51].
+DSP Report: Generating DSP accumulator_pipeline_reg[52], operation Mode is: (PCIN+(A:0x178ca4)*B)'.
+DSP Report: register accumulator_pipeline_reg[52] is absorbed into DSP accumulator_pipeline_reg[52].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[52].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[52].
+DSP Report: Generating DSP accumulator_pipeline_reg[53], operation Mode is: (PCIN+(A:0x117e0c)*B)'.
+DSP Report: register accumulator_pipeline_reg[53] is absorbed into DSP accumulator_pipeline_reg[53].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[53].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[53].
+DSP Report: Generating DSP accumulator_pipeline_reg[54], operation Mode is: (PCIN+(A:0xa36d7)*B)'.
+DSP Report: register accumulator_pipeline_reg[54] is absorbed into DSP accumulator_pipeline_reg[54].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[54].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[54].
+DSP Report: Generating DSP accumulator_pipeline_reg[55], operation Mode is: (PCIN+(A:0x350ac)*B)'.
+DSP Report: register accumulator_pipeline_reg[55] is absorbed into DSP accumulator_pipeline_reg[55].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[55].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[55].
+DSP Report: Generating DSP accumulator_pipeline_reg[56], operation Mode is: (PCIN+(A:0x3ffe2a88)*B)'.
+DSP Report: register accumulator_pipeline_reg[56] is absorbed into DSP accumulator_pipeline_reg[56].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[56].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[56].
+DSP Report: Generating DSP accumulator_pipeline_reg[57], operation Mode is: (PCIN+(A:0x3ffb9060)*B)'.
+DSP Report: register accumulator_pipeline_reg[57] is absorbed into DSP accumulator_pipeline_reg[57].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[57].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[57].
+DSP Report: Generating DSP accumulator_pipeline_reg[58], operation Mode is: (PCIN+(A:0x3ffb9123)*B)'.
+DSP Report: register accumulator_pipeline_reg[58] is absorbed into DSP accumulator_pipeline_reg[58].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[58].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[58].
+DSP Report: Generating DSP accumulator_pipeline_reg[59], operation Mode is: (PCIN+(A:0x3ffd8d22)*B)'.
+DSP Report: register accumulator_pipeline_reg[59] is absorbed into DSP accumulator_pipeline_reg[59].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[59].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[59].
+DSP Report: Generating DSP accumulator_pipeline_reg[60], operation Mode is: PCIN+A*(B:0x754e).
+DSP Report: register accumulator_pipeline_reg[60] is absorbed into DSP accumulator_pipeline_reg[60].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[60].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[60].
+DSP Report: Generating DSP accumulator_pipeline_reg[61], operation Mode is: (PCIN+(A:0x32544)*B)'.
+DSP Report: register accumulator_pipeline_reg[61] is absorbed into DSP accumulator_pipeline_reg[61].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[61].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[61].
+DSP Report: Generating DSP accumulator_pipeline_reg[62], operation Mode is: (PCIN+(A:0x4bb4c)*B)'.
+DSP Report: register accumulator_pipeline_reg[62] is absorbed into DSP accumulator_pipeline_reg[62].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[62].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[62].
+DSP Report: Generating DSP accumulator_pipeline_reg[63], operation Mode is: (PCIN+(A:0x4d3b7)*B)'.
+DSP Report: register accumulator_pipeline_reg[63] is absorbed into DSP accumulator_pipeline_reg[63].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[63].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[63].
+DSP Report: Generating DSP accumulator_pipeline_reg[64], operation Mode is: (PCIN+(A:0x397db)*B)'.
+DSP Report: register accumulator_pipeline_reg[64] is absorbed into DSP accumulator_pipeline_reg[64].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[64].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[64].
+DSP Report: Generating DSP accumulator_pipeline_reg[65], operation Mode is: (PCIN+(A:0x19faf)*B)'.
+DSP Report: register accumulator_pipeline_reg[65] is absorbed into DSP accumulator_pipeline_reg[65].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[65].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[65].
+DSP Report: Generating DSP accumulator_pipeline_reg[66], operation Mode is: PCIN+A*(B:0x3b388).
+DSP Report: register accumulator_pipeline_reg[66] is absorbed into DSP accumulator_pipeline_reg[66].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[66].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[66].
+DSP Report: Generating DSP accumulator_pipeline_reg[67], operation Mode is: (PCIN+(A:0x3ffe8461)*B)'.
+DSP Report: register accumulator_pipeline_reg[67] is absorbed into DSP accumulator_pipeline_reg[67].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[67].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[67].
+DSP Report: Generating DSP accumulator_pipeline_reg[68], operation Mode is: (PCIN+(A:0x3ffe7278)*B)'.
+DSP Report: register accumulator_pipeline_reg[68] is absorbed into DSP accumulator_pipeline_reg[68].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[68].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[68].
+DSP Report: Generating DSP accumulator_pipeline_reg[69], operation Mode is: (PCIN+(A:0x3fff7383)*B)'.
+DSP Report: register accumulator_pipeline_reg[69] is absorbed into DSP accumulator_pipeline_reg[69].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[69].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[69].
+DSP Report: Generating DSP accumulator_pipeline_reg[70], operation Mode is: (PCIN+(A:0x11e51)*B)'.
+DSP Report: register accumulator_pipeline_reg[70] is absorbed into DSP accumulator_pipeline_reg[70].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[70].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[70].
+DSP Report: Generating DSP accumulator_pipeline_reg[71], operation Mode is: (PCIN+(A:0x2d515)*B)'.
+DSP Report: register accumulator_pipeline_reg[71] is absorbed into DSP accumulator_pipeline_reg[71].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[71].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[71].
+DSP Report: Generating DSP accumulator_pipeline_reg[72], operation Mode is: (PCIN+(A:0x3fe2a)*B)'.
+DSP Report: register accumulator_pipeline_reg[72] is absorbed into DSP accumulator_pipeline_reg[72].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[72].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[72].
+DSP Report: Generating DSP accumulator_pipeline_reg[73], operation Mode is: (PCIN+(A:0x437a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[73] is absorbed into DSP accumulator_pipeline_reg[73].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[73].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[73].
+DSP Report: Generating DSP accumulator_pipeline_reg[74], operation Mode is: (PCIN+(A:0x37555)*B)'.
+DSP Report: register accumulator_pipeline_reg[74] is absorbed into DSP accumulator_pipeline_reg[74].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[74].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[74].
+DSP Report: Generating DSP accumulator_pipeline_reg[75], operation Mode is: (PCIN+(A:0x200c1)*B)'.
+DSP Report: register accumulator_pipeline_reg[75] is absorbed into DSP accumulator_pipeline_reg[75].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[75].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[75].
+DSP Report: Generating DSP accumulator_pipeline_reg[76], operation Mode is: PCIN+A*(B:0x5d57).
+DSP Report: register accumulator_pipeline_reg[76] is absorbed into DSP accumulator_pipeline_reg[76].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[76].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[76].
+DSP Report: Generating DSP accumulator_pipeline_reg[77], operation Mode is: (PCIN+(A:0x3fff1b70)*B)'.
+DSP Report: register accumulator_pipeline_reg[77] is absorbed into DSP accumulator_pipeline_reg[77].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[77].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[77].
+DSP Report: Generating DSP accumulator_pipeline_reg[78], operation Mode is: (PCIN+(A:0x3ffea9a9)*B)'.
+DSP Report: register accumulator_pipeline_reg[78] is absorbed into DSP accumulator_pipeline_reg[78].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[78].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[78].
+DSP Report: Generating DSP accumulator_pipeline_reg[79], operation Mode is: (PCIN+(A:0x3fff3353)*B)'.
+DSP Report: register accumulator_pipeline_reg[79] is absorbed into DSP accumulator_pipeline_reg[79].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[79].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[79].
+DSP Report: Generating DSP accumulator_pipeline_reg[80], operation Mode is: (PCIN+(A:0x9568)*B)'.
+DSP Report: register accumulator_pipeline_reg[80] is absorbed into DSP accumulator_pipeline_reg[80].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[80].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[80].
+DSP Report: Generating DSP accumulator_pipeline_reg[81], operation Mode is: (PCIN+(A:0x26bd5)*B)'.
+DSP Report: register accumulator_pipeline_reg[81] is absorbed into DSP accumulator_pipeline_reg[81].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[81].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[81].
+DSP Report: Generating DSP accumulator_pipeline_reg[82], operation Mode is: (PCIN+(A:0x4311c)*B)'.
+DSP Report: register accumulator_pipeline_reg[82] is absorbed into DSP accumulator_pipeline_reg[82].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[82].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[82].
+DSP Report: Generating DSP accumulator_pipeline_reg[83], operation Mode is: (PCIN+(A:0x56581)*B)'.
+DSP Report: register accumulator_pipeline_reg[83] is absorbed into DSP accumulator_pipeline_reg[83].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[83].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[83].
+DSP Report: Generating DSP accumulator_pipeline_reg[84], operation Mode is: (PCIN+(A:0x5b190)*B)'.
+DSP Report: register accumulator_pipeline_reg[84] is absorbed into DSP accumulator_pipeline_reg[84].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[84].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[84].
+DSP Report: Generating DSP accumulator_pipeline_reg[85], operation Mode is: (PCIN+(A:0x4fa9d)*B)'.
+DSP Report: register accumulator_pipeline_reg[85] is absorbed into DSP accumulator_pipeline_reg[85].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[85].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[85].
+DSP Report: Generating DSP accumulator_pipeline_reg[86], operation Mode is: (PCIN+(A:0x364e2)*B)'.
+DSP Report: register accumulator_pipeline_reg[86] is absorbed into DSP accumulator_pipeline_reg[86].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[86].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[86].
+DSP Report: Generating DSP accumulator_pipeline_reg[87], operation Mode is: (PCIN+(A:0x144c4)*B)'.
+DSP Report: register accumulator_pipeline_reg[87] is absorbed into DSP accumulator_pipeline_reg[87].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[87].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[87].
+DSP Report: Generating DSP accumulator_pipeline_reg[88], operation Mode is: (PCIN+(A:0x3fff0559)*B)'.
+DSP Report: register accumulator_pipeline_reg[88] is absorbed into DSP accumulator_pipeline_reg[88].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[88].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[88].
+DSP Report: Generating DSP accumulator_pipeline_reg[89], operation Mode is: (PCIN+(A:0x3ffd0c8e)*B)'.
+DSP Report: register accumulator_pipeline_reg[89] is absorbed into DSP accumulator_pipeline_reg[89].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[89].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[89].
+DSP Report: Generating DSP accumulator_pipeline_reg[90], operation Mode is: (PCIN+(A:0x3ffba4a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[90] is absorbed into DSP accumulator_pipeline_reg[90].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[90].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[90].
+DSP Report: Generating DSP accumulator_pipeline_reg[91], operation Mode is: (PCIN+(A:0x3ffaf014)*B)'.
+DSP Report: register accumulator_pipeline_reg[91] is absorbed into DSP accumulator_pipeline_reg[91].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[91].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[91].
+DSP Report: Generating DSP accumulator_pipeline_reg[92], operation Mode is: (PCIN+(A:0x3ffae924)*B)'.
+DSP Report: register accumulator_pipeline_reg[92] is absorbed into DSP accumulator_pipeline_reg[92].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[92].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[92].
+DSP Report: Generating DSP accumulator_pipeline_reg[93], operation Mode is: (PCIN+(A:0x3ffb6b35)*B)'.
+DSP Report: register accumulator_pipeline_reg[93] is absorbed into DSP accumulator_pipeline_reg[93].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[93].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[93].
+DSP Report: Generating DSP accumulator_pipeline_reg[94], operation Mode is: (PCIN+(A:0x3ffc414c)*B)'.
+DSP Report: register accumulator_pipeline_reg[94] is absorbed into DSP accumulator_pipeline_reg[94].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[94].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[94].
+DSP Report: Generating DSP accumulator_pipeline_reg[95], operation Mode is: (PCIN+(A:0x3ffd3523)*B)'.
+DSP Report: register accumulator_pipeline_reg[95] is absorbed into DSP accumulator_pipeline_reg[95].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[95].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[95].
+DSP Report: Generating DSP accumulator_pipeline_reg[96], operation Mode is: (PCIN+(A:0x3ffe1ac3)*B)'.
+DSP Report: register accumulator_pipeline_reg[96] is absorbed into DSP accumulator_pipeline_reg[96].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[96].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[96].
+DSP Report: Generating DSP accumulator_pipeline_reg[97], operation Mode is: (PCIN+(A:0x3ffed69f)*B)'.
+DSP Report: register accumulator_pipeline_reg[97] is absorbed into DSP accumulator_pipeline_reg[97].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[97].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[97].
+DSP Report: Generating DSP accumulator_pipeline_reg[98], operation Mode is: (PCIN+(A:0x3fff5e22)*B)'.
+DSP Report: register accumulator_pipeline_reg[98] is absorbed into DSP accumulator_pipeline_reg[98].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[98].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[98].
+DSP Report: Generating DSP accumulator_pipeline_reg[99], operation Mode is: PCIN+A*(B:0x3b418).
+DSP Report: register accumulator_pipeline_reg[99] is absorbed into DSP accumulator_pipeline_reg[99].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[99].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[99].
+DSP Report: Generating DSP accumulator_pipeline_reg[100], operation Mode is: PCIN+A*(B:0x3e32b).
+DSP Report: register accumulator_pipeline_reg[100] is absorbed into DSP accumulator_pipeline_reg[100].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[100].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[100].
+DSP Report: Generating DSP accumulator_pipeline_reg[101], operation Mode is: PCIN+A*(B:0x3f850).
+DSP Report: register accumulator_pipeline_reg[101] is absorbed into DSP accumulator_pipeline_reg[101].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[101].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[101].
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1214.895 ; gain = 659.863
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1221.996 ; gain = 665.688
 ---------------------------------------------------------------------------------
- Sort Area is  accumulator_pipeline_reg[0]_0 : 0 0 : 596 2625 : Used 1 time 0
- Sort Area is  accumulator_pipeline_reg[0]_0 : 0 1 : 1096 2625 : Used 1 time 0
- Sort Area is  accumulator_pipeline_reg[0]_0 : 0 2 : 933 2625 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 0 : 596 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 1 : 1096 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 2 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 3 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 4 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 5 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 6 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 7 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 8 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 9 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 10 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 11 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 12 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 13 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 14 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 15 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 16 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 17 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 18 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 19 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 20 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 21 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 22 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 23 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 24 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 25 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 26 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 27 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 28 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 29 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 30 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 31 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 32 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 33 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 34 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 35 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 36 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 37 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 38 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 39 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 40 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 41 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 42 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 43 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 44 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 45 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 46 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 47 : 1861 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 48 : 1716 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 49 : 1716 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 50 : 1716 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 51 : 1716 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 52 : 1716 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 53 : 1716 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 54 : 1861 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 55 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 56 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 57 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 58 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 59 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 60 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 61 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 62 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 63 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 64 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 65 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 66 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 67 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 68 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 69 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 70 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 71 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 72 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 73 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 74 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 75 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 76 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 77 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 78 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 79 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 80 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 81 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 82 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 83 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 84 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 85 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 86 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 87 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 88 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 89 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 90 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 91 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 92 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 93 : 1795 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 94 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 95 : 1685 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 96 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 97 : 1463 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 98 : 1209 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 99 : 933 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 100 : 1103 156339 : Used 1 time 0
+ Sort Area is  accumulator_pipeline_reg[0]_0 : 0 101 : 740 156339 : Used 1 time 0
+ DSP resource Status: accumulator_pipeline_reg[0]_0 0 156339 596: Used 1 time : Accepted (1 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 1 156339 1096: Used 1 time : Accepted (2 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 2 156339 933: Used 1 time : Accepted (3 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 3 156339 1209: Used 1 time : Accepted (4 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 4 156339 1463: Used 1 time : Accepted (5 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 5 156339 1463: Used 1 time : Accepted (6 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 6 156339 1685: Used 1 time : Accepted (7 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 7 156339 1685: Used 1 time : Accepted (8 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 8 156339 1795: Used 1 time : Accepted (9 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 9 156339 1795: Used 1 time : Accepted (10 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 10 156339 1795: Used 1 time : Accepted (11 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 11 156339 1795: Used 1 time : Accepted (12 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 12 156339 1685: Used 1 time : Accepted (13 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 13 156339 1209: Used 1 time : Accepted (14 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 14 156339 1463: Used 1 time : Accepted (15 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 15 156339 1685: Used 1 time : Accepted (16 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 16 156339 1795: Used 1 time : Accepted (17 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 17 156339 1795: Used 1 time : Accepted (18 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 18 156339 1795: Used 1 time : Accepted (19 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 19 156339 1795: Used 1 time : Accepted (20 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 20 156339 1685: Used 1 time : Accepted (21 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 21 156339 1209: Used 1 time : Accepted (22 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 22 156339 1209: Used 1 time : Accepted (23 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 23 156339 1463: Used 1 time : Accepted (24 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 24 156339 1209: Used 1 time : Accepted (25 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 25 156339 933: Used 1 time : Accepted (26 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 26 156339 1685: Used 1 time : Accepted (27 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 27 156339 1685: Used 1 time : Accepted (28 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 28 156339 1795: Used 1 time : Accepted (29 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 29 156339 1685: Used 1 time : Accepted (30 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 30 156339 1685: Used 1 time : Accepted (31 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 31 156339 1463: Used 1 time : Accepted (32 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 32 156339 1209: Used 1 time : Accepted (33 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 33 156339 1463: Used 1 time : Accepted (34 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 34 156339 1463: Used 1 time : Accepted (35 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 35 156339 933: Used 1 time : Accepted (36 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 36 156339 1463: Used 1 time : Accepted (37 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 37 156339 1685: Used 1 time : Accepted (38 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 38 156339 1795: Used 1 time : Accepted (39 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 39 156339 1795: Used 1 time : Accepted (40 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 40 156339 1685: Used 1 time : Accepted (41 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 41 156339 933: Used 1 time : Accepted (42 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 42 156339 1685: Used 1 time : Accepted (43 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 43 156339 1795: Used 1 time : Accepted (44 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 44 156339 1795: Used 1 time : Accepted (45 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 45 156339 1463: Used 1 time : Accepted (46 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 46 156339 1685: Used 1 time : Accepted (47 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 47 156339 1861: Used 1 time : Accepted (48 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 48 156339 1716: Used 1 time : Accepted (49 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 49 156339 1716: Used 1 time : Accepted (50 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 50 156339 1716: Used 1 time : Accepted (51 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 51 156339 1716: Used 1 time : Accepted (52 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 52 156339 1716: Used 1 time : Accepted (53 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 53 156339 1716: Used 1 time : Accepted (54 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 54 156339 1861: Used 1 time : Accepted (55 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 55 156339 1685: Used 1 time : Accepted (56 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 56 156339 1463: Used 1 time : Accepted (57 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 57 156339 1795: Used 1 time : Accepted (58 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 58 156339 1795: Used 1 time : Accepted (59 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 59 156339 1685: Used 1 time : Accepted (60 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 60 156339 933: Used 1 time : Accepted (61 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 61 156339 1685: Used 1 time : Accepted (62 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 62 156339 1795: Used 1 time : Accepted (63 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 63 156339 1795: Used 1 time : Accepted (64 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 64 156339 1685: Used 1 time : Accepted (65 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 65 156339 1463: Used 1 time : Accepted (66 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 66 156339 933: Used 1 time : Accepted (67 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 67 156339 1463: Used 1 time : Accepted (68 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 68 156339 1463: Used 1 time : Accepted (69 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 69 156339 1209: Used 1 time : Accepted (70 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 70 156339 1463: Used 1 time : Accepted (71 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 71 156339 1685: Used 1 time : Accepted (72 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 72 156339 1685: Used 1 time : Accepted (73 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 73 156339 1795: Used 1 time : Accepted (74 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 74 156339 1685: Used 1 time : Accepted (75 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 75 156339 1685: Used 1 time : Accepted (76 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 76 156339 933: Used 1 time : Accepted (77 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 77 156339 1209: Used 1 time : Accepted (78 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 78 156339 1463: Used 1 time : Accepted (79 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 79 156339 1209: Used 1 time : Accepted (80 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 80 156339 1209: Used 1 time : Accepted (81 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 81 156339 1685: Used 1 time : Accepted (82 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 82 156339 1795: Used 1 time : Accepted (83 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 83 156339 1795: Used 1 time : Accepted (84 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 84 156339 1795: Used 1 time : Accepted (85 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 85 156339 1795: Used 1 time : Accepted (86 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 86 156339 1685: Used 1 time : Accepted (87 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 87 156339 1463: Used 1 time : Accepted (88 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 88 156339 1209: Used 1 time : Accepted (89 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 89 156339 1685: Used 1 time : Accepted (90 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 90 156339 1795: Used 1 time : Accepted (91 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 91 156339 1795: Used 1 time : Accepted (92 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 92 156339 1795: Used 1 time : Accepted (93 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 93 156339 1795: Used 1 time : Accepted (94 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 94 156339 1685: Used 1 time : Accepted (95 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 95 156339 1685: Used 1 time : Accepted (96 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 96 156339 1463: Used 1 time : Accepted (97 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 97 156339 1463: Used 1 time : Accepted (98 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 98 156339 1209: Used 1 time : Accepted (99 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 99 156339 933: Used 1 time : Accepted (100 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 100 156339 1103: Used 1 time : Accepted (101 < 240) uniquify 0 
+ DSP resource Status: accumulator_pipeline_reg[0]_0 101 156339 740: Used 1 time : Accepted (102 < 240) uniquify 0 
+DSP Report: Generating DSP accumulator_pipeline_reg[0], operation Mode is (post resource management): (A*(B:0x3f850))'.
+DSP Report: register accumulator_pipeline_reg[0] is absorbed into DSP accumulator_pipeline_reg[0].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[0].
+DSP Report: Generating DSP accumulator_pipeline_reg[1], operation Mode is (post resource management): PCIN+A*(B:0x3e32b).
+DSP Report: register accumulator_pipeline_reg[1] is absorbed into DSP accumulator_pipeline_reg[1].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[1].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[1].
+DSP Report: Generating DSP accumulator_pipeline_reg[2], operation Mode is (post resource management): PCIN+A*(B:0x3b418).
+DSP Report: register accumulator_pipeline_reg[2] is absorbed into DSP accumulator_pipeline_reg[2].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[2].
+DSP Report: Generating DSP accumulator_pipeline_reg[3], operation Mode is (post resource management): (PCIN+(A:0x3fff5e22)*B)'.
+DSP Report: register accumulator_pipeline_reg[3] is absorbed into DSP accumulator_pipeline_reg[3].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[3].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[3].
+DSP Report: Generating DSP accumulator_pipeline_reg[4], operation Mode is (post resource management): (PCIN+(A:0x3ffed69f)*B)'.
+DSP Report: register accumulator_pipeline_reg[4] is absorbed into DSP accumulator_pipeline_reg[4].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[4].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[4].
+DSP Report: Generating DSP accumulator_pipeline_reg[5], operation Mode is (post resource management): (PCIN+(A:0x3ffe1ac3)*B)'.
+DSP Report: register accumulator_pipeline_reg[5] is absorbed into DSP accumulator_pipeline_reg[5].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[5].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[5].
+DSP Report: Generating DSP accumulator_pipeline_reg[6], operation Mode is (post resource management): (PCIN+(A:0x3ffd3523)*B)'.
+DSP Report: register accumulator_pipeline_reg[6] is absorbed into DSP accumulator_pipeline_reg[6].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[6].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[6].
+DSP Report: Generating DSP accumulator_pipeline_reg[7], operation Mode is (post resource management): (PCIN+(A:0x3ffc414c)*B)'.
+DSP Report: register accumulator_pipeline_reg[7] is absorbed into DSP accumulator_pipeline_reg[7].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[7].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[7].
+DSP Report: Generating DSP accumulator_pipeline_reg[8], operation Mode is (post resource management): (PCIN+(A:0x3ffb6b35)*B)'.
+DSP Report: register accumulator_pipeline_reg[8] is absorbed into DSP accumulator_pipeline_reg[8].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[8].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[8].
+DSP Report: Generating DSP accumulator_pipeline_reg[9], operation Mode is (post resource management): (PCIN+(A:0x3ffae924)*B)'.
+DSP Report: register accumulator_pipeline_reg[9] is absorbed into DSP accumulator_pipeline_reg[9].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[9].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[9].
+DSP Report: Generating DSP accumulator_pipeline_reg[10], operation Mode is (post resource management): (PCIN+(A:0x3ffaf014)*B)'.
+DSP Report: register accumulator_pipeline_reg[10] is absorbed into DSP accumulator_pipeline_reg[10].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[10].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[10].
+DSP Report: Generating DSP accumulator_pipeline_reg[11], operation Mode is (post resource management): (PCIN+(A:0x3ffba4a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[11] is absorbed into DSP accumulator_pipeline_reg[11].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[11].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[11].
+DSP Report: Generating DSP accumulator_pipeline_reg[12], operation Mode is (post resource management): (PCIN+(A:0x3ffd0c8e)*B)'.
+DSP Report: register accumulator_pipeline_reg[12] is absorbed into DSP accumulator_pipeline_reg[12].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[12].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[12].
+DSP Report: Generating DSP accumulator_pipeline_reg[13], operation Mode is (post resource management): (PCIN+(A:0x3fff0559)*B)'.
+DSP Report: register accumulator_pipeline_reg[13] is absorbed into DSP accumulator_pipeline_reg[13].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[13].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[13].
+DSP Report: Generating DSP accumulator_pipeline_reg[14], operation Mode is (post resource management): (PCIN+(A:0x144c4)*B)'.
+DSP Report: register accumulator_pipeline_reg[14] is absorbed into DSP accumulator_pipeline_reg[14].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[14].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[14].
+DSP Report: Generating DSP accumulator_pipeline_reg[15], operation Mode is (post resource management): (PCIN+(A:0x364e2)*B)'.
+DSP Report: register accumulator_pipeline_reg[15] is absorbed into DSP accumulator_pipeline_reg[15].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[15].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[15].
+DSP Report: Generating DSP accumulator_pipeline_reg[16], operation Mode is (post resource management): (PCIN+(A:0x4fa9d)*B)'.
+DSP Report: register accumulator_pipeline_reg[16] is absorbed into DSP accumulator_pipeline_reg[16].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[16].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[16].
+DSP Report: Generating DSP accumulator_pipeline_reg[17], operation Mode is (post resource management): (PCIN+(A:0x5b190)*B)'.
+DSP Report: register accumulator_pipeline_reg[17] is absorbed into DSP accumulator_pipeline_reg[17].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[17].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[17].
+DSP Report: Generating DSP accumulator_pipeline_reg[18], operation Mode is (post resource management): (PCIN+(A:0x56581)*B)'.
+DSP Report: register accumulator_pipeline_reg[18] is absorbed into DSP accumulator_pipeline_reg[18].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[18].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[18].
+DSP Report: Generating DSP accumulator_pipeline_reg[19], operation Mode is (post resource management): (PCIN+(A:0x4311c)*B)'.
+DSP Report: register accumulator_pipeline_reg[19] is absorbed into DSP accumulator_pipeline_reg[19].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[19].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[19].
+DSP Report: Generating DSP accumulator_pipeline_reg[20], operation Mode is (post resource management): (PCIN+(A:0x26bd5)*B)'.
+DSP Report: register accumulator_pipeline_reg[20] is absorbed into DSP accumulator_pipeline_reg[20].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[20].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[20].
+DSP Report: Generating DSP accumulator_pipeline_reg[21], operation Mode is (post resource management): (PCIN+(A:0x9568)*B)'.
+DSP Report: register accumulator_pipeline_reg[21] is absorbed into DSP accumulator_pipeline_reg[21].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[21].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[21].
+DSP Report: Generating DSP accumulator_pipeline_reg[22], operation Mode is (post resource management): (PCIN+(A:0x3fff3353)*B)'.
+DSP Report: register accumulator_pipeline_reg[22] is absorbed into DSP accumulator_pipeline_reg[22].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[22].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[22].
+DSP Report: Generating DSP accumulator_pipeline_reg[23], operation Mode is (post resource management): (PCIN+(A:0x3ffea9a9)*B)'.
+DSP Report: register accumulator_pipeline_reg[23] is absorbed into DSP accumulator_pipeline_reg[23].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[23].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[23].
+DSP Report: Generating DSP accumulator_pipeline_reg[24], operation Mode is (post resource management): (PCIN+(A:0x3fff1b70)*B)'.
+DSP Report: register accumulator_pipeline_reg[24] is absorbed into DSP accumulator_pipeline_reg[24].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[24].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[24].
+DSP Report: Generating DSP accumulator_pipeline_reg[25], operation Mode is (post resource management): PCIN+A*(B:0x5d57).
+DSP Report: register accumulator_pipeline_reg[25] is absorbed into DSP accumulator_pipeline_reg[25].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[25].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[25].
+DSP Report: Generating DSP accumulator_pipeline_reg[26], operation Mode is (post resource management): (PCIN+(A:0x200c1)*B)'.
+DSP Report: register accumulator_pipeline_reg[26] is absorbed into DSP accumulator_pipeline_reg[26].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[26].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[26].
+DSP Report: Generating DSP accumulator_pipeline_reg[27], operation Mode is (post resource management): (PCIN+(A:0x37555)*B)'.
+DSP Report: register accumulator_pipeline_reg[27] is absorbed into DSP accumulator_pipeline_reg[27].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[27].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[27].
+DSP Report: Generating DSP accumulator_pipeline_reg[28], operation Mode is (post resource management): (PCIN+(A:0x437a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[28] is absorbed into DSP accumulator_pipeline_reg[28].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[28].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[28].
+DSP Report: Generating DSP accumulator_pipeline_reg[29], operation Mode is (post resource management): (PCIN+(A:0x3fe2a)*B)'.
+DSP Report: register accumulator_pipeline_reg[29] is absorbed into DSP accumulator_pipeline_reg[29].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[29].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[29].
+DSP Report: Generating DSP accumulator_pipeline_reg[30], operation Mode is (post resource management): (PCIN+(A:0x2d515)*B)'.
+DSP Report: register accumulator_pipeline_reg[30] is absorbed into DSP accumulator_pipeline_reg[30].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[30].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[30].
+DSP Report: Generating DSP accumulator_pipeline_reg[31], operation Mode is (post resource management): (PCIN+(A:0x11e51)*B)'.
+DSP Report: register accumulator_pipeline_reg[31] is absorbed into DSP accumulator_pipeline_reg[31].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[31].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[31].
+DSP Report: Generating DSP accumulator_pipeline_reg[32], operation Mode is (post resource management): (PCIN+(A:0x3fff7383)*B)'.
+DSP Report: register accumulator_pipeline_reg[32] is absorbed into DSP accumulator_pipeline_reg[32].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[32].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[32].
+DSP Report: Generating DSP accumulator_pipeline_reg[33], operation Mode is (post resource management): (PCIN+(A:0x3ffe7278)*B)'.
+DSP Report: register accumulator_pipeline_reg[33] is absorbed into DSP accumulator_pipeline_reg[33].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[33].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[33].
+DSP Report: Generating DSP accumulator_pipeline_reg[34], operation Mode is (post resource management): (PCIN+(A:0x3ffe8461)*B)'.
+DSP Report: register accumulator_pipeline_reg[34] is absorbed into DSP accumulator_pipeline_reg[34].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[34].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[34].
+DSP Report: Generating DSP accumulator_pipeline_reg[35], operation Mode is (post resource management): PCIN+A*(B:0x3b388).
+DSP Report: register accumulator_pipeline_reg[35] is absorbed into DSP accumulator_pipeline_reg[35].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[35].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[35].
+DSP Report: Generating DSP accumulator_pipeline_reg[36], operation Mode is (post resource management): (PCIN+(A:0x19faf)*B)'.
+DSP Report: register accumulator_pipeline_reg[36] is absorbed into DSP accumulator_pipeline_reg[36].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[36].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[36].
+DSP Report: Generating DSP accumulator_pipeline_reg[37], operation Mode is (post resource management): (PCIN+(A:0x397db)*B)'.
+DSP Report: register accumulator_pipeline_reg[37] is absorbed into DSP accumulator_pipeline_reg[37].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[37].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[37].
+DSP Report: Generating DSP accumulator_pipeline_reg[38], operation Mode is (post resource management): (PCIN+(A:0x4d3b7)*B)'.
+DSP Report: register accumulator_pipeline_reg[38] is absorbed into DSP accumulator_pipeline_reg[38].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[38].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[38].
+DSP Report: Generating DSP accumulator_pipeline_reg[39], operation Mode is (post resource management): (PCIN+(A:0x4bb4c)*B)'.
+DSP Report: register accumulator_pipeline_reg[39] is absorbed into DSP accumulator_pipeline_reg[39].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[39].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[39].
+DSP Report: Generating DSP accumulator_pipeline_reg[40], operation Mode is (post resource management): (PCIN+(A:0x32544)*B)'.
+DSP Report: register accumulator_pipeline_reg[40] is absorbed into DSP accumulator_pipeline_reg[40].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[40].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[40].
+DSP Report: Generating DSP accumulator_pipeline_reg[41], operation Mode is (post resource management): PCIN+A*(B:0x754e).
+DSP Report: register accumulator_pipeline_reg[41] is absorbed into DSP accumulator_pipeline_reg[41].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[41].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[41].
+DSP Report: Generating DSP accumulator_pipeline_reg[42], operation Mode is (post resource management): (PCIN+(A:0x3ffd8d22)*B)'.
+DSP Report: register accumulator_pipeline_reg[42] is absorbed into DSP accumulator_pipeline_reg[42].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[42].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[42].
+DSP Report: Generating DSP accumulator_pipeline_reg[43], operation Mode is (post resource management): (PCIN+(A:0x3ffb9123)*B)'.
+DSP Report: register accumulator_pipeline_reg[43] is absorbed into DSP accumulator_pipeline_reg[43].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[43].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[43].
+DSP Report: Generating DSP accumulator_pipeline_reg[44], operation Mode is (post resource management): (PCIN+(A:0x3ffb9060)*B)'.
+DSP Report: register accumulator_pipeline_reg[44] is absorbed into DSP accumulator_pipeline_reg[44].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[44].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[44].
+DSP Report: Generating DSP accumulator_pipeline_reg[45], operation Mode is (post resource management): (PCIN+(A:0x3ffe2a88)*B)'.
+DSP Report: register accumulator_pipeline_reg[45] is absorbed into DSP accumulator_pipeline_reg[45].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[45].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[45].
+DSP Report: Generating DSP accumulator_pipeline_reg[46], operation Mode is (post resource management): (PCIN+(A:0x350ac)*B)'.
+DSP Report: register accumulator_pipeline_reg[46] is absorbed into DSP accumulator_pipeline_reg[46].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[46].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[46].
+DSP Report: Generating DSP accumulator_pipeline_reg[47], operation Mode is (post resource management): (PCIN+(A:0xa36d7)*B)'.
+DSP Report: register accumulator_pipeline_reg[47] is absorbed into DSP accumulator_pipeline_reg[47].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[47].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[47].
+DSP Report: Generating DSP accumulator_pipeline_reg[48], operation Mode is (post resource management): (PCIN+(A:0x117e0c)*B)'.
+DSP Report: register accumulator_pipeline_reg[48] is absorbed into DSP accumulator_pipeline_reg[48].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[48].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[48].
+DSP Report: Generating DSP accumulator_pipeline_reg[49], operation Mode is (post resource management): (PCIN+(A:0x178ca4)*B)'.
+DSP Report: register accumulator_pipeline_reg[49] is absorbed into DSP accumulator_pipeline_reg[49].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[49].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[49].
+DSP Report: Generating DSP accumulator_pipeline_reg[50], operation Mode is (post resource management): (PCIN+(A:0x1afc21)*B)'.
+DSP Report: register accumulator_pipeline_reg[50] is absorbed into DSP accumulator_pipeline_reg[50].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[50].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[50].
+DSP Report: Generating DSP accumulator_pipeline_reg[51], operation Mode is (post resource management): (PCIN+(A:0x1afc21)*B)'.
+DSP Report: register accumulator_pipeline_reg[51] is absorbed into DSP accumulator_pipeline_reg[51].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[51].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[51].
+DSP Report: Generating DSP accumulator_pipeline_reg[52], operation Mode is (post resource management): (PCIN+(A:0x178ca4)*B)'.
+DSP Report: register accumulator_pipeline_reg[52] is absorbed into DSP accumulator_pipeline_reg[52].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[52].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[52].
+DSP Report: Generating DSP accumulator_pipeline_reg[53], operation Mode is (post resource management): (PCIN+(A:0x117e0c)*B)'.
+DSP Report: register accumulator_pipeline_reg[53] is absorbed into DSP accumulator_pipeline_reg[53].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[53].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[53].
+DSP Report: Generating DSP accumulator_pipeline_reg[54], operation Mode is (post resource management): (PCIN+(A:0xa36d7)*B)'.
+DSP Report: register accumulator_pipeline_reg[54] is absorbed into DSP accumulator_pipeline_reg[54].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[54].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[54].
+DSP Report: Generating DSP accumulator_pipeline_reg[55], operation Mode is (post resource management): (PCIN+(A:0x350ac)*B)'.
+DSP Report: register accumulator_pipeline_reg[55] is absorbed into DSP accumulator_pipeline_reg[55].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[55].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[55].
+DSP Report: Generating DSP accumulator_pipeline_reg[56], operation Mode is (post resource management): (PCIN+(A:0x3ffe2a88)*B)'.
+DSP Report: register accumulator_pipeline_reg[56] is absorbed into DSP accumulator_pipeline_reg[56].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[56].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[56].
+DSP Report: Generating DSP accumulator_pipeline_reg[57], operation Mode is (post resource management): (PCIN+(A:0x3ffb9060)*B)'.
+DSP Report: register accumulator_pipeline_reg[57] is absorbed into DSP accumulator_pipeline_reg[57].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[57].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[57].
+DSP Report: Generating DSP accumulator_pipeline_reg[58], operation Mode is (post resource management): (PCIN+(A:0x3ffb9123)*B)'.
+DSP Report: register accumulator_pipeline_reg[58] is absorbed into DSP accumulator_pipeline_reg[58].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[58].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[58].
+DSP Report: Generating DSP accumulator_pipeline_reg[59], operation Mode is (post resource management): (PCIN+(A:0x3ffd8d22)*B)'.
+DSP Report: register accumulator_pipeline_reg[59] is absorbed into DSP accumulator_pipeline_reg[59].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[59].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[59].
+DSP Report: Generating DSP accumulator_pipeline_reg[60], operation Mode is (post resource management): PCIN+A*(B:0x754e).
+DSP Report: register accumulator_pipeline_reg[60] is absorbed into DSP accumulator_pipeline_reg[60].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[60].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[60].
+DSP Report: Generating DSP accumulator_pipeline_reg[61], operation Mode is (post resource management): (PCIN+(A:0x32544)*B)'.
+DSP Report: register accumulator_pipeline_reg[61] is absorbed into DSP accumulator_pipeline_reg[61].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[61].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[61].
+DSP Report: Generating DSP accumulator_pipeline_reg[62], operation Mode is (post resource management): (PCIN+(A:0x4bb4c)*B)'.
+DSP Report: register accumulator_pipeline_reg[62] is absorbed into DSP accumulator_pipeline_reg[62].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[62].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[62].
+DSP Report: Generating DSP accumulator_pipeline_reg[63], operation Mode is (post resource management): (PCIN+(A:0x4d3b7)*B)'.
+DSP Report: register accumulator_pipeline_reg[63] is absorbed into DSP accumulator_pipeline_reg[63].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[63].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[63].
+DSP Report: Generating DSP accumulator_pipeline_reg[64], operation Mode is (post resource management): (PCIN+(A:0x397db)*B)'.
+DSP Report: register accumulator_pipeline_reg[64] is absorbed into DSP accumulator_pipeline_reg[64].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[64].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[64].
+DSP Report: Generating DSP accumulator_pipeline_reg[65], operation Mode is (post resource management): (PCIN+(A:0x19faf)*B)'.
+DSP Report: register accumulator_pipeline_reg[65] is absorbed into DSP accumulator_pipeline_reg[65].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[65].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[65].
+DSP Report: Generating DSP accumulator_pipeline_reg[66], operation Mode is (post resource management): PCIN+A*(B:0x3b388).
+DSP Report: register accumulator_pipeline_reg[66] is absorbed into DSP accumulator_pipeline_reg[66].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[66].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[66].
+DSP Report: Generating DSP accumulator_pipeline_reg[67], operation Mode is (post resource management): (PCIN+(A:0x3ffe8461)*B)'.
+DSP Report: register accumulator_pipeline_reg[67] is absorbed into DSP accumulator_pipeline_reg[67].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[67].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[67].
+DSP Report: Generating DSP accumulator_pipeline_reg[68], operation Mode is (post resource management): (PCIN+(A:0x3ffe7278)*B)'.
+DSP Report: register accumulator_pipeline_reg[68] is absorbed into DSP accumulator_pipeline_reg[68].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[68].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[68].
+DSP Report: Generating DSP accumulator_pipeline_reg[69], operation Mode is (post resource management): (PCIN+(A:0x3fff7383)*B)'.
+DSP Report: register accumulator_pipeline_reg[69] is absorbed into DSP accumulator_pipeline_reg[69].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[69].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[69].
+DSP Report: Generating DSP accumulator_pipeline_reg[70], operation Mode is (post resource management): (PCIN+(A:0x11e51)*B)'.
+DSP Report: register accumulator_pipeline_reg[70] is absorbed into DSP accumulator_pipeline_reg[70].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[70].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[70].
+DSP Report: Generating DSP accumulator_pipeline_reg[71], operation Mode is (post resource management): (PCIN+(A:0x2d515)*B)'.
+DSP Report: register accumulator_pipeline_reg[71] is absorbed into DSP accumulator_pipeline_reg[71].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[71].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[71].
+DSP Report: Generating DSP accumulator_pipeline_reg[72], operation Mode is (post resource management): (PCIN+(A:0x3fe2a)*B)'.
+DSP Report: register accumulator_pipeline_reg[72] is absorbed into DSP accumulator_pipeline_reg[72].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[72].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[72].
+DSP Report: Generating DSP accumulator_pipeline_reg[73], operation Mode is (post resource management): (PCIN+(A:0x437a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[73] is absorbed into DSP accumulator_pipeline_reg[73].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[73].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[73].
+DSP Report: Generating DSP accumulator_pipeline_reg[74], operation Mode is (post resource management): (PCIN+(A:0x37555)*B)'.
+DSP Report: register accumulator_pipeline_reg[74] is absorbed into DSP accumulator_pipeline_reg[74].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[74].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[74].
+DSP Report: Generating DSP accumulator_pipeline_reg[75], operation Mode is (post resource management): (PCIN+(A:0x200c1)*B)'.
+DSP Report: register accumulator_pipeline_reg[75] is absorbed into DSP accumulator_pipeline_reg[75].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[75].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[75].
+DSP Report: Generating DSP accumulator_pipeline_reg[76], operation Mode is (post resource management): PCIN+A*(B:0x5d57).
+DSP Report: register accumulator_pipeline_reg[76] is absorbed into DSP accumulator_pipeline_reg[76].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[76].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[76].
+DSP Report: Generating DSP accumulator_pipeline_reg[77], operation Mode is (post resource management): (PCIN+(A:0x3fff1b70)*B)'.
+DSP Report: register accumulator_pipeline_reg[77] is absorbed into DSP accumulator_pipeline_reg[77].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[77].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[77].
+DSP Report: Generating DSP accumulator_pipeline_reg[78], operation Mode is (post resource management): (PCIN+(A:0x3ffea9a9)*B)'.
+DSP Report: register accumulator_pipeline_reg[78] is absorbed into DSP accumulator_pipeline_reg[78].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[78].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[78].
+DSP Report: Generating DSP accumulator_pipeline_reg[79], operation Mode is (post resource management): (PCIN+(A:0x3fff3353)*B)'.
+DSP Report: register accumulator_pipeline_reg[79] is absorbed into DSP accumulator_pipeline_reg[79].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[79].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[79].
+DSP Report: Generating DSP accumulator_pipeline_reg[80], operation Mode is (post resource management): (C+(A:0x9568)*B)'.
+DSP Report: register accumulator_pipeline_reg[80] is absorbed into DSP accumulator_pipeline_reg[80].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[80].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[80].
+DSP Report: Generating DSP accumulator_pipeline_reg[81], operation Mode is (post resource management): (PCIN+(A:0x26bd5)*B)'.
+DSP Report: register accumulator_pipeline_reg[81] is absorbed into DSP accumulator_pipeline_reg[81].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[81].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[81].
+DSP Report: Generating DSP accumulator_pipeline_reg[82], operation Mode is (post resource management): (PCIN+(A:0x4311c)*B)'.
+DSP Report: register accumulator_pipeline_reg[82] is absorbed into DSP accumulator_pipeline_reg[82].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[82].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[82].
+DSP Report: Generating DSP accumulator_pipeline_reg[83], operation Mode is (post resource management): (PCIN+(A:0x56581)*B)'.
+DSP Report: register accumulator_pipeline_reg[83] is absorbed into DSP accumulator_pipeline_reg[83].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[83].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[83].
+DSP Report: Generating DSP accumulator_pipeline_reg[84], operation Mode is (post resource management): (PCIN+(A:0x5b190)*B)'.
+DSP Report: register accumulator_pipeline_reg[84] is absorbed into DSP accumulator_pipeline_reg[84].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[84].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[84].
+DSP Report: Generating DSP accumulator_pipeline_reg[85], operation Mode is (post resource management): (PCIN+(A:0x4fa9d)*B)'.
+DSP Report: register accumulator_pipeline_reg[85] is absorbed into DSP accumulator_pipeline_reg[85].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[85].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[85].
+DSP Report: Generating DSP accumulator_pipeline_reg[86], operation Mode is (post resource management): (PCIN+(A:0x364e2)*B)'.
+DSP Report: register accumulator_pipeline_reg[86] is absorbed into DSP accumulator_pipeline_reg[86].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[86].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[86].
+DSP Report: Generating DSP accumulator_pipeline_reg[87], operation Mode is (post resource management): (PCIN+(A:0x144c4)*B)'.
+DSP Report: register accumulator_pipeline_reg[87] is absorbed into DSP accumulator_pipeline_reg[87].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[87].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[87].
+DSP Report: Generating DSP accumulator_pipeline_reg[88], operation Mode is (post resource management): (PCIN+(A:0x3fff0559)*B)'.
+DSP Report: register accumulator_pipeline_reg[88] is absorbed into DSP accumulator_pipeline_reg[88].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[88].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[88].
+DSP Report: Generating DSP accumulator_pipeline_reg[89], operation Mode is (post resource management): (PCIN+(A:0x3ffd0c8e)*B)'.
+DSP Report: register accumulator_pipeline_reg[89] is absorbed into DSP accumulator_pipeline_reg[89].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[89].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[89].
+DSP Report: Generating DSP accumulator_pipeline_reg[90], operation Mode is (post resource management): (PCIN+(A:0x3ffba4a6)*B)'.
+DSP Report: register accumulator_pipeline_reg[90] is absorbed into DSP accumulator_pipeline_reg[90].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[90].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[90].
+DSP Report: Generating DSP accumulator_pipeline_reg[91], operation Mode is (post resource management): (PCIN+(A:0x3ffaf014)*B)'.
+DSP Report: register accumulator_pipeline_reg[91] is absorbed into DSP accumulator_pipeline_reg[91].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[91].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[91].
+DSP Report: Generating DSP accumulator_pipeline_reg[92], operation Mode is (post resource management): (PCIN+(A:0x3ffae924)*B)'.
+DSP Report: register accumulator_pipeline_reg[92] is absorbed into DSP accumulator_pipeline_reg[92].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[92].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[92].
+DSP Report: Generating DSP accumulator_pipeline_reg[93], operation Mode is (post resource management): (PCIN+(A:0x3ffb6b35)*B)'.
+DSP Report: register accumulator_pipeline_reg[93] is absorbed into DSP accumulator_pipeline_reg[93].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[93].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[93].
+DSP Report: Generating DSP accumulator_pipeline_reg[94], operation Mode is (post resource management): (PCIN+(A:0x3ffc414c)*B)'.
+DSP Report: register accumulator_pipeline_reg[94] is absorbed into DSP accumulator_pipeline_reg[94].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[94].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[94].
+DSP Report: Generating DSP accumulator_pipeline_reg[95], operation Mode is (post resource management): (PCIN+(A:0x3ffd3523)*B)'.
+DSP Report: register accumulator_pipeline_reg[95] is absorbed into DSP accumulator_pipeline_reg[95].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[95].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[95].
+DSP Report: Generating DSP accumulator_pipeline_reg[96], operation Mode is (post resource management): (PCIN+(A:0x3ffe1ac3)*B)'.
+DSP Report: register accumulator_pipeline_reg[96] is absorbed into DSP accumulator_pipeline_reg[96].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[96].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[96].
+DSP Report: Generating DSP accumulator_pipeline_reg[97], operation Mode is (post resource management): (PCIN+(A:0x3ffed69f)*B)'.
+DSP Report: register accumulator_pipeline_reg[97] is absorbed into DSP accumulator_pipeline_reg[97].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[97].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[97].
+DSP Report: Generating DSP accumulator_pipeline_reg[98], operation Mode is (post resource management): (PCIN+(A:0x3fff5e22)*B)'.
+DSP Report: register accumulator_pipeline_reg[98] is absorbed into DSP accumulator_pipeline_reg[98].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[98].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[98].
+DSP Report: Generating DSP accumulator_pipeline_reg[99], operation Mode is (post resource management): PCIN+A*(B:0x3b418).
+DSP Report: register accumulator_pipeline_reg[99] is absorbed into DSP accumulator_pipeline_reg[99].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[99].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[99].
+DSP Report: Generating DSP accumulator_pipeline_reg[100], operation Mode is (post resource management): PCIN+A*(B:0x3e32b).
+DSP Report: register accumulator_pipeline_reg[100] is absorbed into DSP accumulator_pipeline_reg[100].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[100].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[100].
+DSP Report: Generating DSP accumulator_pipeline_reg[101], operation Mode is (post resource management): PCIN+A*(B:0x3f850).
+DSP Report: register accumulator_pipeline_reg[101] is absorbed into DSP accumulator_pipeline_reg[101].
+DSP Report: operator p_1_out is absorbed into DSP accumulator_pipeline_reg[101].
+DSP Report: operator p_0_out is absorbed into DSP accumulator_pipeline_reg[101].
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|fir_filter  | (A*(B:0x3f850))'   | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|fir_filter  | PCIN+A*(B:0x3e32b) | 16     | 14     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|fir_filter  | PCIN+A*(B:0x3b418) | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-+------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping              | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fir_filter  | (A*(B:0x3f850))'         | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3e32b)       | 16     | 14     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x3b418)       | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff5e22)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffed69f)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe1ac3)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffd3523)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffc414c)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffb6b35)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffae924)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffaf014)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffba4a6)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffd0c8e)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff0559)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x144c4)*B)'    | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x364e2)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4fa9d)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x5b190)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x56581)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4311c)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x26bd5)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x9568)*B)'     | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff3353)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffea9a9)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff1b70)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x5d57)        | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x200c1)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x37555)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x437a6)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fe2a)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x2d515)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x11e51)*B)'    | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff7383)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe7278)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe8461)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x3b388)       | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x19faf)*B)'    | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x397db)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4d3b7)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4bb4c)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x32544)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x754e)        | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffd8d22)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffb9123)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffb9060)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe2a88)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x350ac)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0xa36d7)*B)'    | 21     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x117e0c)*B)'   | 22     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x178ca4)*B)'   | 22     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x1afc21)*B)'   | 22     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x1afc21)*B)'   | 22     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x178ca4)*B)'   | 22     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x117e0c)*B)'   | 22     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0xa36d7)*B)'    | 21     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x350ac)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe2a88)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffb9060)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffb9123)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffd8d22)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x754e)        | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x32544)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4bb4c)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4d3b7)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x397db)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x19faf)*B)'    | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x3b388)       | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe8461)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe7278)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff7383)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x11e51)*B)'    | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x2d515)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fe2a)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x437a6)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x37555)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x200c1)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x5d57)        | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff1b70)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffea9a9)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff3353)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x9568)*B)'     | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x26bd5)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4311c)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x56581)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x5b190)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x4fa9d)*B)'    | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x364e2)*B)'    | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x144c4)*B)'    | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff0559)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffd0c8e)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffba4a6)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffaf014)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffae924)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffb6b35)*B)' | 20     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffc414c)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffd3523)*B)' | 19     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffe1ac3)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3ffed69f)*B)' | 18     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+(A:0x3fff5e22)*B)' | 17     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x3b418)       | 16     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x3e32b)       | 16     | 14     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | PCIN+A*(B:0x3f850)       | 16     | 12     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -140,19 +1243,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1362.797 ; gain = 807.766
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1379.691 ; gain = 823.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1363.574 ; gain = 808.543
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1400.758 ; gain = 844.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1373.668 ; gain = 818.637
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1411.359 ; gain = 855.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -170,37 +1273,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -211,6 +1314,105 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |fir_filter  | (A*B)'      | 30     | 18     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 17     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 16     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 15     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 17     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 17     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 15     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 20     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 21     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 21     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 21     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 0      | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 21     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 21     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 20     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 15     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 17     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 17     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 15     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (C+A*B)'    | 30     | 16     | 48     | -      | 0      | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 19     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 18     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 17     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 +------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -227,33 +1429,34 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |DSP48E1 |     3|
-|4     |FDCE    |    64|
-|5     |IBUF    |    18|
-|6     |OBUF    |    16|
+|2     |DSP48E1 |   102|
+|5     |FDCE    |  3232|
+|6     |IBUF    |    18|
+|7     |OBUF    |    16|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1593.488 ; gain = 952.590
-Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1593.488 ; gain = 1038.457
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1616.742 ; gain = 982.066
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1616.742 ; gain = 1060.434
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1593.488 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1632.195 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 102 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'fir_filter' is not ideal for floorplanning, since the cellview 'fir_filter' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1593.488 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1635.832 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: a35d7232
+Synth Design complete | Checksum: bf53d878
 INFO: [Common 17-83] Releasing license: Synthesis
-23 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+23 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 1593.488 ; gain = 1222.676
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1593.488 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1635.832 ; gain = 1264.605
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1635.832 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/code/FIR-Filter-Design/FIR_Pipelined/FIR_Pipelined.runs/synth_1/fir_filter.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file fir_filter_utilization_synth.rpt -pb fir_filter_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 18 18:48:52 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 18 19:24:10 2025...

@@ -129,19 +129,15 @@ All filter's were developed in AMD's Vivado software using System Verilog. ```.m
 * Pipelined FIR [FIR_Pipelined]
     * Implementation: [fir_filter.sv](FIR_Pipelined\FIR_Pipelined.srcs\sources_1\new\fir_filter.sv)
     * Testbench: [fir_filter_tb.sv](FIR_Pipelined\FIR_Pipelined.srcs\sim_1\new\fir_filter_tb.sv)
-    * RTL Schematic (reduced to 3 taps): ![](TEST_RESULTS/FIR_Pipelined/rtlschem.png)
 * L2 Parallel FIR [FIR_L2]
     * Implementation:
     * Testbench: 
-    * RTL Schematic (reduced to 6 taps): ![](TEST_RESULTS/FIR_Pipelined/rtlschem.png)
 * L3 Parallel FIR [FIR_L3]
     * Implementation:
     * Testbench: 
-    * RTL Schematic (reduced to 9 taps): 
 * Pipelined, L3 Parallel FIR [FIR_Pipelined_L3]
     * Implementation:
     * Testbench: 
-    * RTL Schematic (reduced to 9 taps): 
 
 Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-bit, as configured earlier. To maintain precision during filtering, each input sample is multiplied by a 24-bit coefficient, producing a 40-bit intermediate result (16-bit × 24-bit multiplication).
 
@@ -163,34 +159,66 @@ An input wave form sweeping 500Hz to 41.1kHz with 50 steps and 200 samples per f
 > This file is intended to work with filters sampling at 44.1 kHz. If you are using a different sampling rate, you will need to produce a new file using the linked python script.
 
 #### Testing criteria (and how to derive)
-Four criteria will be tested for:
+Two schematics and Four criteria will be tested for:
+* Filter Schematic
+    * Question: What does our filter schematic look like? Does it match our design schematic?
+    * Run: n the flow navigator run "RTL Analysis," then select "Schematic" under "Open Elaborated Design" in the "RTL Analysis" dropdown.
+* Device Layout on FPGA
+    * Question: What does our filter look like on the FPGA? The white line represents the critical path.
+    * Run: In the flow navigator, run "Implementation." Device layout should open up after implementation is complete.
 * Behavioral Simulation
-    * How does the filter respond to the input signal?
+    * Question: How does the filter respond to the input signal?
+    * Run: In the flow navigator left-click "Run Simulation." A window will show up called "Untitled." Click on the "Zoom to Fit" icon (four arrows pointing away from each other). Right-click on ```x_in``` and ```y_out``` signals to set "Waveform Style" to "Analog" and "Radix" to "Signed Decimal."
+    > [!NOTE]  
+    > You may need to change the simulation time to fit the full plot. To do this, before left-clicking "Run Simulation," right-click "Run Simulation" instead and select "Simulation Settings." Under "Simulation -> Simulation" set "xsim.simulate.runtime*" to your desired runtime. In this case, I am using 200ms
 * Timing
-    * What is critical path of the filter?
-    * What is influecning the critical path?
+    * Question: What is critical path of the filter?
+    * Run: To find this, we run the command ```report_timing -delay_type max -path_type full``` in the tcl terminal. This will return a report with the path offending the lowest "slack" time. The slack time is the difference between the clock cycle and critical path. To find the critical path from thsi, we look for the "data path delay."
 * Power
-    * How many watts does the filter consume?
-    * What is the distribution of power consumption among components?
+    * Question: How many watts does the filter consume? What is the distribution of power consumption among components?
+    * Run: In the flow navigator, run "Implementation." After the implementation completes, in the console select "Power."
 * Area / Resource Utilization
-    * How many resources on the FPGA are used?
-    * Rough conversion to area using this equation: $A_{\text{FPGA}} \approx (1 \times U_{\text{LUT}}) + (0.5 \times U_{\text{FF}}) + (5 \times U_{\text{DSP}}) + (2 \times U_{\text{IO}})$ with the following weights (arbitrarly chosen by ChatGPT): 
-
-    * | Resource | Weight |
+    * Question: How many resources on the FPGA are used? Rough conversion to area using this equation: $A_{\text{FPGA}} \approx (0.0002 \times U_{\text{LUT}}) + (0.0001 \times U_{\text{FF}}) + (0.03 \times U_{\text{DSP}}) + (0.02 \times U_{\text{IO}})$ with the following sizes arbitrarly chosen by ChatGPT: 
+    * | Resource | mm^2 |
       |----------|-------:|
-      | LUTs     | 1      |
-      | FFs      | 0.5    |
-      | DSPs     | 5      |
-      | IOs      | 2      |
+      | LUTs     | 0.0002 |
+      | FFs      | 0.0001 |
+      | DSPs     | 0.03   |
+      | IOs      | 0.02   |
+    * Run: In the flow navigator, run "Implementation." After the implementation completes, in the console select "Utilization."
 
 #### Pipelined FIR Filter Results
+
+##### Circuit Schematic
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_Pipelined/rtlschem.png" alt="" width="500">
+  <br>
+  <p>Figure 7: Pipelined FIR Filter RTL Schematic</p>
+</div>
+
+<br>
+
+This schematic has been reduced to only 3 taps, but it looks like this implementation follows the design proposed in [Pipelined FIR](#pipelined-fir)
+
+##### Device Layout on FPGA
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_Pipelined/device.png" alt="" height="500">
+  <br>
+  <p>Figure 8: Pipelined FIR Filter on FPGA</p>
+</div>
+
+<br>
+
+No major comments. Resource utilization from this device layout seems minimal, and the critical path spans the whole device. This may have large effects on our timing later.
 
 ##### Behavioral Sim
 
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/behavioralsim.png" alt="" width="500">
   <br>
-  <p>Figure 11: Pipelined FIR Filter Behavioral Sim</p>
+  <p>Figure 9: Pipelined FIR Filter Behavioral Sim</p>
 </div>
 
 <br>
@@ -201,14 +229,83 @@ There is a pretty significant delay of about 204 clock cycles before the filter 
 
 ##### Timing
 
+```
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Mar 18 21:00:03 2025
+| Host         : Amars-XPS running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -path_type full
+| Design       : fir_filter
+| Device       : 7k70t-fbv676
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
 
+Timing Report
+
+Slack (MET) :             22659.553ns  (required time - arrival time)
+  Source:                 accumulator_pipeline_reg[101]/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Destination:            y_out[3]
+                            (output port clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Path Group:             clk
+  Path Type:              Max at Slow Process Corner
+  Requirement:            22676.000ns  (clk rise@22676.000ns - clk rise@0.000ns)
+  Data Path Delay:        8.663ns  (logic 2.852ns (32.923%)  route 5.811ns (67.077%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           3.000ns
+  Clock Path Skew:        -4.750ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.000ns = ( 22676.000 - 22676.000 ) 
+    Source Clock Delay      (SCD):    4.750ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                         propagated clock network latency
+                                                      4.750     4.750    
+    DSP48_X0Y79          DSP48E1                      0.000     4.750 r  accumulator_pipeline_reg[101]/CLK
+    DSP48_X0Y79          DSP48E1 (Prop_dsp48e1_CLK_P[26])
+                                                      0.383     5.133 r  accumulator_pipeline_reg[101]/P[26]
+                         net (fo=1, routed)           5.811    10.944    y_out_OBUF[3]
+    T24                  OBUF (Prop_obuf_I_O)         2.469    13.414 r  y_out_OBUF[3]_inst/O
+                         net (fo=0)                   0.000    13.414    y_out[3]
+    T24                                                               r  y_out[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)    22676.000 22676.000 r  
+                         propagated clock network latency
+                                                      0.000 22676.000    
+                         clock pessimism              0.000 22676.000    
+                         clock uncertainty           -0.035 22675.965    
+                         output delay                -3.000 22672.965    
+  -------------------------------------------------------------------
+                         required time                      22672.967    
+                         arrival time                         -13.414    
+  -------------------------------------------------------------------
+                         slack                              22659.553
+```
+
+<br>
+
+The critical path per the report is 8.663ns on the FPGA. A majority of this time (about 5.811ns) is due to the physical route that is taken on the FPGA. The logic only takes 2.852ns. We can also see that this occured on the accumulator pipeline @ tap 101. My implentation handles multipling the current tap by its coefficient and adding to the previous accumulations within this step/region:
+
+    accumulator_pipeline[j] <= (accumulator_pipeline[j-1] + delay_pipeline[2*(j-1)+1] * coeffs[j]);
+
+This location of the critical path aligns with where I would expect the critical path to be.
 
 ##### Power
 
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/power.png" alt="" width="500">
   <br>
-  <p>Figure 13: Pipelined FIR Filter Power</p>
+  <p>Figure 11: Pipelined FIR Filter Power</p>
 </div>
 
 <br>
@@ -216,6 +313,16 @@ There is a pretty significant delay of about 204 clock cycles before the filter 
 The total on-chip power shown is about 0.081 Watts, which is very good. Diging deeper it is clear that most power is consumed from device statics. After that, device I/O takes up the most power. Other components which are integral to the algorithm itself do not take up that much power in comparison to the I/O and statics. Choosing to go with only a 16-bit input and 24-bit coefficient size has definitely helped to save on power consumption; which will also hold true for the other implementations.
 
 ##### Area / Resource Utilization
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_Pipelined/util.png" alt="" width="500">
+  <br>
+  <p>Figure 14: Pipelined FIR Filter Resource Utilization</p>
+</div>
+
+<br>
+
+Using our equation from above, we derive: $A_{\text{FPGA}} \approx (0.0002 \times 0) + (0.0001 \times 3232) + (0.03 \times 102) + (0.02 \times 34) = 4.0632$ mm^2
 
 #### L2 Parallel FIR Filter Results
 #### L3 Parallel FIR Filter Results

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Tue Mar 18 18:49:28 2025
+| Date         : Tue Mar 18 19:24:37 2025
 | Host         : Amars-XPS running 64-bit major release  (build 9200)
 | Command      : report_drc -file fir_filter_drc_opted.rpt -pb fir_filter_drc_opted.pb -rpx fir_filter_drc_opted.rpx
 | Design       : fir_filter
@@ -24,15 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 7
+             Checks found: 108
 +----------+------------------+-----------------------------------------------------+--------+
 | Rule     | Severity         | Description                                         | Checks |
 +----------+------------------+-----------------------------------------------------+--------+
 | NSTD-1   | Critical Warning | Unspecified I/O Standard                            | 1      |
 | UCIO-1   | Critical Warning | Unconstrained Logical Port                          | 1      |
 | CFGBVS-1 | Warning          | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
-| DPIP-1   | Warning          | Input pipelining                                    | 3      |
-| DPOP-2   | Warning          | MREG Output pipelining                              | 1      |
+| DPIP-1   | Warning          | Input pipelining                                    | 103    |
+| DPOP-2   | Warning          | MREG Output pipelining                              | 2      |
 +----------+------------------+-----------------------------------------------------+--------+
 
 2. REPORT DETAILS
@@ -67,17 +67,522 @@ Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP accumulator_pipeline_reg[1] input accumulator_pipeline_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP accumulator_pipeline_reg[100] input accumulator_pipeline_reg[100]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
+DSP accumulator_pipeline_reg[101] input accumulator_pipeline_reg[101]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[10] input accumulator_pipeline_reg[10]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[11] input accumulator_pipeline_reg[11]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[12] input accumulator_pipeline_reg[12]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[13] input accumulator_pipeline_reg[13]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[14] input accumulator_pipeline_reg[14]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[15] input accumulator_pipeline_reg[15]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[16] input accumulator_pipeline_reg[16]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[17] input accumulator_pipeline_reg[17]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[18] input accumulator_pipeline_reg[18]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[19] input accumulator_pipeline_reg[19]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[1] input accumulator_pipeline_reg[1]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#15 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[20] input accumulator_pipeline_reg[20]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#16 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[21] input accumulator_pipeline_reg[21]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#17 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[22] input accumulator_pipeline_reg[22]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#18 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[23] input accumulator_pipeline_reg[23]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#19 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[24] input accumulator_pipeline_reg[24]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#20 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[25] input accumulator_pipeline_reg[25]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#21 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[26] input accumulator_pipeline_reg[26]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#22 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[27] input accumulator_pipeline_reg[27]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#23 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[28] input accumulator_pipeline_reg[28]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#24 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[29] input accumulator_pipeline_reg[29]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#25 Warning
+Input pipelining  
 DSP accumulator_pipeline_reg[2] input accumulator_pipeline_reg[2]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[30] input accumulator_pipeline_reg[30]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[31] input accumulator_pipeline_reg[31]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[32] input accumulator_pipeline_reg[32]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[33] input accumulator_pipeline_reg[33]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[34] input accumulator_pipeline_reg[34]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[35] input accumulator_pipeline_reg[35]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[36] input accumulator_pipeline_reg[36]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[37] input accumulator_pipeline_reg[37]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[38] input accumulator_pipeline_reg[38]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[39] input accumulator_pipeline_reg[39]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[3] input accumulator_pipeline_reg[3]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[40] input accumulator_pipeline_reg[40]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[41] input accumulator_pipeline_reg[41]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[42] input accumulator_pipeline_reg[42]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[43] input accumulator_pipeline_reg[43]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#41 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[44] input accumulator_pipeline_reg[44]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#42 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[45] input accumulator_pipeline_reg[45]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#43 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[46] input accumulator_pipeline_reg[46]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#44 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[47] input accumulator_pipeline_reg[47]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#45 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[48] input accumulator_pipeline_reg[48]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#46 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[49] input accumulator_pipeline_reg[49]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#47 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[4] input accumulator_pipeline_reg[4]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#48 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[50] input accumulator_pipeline_reg[50]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[51] input accumulator_pipeline_reg[51]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[52] input accumulator_pipeline_reg[52]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#51 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[53] input accumulator_pipeline_reg[53]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#52 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[54] input accumulator_pipeline_reg[54]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#53 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[55] input accumulator_pipeline_reg[55]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#54 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[56] input accumulator_pipeline_reg[56]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#55 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[57] input accumulator_pipeline_reg[57]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#56 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[58] input accumulator_pipeline_reg[58]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#57 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[59] input accumulator_pipeline_reg[59]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#58 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[5] input accumulator_pipeline_reg[5]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#59 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[60] input accumulator_pipeline_reg[60]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#60 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[61] input accumulator_pipeline_reg[61]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#61 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[62] input accumulator_pipeline_reg[62]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#62 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[63] input accumulator_pipeline_reg[63]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#63 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[64] input accumulator_pipeline_reg[64]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#64 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[65] input accumulator_pipeline_reg[65]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#65 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[66] input accumulator_pipeline_reg[66]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#66 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[67] input accumulator_pipeline_reg[67]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#67 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[68] input accumulator_pipeline_reg[68]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#68 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[69] input accumulator_pipeline_reg[69]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#69 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[6] input accumulator_pipeline_reg[6]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#70 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[70] input accumulator_pipeline_reg[70]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#71 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[71] input accumulator_pipeline_reg[71]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#72 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[72] input accumulator_pipeline_reg[72]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#73 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[73] input accumulator_pipeline_reg[73]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#74 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[74] input accumulator_pipeline_reg[74]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#75 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[75] input accumulator_pipeline_reg[75]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#76 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[76] input accumulator_pipeline_reg[76]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#77 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[77] input accumulator_pipeline_reg[77]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#78 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[78] input accumulator_pipeline_reg[78]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#79 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[79] input accumulator_pipeline_reg[79]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#80 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[7] input accumulator_pipeline_reg[7]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#81 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[80] input accumulator_pipeline_reg[80]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#82 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[80] input accumulator_pipeline_reg[80]/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#83 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[81] input accumulator_pipeline_reg[81]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#84 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[82] input accumulator_pipeline_reg[82]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#85 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[83] input accumulator_pipeline_reg[83]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#86 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[84] input accumulator_pipeline_reg[84]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#87 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[85] input accumulator_pipeline_reg[85]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#88 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[86] input accumulator_pipeline_reg[86]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#89 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[87] input accumulator_pipeline_reg[87]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#90 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[88] input accumulator_pipeline_reg[88]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#91 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[89] input accumulator_pipeline_reg[89]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#92 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[8] input accumulator_pipeline_reg[8]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#93 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[90] input accumulator_pipeline_reg[90]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#94 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[91] input accumulator_pipeline_reg[91]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#95 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[92] input accumulator_pipeline_reg[92]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#96 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[93] input accumulator_pipeline_reg[93]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#97 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[94] input accumulator_pipeline_reg[94]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#98 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[95] input accumulator_pipeline_reg[95]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#99 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[96] input accumulator_pipeline_reg[96]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#100 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[97] input accumulator_pipeline_reg[97]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#101 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[98] input accumulator_pipeline_reg[98]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#102 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[99] input accumulator_pipeline_reg[99]/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#103 Warning
+Input pipelining  
+DSP accumulator_pipeline_reg[9] input accumulator_pipeline_reg[9]/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP accumulator_pipeline_reg[2] multiplier stage accumulator_pipeline_reg[2]/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP accumulator_pipeline_reg[101] multiplier stage accumulator_pipeline_reg[101]/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP accumulator_pipeline_reg[79] multiplier stage accumulator_pipeline_reg[79]/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 
