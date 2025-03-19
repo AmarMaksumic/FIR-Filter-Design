@@ -129,7 +129,7 @@ Similar process to the 2-Parallel Reduced-Complexity Fast filter, but make three
 
 ### Pipelined, L3 Parallel FIR
 
-div align="center">
+<div align="center">
   <img src="README_resources/l3firfilterpiped.png" alt="" width="500">
   <br>
   <p>Figure 7: 3-Parallel Optimal Pipelined Fast FIR filter</p>
@@ -336,7 +336,7 @@ The total on-chip power shown is about 0.081 Watts, which is very good. Diging d
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/util.png" alt="" width="500">
   <br>
-  <p>Figure 14: Pipelined FIR Filter Resource Utilization</p>
+  <p>Figure 12: Pipelined FIR Filter Resource Utilization</p>
 </div>
 
 <br>
@@ -350,7 +350,7 @@ Using our equation from above, we derive: $A_{\text{FPGA}} \approx (0.0002 \time
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/rtlschem.png" alt="" width="1000">
   <br>
-  <p>Figure 15: L2 Parallel FIR Filter RTL Schematic, High-Level</p>
+  <p>Figure 13: L2 Parallel FIR Filter RTL Schematic, High-Level</p>
 </div>
 
 <br>
@@ -360,7 +360,7 @@ The high-level schematic exactly replicates the proposed implementation from ear
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/rtlschem2.png" alt="" width="1000">
   <br>
-  <p>Figure 16: L2 Parallel FIR Filter RTL Schematic, Low-Level</p>
+  <p>Figure 14: L2 Parallel FIR Filter RTL Schematic, Low-Level</p>
 </div>
 
 <br>
@@ -372,7 +372,7 @@ Inside any of the ```fir_filter``` in the high-level diagram, we can see the ope
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/device.png" alt="" height="500">
   <br>
-  <p>Figure 17: L2 Parallel FIR Filter on FPGA</p>
+  <p>Figure 15: L2 Parallel FIR Filter on FPGA</p>
 </div>
 
 <br>
@@ -389,7 +389,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/behavioralsim.png" alt="" width="1000">
   <br>
-  <p>Figure 18: L2 Parallel FIR Filter Behavioral Sim</p>
+  <p>Figure 16: L2 Parallel FIR Filter Behavioral Sim</p>
 </div>
 
 <br>
@@ -407,7 +407,7 @@ I have linked the output file [here](TEST_RESULTS/FIR_L2/timing.txt) for the tim
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/power.png" alt="" width="500">
   <br>
-  <p>Figure 19: L2 Parallel FIR Filter Power</p>
+  <p>Figure 17: L2 Parallel FIR Filter Power</p>
 </div>
 
 <br>
@@ -419,7 +419,7 @@ The total on-chip power shown is about 0.081 Watts, which is very good. Diging d
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/util.png" alt="" width="500">
   <br>
-  <p>Figure 20: L2 Parallel FIR Filter Resource Utilization</p>
+  <p>Figure 18: L2 Parallel FIR Filter Resource Utilization</p>
 </div>
 
 <br>
@@ -431,7 +431,7 @@ It is interesting to note that there are almost exactly 50% more DSP units used,
 <div align="center">
   <img src="TEST_RESULTS/FIR_L2/util2.png" alt="" width="500">
   <br>
-  <p>Figure 21: L2 Parallel FIR Filter Resource Utilization</p>
+  <p>Figure 19: L2 Parallel FIR Filter Resource Utilization</p>
 </div>
 
 From the above report, we can also see that the resource utilization across the three filters is almost identical.
@@ -445,7 +445,7 @@ From the above report, we can also see that the resource utilization across the 
 <div align="center">
   <img src="TEST_RESULTS/FIR_L3/rtlschem.png" alt="" width="1000">
   <br>
-  <p>Figure 22: L3 Parallel FIR Filter RTL Schematic, High-Level</p>
+  <p>Figure 20: L3 Parallel FIR Filter RTL Schematic, High-Level</p>
 </div>
 
 <br>
@@ -457,7 +457,7 @@ The high-level schematic exactly replicates the proposed implementation from ear
 <div align="center">
   <img src="TEST_RESULTS/FIR_L3/device.png" alt="" height="500">
   <br>
-  <p>Figure 23: L3 Parallel FIR Filter on FPGA</p>
+  <p>Figure 21: L3 Parallel FIR Filter on FPGA</p>
 </div>
 
 <br>
@@ -474,7 +474,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 <div align="center">
   <img src="TEST_RESULTS/FIR_L3/behavioralsim.png" alt="" width="1000">
   <br>
-  <p>Figure 24: L3 Parallel FIR Filter Behavioral Sim</p>
+  <p>Figure 22: L3 Parallel FIR Filter Behavioral Sim</p>
 </div>
 
 <br>
@@ -492,7 +492,7 @@ I have linked the output file [here](TEST_RESULTS/FIR_L3/timing.txt) for the tim
 <div align="center">
   <img src="TEST_RESULTS/FIR_L3/power.png" alt="" width="500">
   <br>
-  <p>Figure 25: L3 Parallel FIR Filter Power</p>
+  <p>Figure 23: L3 Parallel FIR Filter Power</p>
 </div>
 
 <br>
@@ -504,7 +504,7 @@ The total on-chip power shown is about 0.081 Watts, which is very good. Diging d
 <div align="center">
   <img src="TEST_RESULTS/FIR_L3/util.png" alt="" width="500">
   <br>
-  <p>Figure 26: L3 Parallel FIR Filter Resource Utilization</p>
+  <p>Figure 24: L3 Parallel FIR Filter Resource Utilization</p>
 </div>
 
 <br>
@@ -516,7 +516,7 @@ Like before, there is a reasonable increase in the DSP units. This time, we have
 <div align="center">
   <img src="TEST_RESULTS/FIR_L3/util2.png" alt="" width="500">
   <br>
-  <p>Figure 27: L3 Parallel FIR Filter Resource Utilization</p>
+  <p>Figure 25: L3 Parallel FIR Filter Resource Utilization</p>
 </div>
 
 From the above report, we can also see that the resource utilization across the six filters is almost identical.
@@ -530,7 +530,7 @@ From the above report, we can also see that the resource utilization across the 
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L3/rtlschem.png" alt="" width="1000">
   <br>
-  <p>Figure 28: Pipelined L3 Parallel FIR Filter RTL Schematic, High-Level</p>
+  <p>Figure 26: Pipelined L3 Parallel FIR Filter RTL Schematic, High-Level</p>
 </div>
 
 <br>
@@ -542,7 +542,7 @@ The high-level schematic exactly replicates the proposed implementation from ear
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L3/device.png" alt="" height="500">
   <br>
-  <p>Figure 29: Pipelined L3 Parallel FIR Filter on FPGA</p>
+  <p>Figure 27: Pipelined L3 Parallel FIR Filter on FPGA</p>
 </div>
 
 <br>
@@ -559,7 +559,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L3/behavioralsim.png" alt="" width="1000">
   <br>
-  <p>Figure 30: Pipelined L3 Parallel FIR Filter Behavioral Sim</p>
+  <p>Figure 28: Pipelined L3 Parallel FIR Filter Behavioral Sim</p>
 </div>
 
 <br>
@@ -577,7 +577,7 @@ I have linked the output file [here](TEST_RESULTS/FIR_Pipelined_L3/timing.txt) f
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L3/power.png" alt="" width="500">
   <br>
-  <p>Figure 31: Pipelined L3 Parallel FIR Filter Power</p>
+  <p>Figure 29: Pipelined L3 Parallel FIR Filter Power</p>
 </div>
 
 <br>
@@ -589,7 +589,7 @@ The total on-chip power shown is about 0.081 Watts, which is very good. Diging d
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L3/util.png" alt="" width="500">
   <br>
-  <p>Figure 32: Pipelined L3 Parallel FIR Filter Resource Utilization</p>
+  <p>Figure 30: Pipelined L3 Parallel FIR Filter Resource Utilization</p>
 </div>
 
 <br>
@@ -601,7 +601,7 @@ Like before, there is a reasonable amount of DSP units as we have 6 * (N/3) DSPs
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L3/util2.png" alt="" width="500">
   <br>
-  <p>Figure 33: Pipelined L3 Parallel FIR Filter Resource Utilization</p>
+  <p>Figure 31: Pipelined L3 Parallel FIR Filter Resource Utilization</p>
 </div>
 
 From the above report, we can also see that the resource utilization across the six filters is almost identical; minus some trading of SLICE LUTs, Slice Registers, Slice, and LUT for logic across the filters.
@@ -628,7 +628,7 @@ This got me thinking that with the FIR filter coefficients I have developed, a p
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined_L2/behavioralsim.png" alt="" width="1000">
   <br>
-  <p>Figure 34: Pipelined L2 Parallel FIR Filter Behavioral Simulation</p>
+  <p>Figure 32: Pipelined L2 Parallel FIR Filter Behavioral Simulation</p>
 </div>
 
 <br>
