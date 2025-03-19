@@ -7,5 +7,6 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 40 for port 'y_out_0' [C:/code/FIR-Filter-Design/FIR_L2/FIR_L2.srcs/sim_1/new/fir_filter_tb.sv:31]
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 40 for port 'y_out_1' [C:/code/FIR-Filter-Design/FIR_L2/FIR_L2.srcs/sim_1/new/fir_filter_tb.sv:32]
+WARNING: [VRFC 10-3823] variable 'y_out' might have multiple concurrent drivers [C:/code/FIR-Filter-Design/FIR_L2/FIR_L2.srcs/sources_1/new/fir_filter.sv:55]
 Completed static elaboration
 INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

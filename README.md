@@ -130,8 +130,8 @@ All filter's were developed in AMD's Vivado software using System Verilog. ```.m
     * Implementation: [fir_filter.sv](FIR_Pipelined\FIR_Pipelined.srcs\sources_1\new\fir_filter.sv)
     * Testbench: [fir_filter_tb.sv](FIR_Pipelined\FIR_Pipelined.srcs\sim_1\new\fir_filter_tb.sv)
 * L2 Parallel FIR [FIR_L2]
-    * Implementation:
-    * Testbench: 
+    * Implementation: [fir_filter.sv](FIR_L2\FIR_L2.srcs\sources_1\new\fir_filter.sv), [l2_wrapper.sv](FIR_L2\FIR_L2.srcs\sources_1\new\l2_wrapper.sv)
+    * Testbench: [fir_filter_tb.sv](FIR_L2\FIR_L2.srcs\sim_1\new\fir_filter_tb.sv)
 * L3 Parallel FIR [FIR_L3]
     * Implementation:
     * Testbench: 
@@ -139,9 +139,9 @@ All filter's were developed in AMD's Vivado software using System Verilog. ```.m
     * Implementation:
     * Testbench: 
 
-Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-bit, as configured earlier. To maintain precision during filtering, each input sample is multiplied by a 24-bit coefficient, producing a 40-bit intermediate result (16-bit × 24-bit multiplication).
+Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-bit, as configured earlier. To maintain precision during filtering, each input sample is multiplied by a 24-bit coefficient, producing a 40-bit intermediate result (16-bit × 24-bit multiplication). Since multiple taps contribute to the final output, these 40-bit products are accumulated in a 40-bit register. To ensure the output remains in a 16-bit format, a 24-bit right shift is applied to remove excess precision and scale the result appropriately. This final step helps mitigate quantization effects while preserving signal integrity.
 
-Since multiple taps contribute to the final output, these 40-bit products are accumulated in a 40-bit register. To ensure the output remains in a 16-bit format, a 24-bit right shift is applied to remove excess precision and scale the result appropriately. This final step helps mitigate quantization effects while preserving signal integrity.
+For implementing the parallelized filters, I made a system verilog file with a basic, non-pipelined filter implementation. From here, I made a wrapper system verilog file to create instances of these filters as needed and use them in the higher level DFGs from earlier. For the pipelined L3 parallelized filter, I replcae the basic, non-pipelined filter implementation with the pipelined filter from ```Pipelined FIR```.
 
 #### Test Signal
 For the testbenches to work, they require an input signal. This input signal is generated using the script [wave_gen.py](wave_gen.py). This script has a function ```sine_wave_sweep``` which takes in the following and generates a trajectory for a logarithmically increasing sine wave:
@@ -187,12 +187,12 @@ Two schematics and Four criteria will be tested for:
       | IOs      | 0.02   |
     * Run: In the flow navigator, run "Implementation." After the implementation completes, in the console select "Utilization."
 
-#### Pipelined FIR Filter Results
+## Pipelined FIR Filter Results
 
-##### Circuit Schematic
+### Circuit Schematic
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_Pipelined/rtlschem.png" alt="" width="500">
+  <img src="TEST_RESULTS/FIR_Pipelined/rtlschem.png" alt="" width="1000">
   <br>
   <p>Figure 7: Pipelined FIR Filter RTL Schematic</p>
 </div>
@@ -201,7 +201,7 @@ Two schematics and Four criteria will be tested for:
 
 This schematic has been reduced to only 3 taps, but it looks like this implementation follows the design proposed in [Pipelined FIR](#pipelined-fir)
 
-##### Device Layout on FPGA
+### Device Layout on FPGA
 
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/device.png" alt="" height="500">
@@ -211,12 +211,12 @@ This schematic has been reduced to only 3 taps, but it looks like this implement
 
 <br>
 
-No major comments. Resource utilization from this device layout seems minimal, and the critical path spans the whole device. This may have large effects on our timing later.
+No major comments. Resource utilization from this device layout seems minimal, and the critical path spans the whole device. However, it looks like a small operation/data transfer that could consist of a single adder and multiplier. So overall, the impact is not that large other than device static times for this movement.
 
-##### Behavioral Sim
+### Behavioral Sim
 
 <div align="center">
-  <img src="TEST_RESULTS/FIR_Pipelined/behavioralsim.png" alt="" width="500">
+  <img src="TEST_RESULTS/FIR_Pipelined/behavioralsim.png" alt="" width="1000">
   <br>
   <p>Figure 9: Pipelined FIR Filter Behavioral Sim</p>
 </div>
@@ -227,7 +227,7 @@ It is evident that the filter is operating as intended. In the beginning, we can
 
 There is a pretty significant delay of about 204 clock cycles before the filter starts outputing data. This is due to the doubly pipelined delay line. Thus, latency with this solution is pretty high.
 
-##### Timing
+### Timing
 
 ```
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
@@ -300,7 +300,7 @@ The critical path per the report is 8.663ns on the FPGA. A majority of this time
 
 This location of the critical path aligns with where I would expect the critical path to be.
 
-##### Power
+### Power
 
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/power.png" alt="" width="500">
@@ -312,7 +312,7 @@ This location of the critical path aligns with where I would expect the critical
 
 The total on-chip power shown is about 0.081 Watts, which is very good. Diging deeper it is clear that most power is consumed from device statics. After that, device I/O takes up the most power. Other components which are integral to the algorithm itself do not take up that much power in comparison to the I/O and statics. Choosing to go with only a 16-bit input and 24-bit coefficient size has definitely helped to save on power consumption; which will also hold true for the other implementations.
 
-##### Area / Resource Utilization
+### Area / Resource Utilization
 
 <div align="center">
   <img src="TEST_RESULTS/FIR_Pipelined/util.png" alt="" width="500">
@@ -324,8 +324,93 @@ The total on-chip power shown is about 0.081 Watts, which is very good. Diging d
 
 Using our equation from above, we derive: $A_{\text{FPGA}} \approx (0.0002 \times 0) + (0.0001 \times 3232) + (0.03 \times 102) + (0.02 \times 34) = 4.0632$ mm^2
 
-#### L2 Parallel FIR Filter Results
+## L2 Parallel FIR Filter Results
+
+### Circuit Schematic
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_L2/rtlschem.png" alt="" width="1000">
+  <br>
+  <p>Figure 15: L2 Parallel FIR Filter RTL Schematic, High-Level</p>
+</div>
+
+<br>
+
+The high-level schematic exactly replicates the proposed implementation from earlier. It is interesting to see how similar the DFGs can be to the in-real-life implementation of DSP designs.
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_L2/rtlschem2.png" alt="" width="1000">
+  <br>
+  <p>Figure 16: L2 Parallel FIR Filter RTL Schematic, Low-Level</p>
+</div>
+
+<br>
+
+Inside any of the ```fir_filter``` in the high-level diagram, we can see the operation of the non-pipelined FIR filter. This looks as expected, and it will be interseting to see the effects of this non-pipelined implementation in the timing analysis later
+
+### Device Layout on FPGA
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_L2/device.png" alt="" height="500">
+  <br>
+  <p>Figure 17: L2 Parallel FIR Filter on FPGA</p>
+</div>
+
+<br>
+
+In comparison to the pipelined FIR filter, we can immediately see two things:
+
+1. Higher resource utilization.
+2. Much more dense and longer critical path.
+
+From this analysis, it is safe to say that we'll see a big increase in silicon usage and critical path time. I will assume this critical path is that of all the adders on the accumulation path; none of which are pipelined.
+
+### Behavioral Sim
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_L2/behavioralsim.png" alt="" width="1000">
+  <br>
+  <p>Figure 18: L2 Parallel FIR Filter Behavioral Sim</p>
+</div>
+
+<br>
+
+It is evident that the filter is operating as intended on both inputs/outputs. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. As the input file is from logarithmic scale, the testing output looks compressed towards the right side compared to the linear scaled MATLAB graphs from the beginning. 
+
+There is a small delay of about 51 clock cycles before the filter starts outputing data. In addition, this filter completes the operation in about half the time of the pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
+
+### Timing
+
+I have linked the output file [here](TEST_RESULTS/FIR_L2/timing.txt) for the timing results, as it is pretty large. Just like the file size, the critical path for this filter is huge in comparison to the pipeliend FIR filter from last test: standing at 80.171ns. This time around, the logic delay hinders performance more than the route delay. Due to the non-pipelined accumulator line, the logic delay is 74.571ns. To improve this, it may be worthwhile to pipeline the individual FIR filters, or to reduce the size of the filters by reducing the number of taps.
+
+### Power
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_L2/power.png" alt="" width="500">
+  <br>
+  <p>Figure 19: L2 Parallel FIR Filter Power</p>
+</div>
+
+<br>
+
+The total on-chip power shown is about 0.081 Watts, which is very good. Diging deeper it is clear that most power is consumed from device statics. After that, device DSP takes up the most power. I/O usage is decently low given the doubled number of inputs and outputs. However, since there is 1.5x "the amount of FIR filter" now (3 half-tap filters) along with some other logic on the very input and output of the parallelized setup, it makes sense that there has been an extreme increase in usage of DSP units and power consumption from said DSP units.
+
+### Area / Resource Utilization
+
+<div align="center">
+  <img src="TEST_RESULTS/FIR_L2/util.png" alt="" width="500">
+  <br>
+  <p>Figure 14: Pipelined FIR Filter Resource Utilization</p>
+</div>
+
+<br>
+
+Using our equation from above, we derive: $A_{\text{FPGA}} \approx (0.0002 \times 49) + (0.0001 \times 2416) + (0.03 \times 153) + (0.02 \times 114) = 7.1214$ mm^2
+
+It is interesting to note that there are almost exactly 50% more DSP units used, which builds off the analysis from power where we have 1.5x "the amount of FIR filter" now. There is a reduction in FF units, most likely due to no pipelining and thus fewer delayblocks. Interestingly, there is a 3.3x increase in the number of I/O usage, which is tough for me to explain. My only stipulation is that it is considering the inner I/O of the system verilog wrapping of the three FIR filters for H0, H1, and H0+H1.
+
 #### L3 Parallel FIR Filter Results
+
 #### Pipelined, L3 Parallel FIR Filter Results
 
 ## Resources

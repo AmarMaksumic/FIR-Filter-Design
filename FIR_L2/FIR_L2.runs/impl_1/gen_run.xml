@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1742355809">
+<GenRun Id="impl_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1742357671">
   <File Type="PA-TCL" Name="l2_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="l2_wrapper_reports.tcl"/>
   <File Type="INIT-TIMING" Name="l2_wrapper_timing_summary_init.rpt"/>

@@ -18,3 +18,18 @@
     <Process Command="vivado.bat" Owner="amarm" Host="AMARS-XPS" Pid="6412" HostCore="20" HostMemory="068374552576">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="amarm" Host="AMARS-XPS" Pid="68696" HostCore="20" HostMemory="068374552576">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="amarm" Host="AMARS-XPS" Pid="28964" HostCore="20" HostMemory="068374552576">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="amarm" Host="AMARS-XPS" Pid="50052" HostCore="20" HostMemory="068374552576">
+    </Process>
+</ProcessHandle>

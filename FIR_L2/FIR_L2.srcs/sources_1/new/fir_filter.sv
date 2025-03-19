@@ -39,17 +39,19 @@ module fir_filter #(
         end
     end
     
-    always_ff @(posedge clk) begin      
-        // FIR filter computation (Multiply-Accumulate)
+    logic signed [(IO_WIDTH + COEFF_WIDTH):0] accumulator;
+    
+    always_ff @(posedge clk) begin
         if (rst) begin
-            y_out <= 16'sd0;
+            accumulator = 16'sd0;
         end else begin
-            y_out <= x_in * coeffs[0];
+            accumulator = x_in * coeffs[0];
             for (j = 0; j < N-1; j++) begin
-                y_out <= y_out + delay_line[j] * coeffs[j+1];
+                accumulator += delay_line[j] * coeffs[j+1];
             end
-            y_out <= y_out >>> (COEFF_WIDTH-1);
         end
     end
+
+    assign y_out = accumulator >>> (COEFF_WIDTH-1); // Apply scaling if needed
 
 endmodule
