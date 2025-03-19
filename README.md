@@ -570,7 +570,7 @@ There is a small delay of about 68 clock cycles before the filter starts outputt
 
 ### Timing
 
-I have linked the output file [here](TEST_RESULTS/FIR_Pipelined_L3/timing.txt) for the timing results. The critical path for this filter is relatively small at 11.881ns, with the logic delay being smaller than the route delay. The logic delay is 4.324ns, with the route delay being 7.668ns. From the contents of the output file, it looks like this occurs after the output of the H-filters, and along the recomposition into ```y_out_1```. In this path, there are multiplier adders without any pipelining on them. There is definitely some way to pipeline this output to optimize it, but I did not have the time to do so. With this pipelining on the recomposition part of the output leading to all ```y_out```s, this filter could have the same critical path as the pipelined-only filter.
+I have linked the output file [here](TEST_RESULTS/FIR_Pipelined_L3/timing.txt) for the timing results. The critical path for this filter is relatively small at 11.881ns, with the logic delay being smaller than the route delay. The logic delay is 4.324ns, with the route delay being 7.668ns. From the contents of the output file, it looks like this occurs after the output of the H-filters, and along the recomposition into ```y_out_1```. In this path, there are multiplier adders without any pipelining on them. There is definitely some way to pipeline this output to optimize it, but that comes at the cost of adding more cycles. As such, I think this pipelining is not necessary as it is close to the time of one adder plus one multiplier (the critical path inside of the pipelined FIR filter).
 
 ### Power
 
