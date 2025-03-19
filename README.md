@@ -3,7 +3,7 @@
 ### by <img src="README_resources/AmarRed.png" alt="signature" width="30"/>
 
 ## Intro
-This repository gives a walk through on the complete design process of a multi-tap low-pass FIR filter on an FPGA for audio processing purposes. Moving forward, the "multi-tap low-pass FIR filter" will be refered to as "filter." This report is divided into several sections:
+This repository gives a walk through on the complete design process of a multi-tap low-pass FIR filter on an FPGA for audio processing purposes. Moving forward, the "multi-tap low-pass FIR filter" will be referred to as "filter." This report is divided into several sections:
 
 0. [Necessary software and setup](#necessary-software-and-setup)
 1. [Filter Coefficient and Frequency Design](#filter-coefficient-and-frequency-design)
@@ -16,7 +16,7 @@ This repository gives a walk through on the complete design process of a multi-t
     * Description of how each filter will be tested, and what criteria will be measured:
         * performance
         * power
-        * criticla path timing
+        * critical path timing
         * space/resource usage on FPGA will be analyzed
 4. [Pipelined FIR Filter Results](#pipelined-fir-filter-results)
 5. [L2 Parallel FIR Filter Results](#l2-parallel-fir-filter-results)
@@ -36,12 +36,12 @@ This repository gives a walk through on the complete design process of a multi-t
 
 ## Filter Coefficient and Frequency Design
 
-First, we will start by selecting the operating frequency for this FIR Filter. As we are only given a general transition region (0.2 $\pi$ to 0.23 $\pi$ rad/sample), I will assume that it is fair game to arbitrarly choose the sampling frequency for this. As such, this filter will be operating inside of an audio filtering device of CD quality (sampling rate = 44.1kHz). It will remove high frequencies in the range of 4.41 kHz to 5.07 kHz from this audio file; so things like high pitched whines or electric noise. 
+First, we will start by selecting the operating frequency for this FIR Filter. As we are only given a general transition region (0.2 $\pi$ to 0.23 $\pi$ rad/sample), I will assume that it is fair game to arbitrarily choose the sampling frequency for this. As such, this filter will be operating inside of an audio filtering device of CD quality (sampling rate = 44.1kHz). It will remove high frequencies above the pass band range of 4.41 kHz to 5.07 kHz from this audio file; so things like high pitched whines or electric noise. 
 
 > [!NOTE]  
 > In design of the basic filter, the sampling frequency is not super important. It does not affect the coefficients for the filter itself assuming we preserve the same general transition region across all normalized frequencies. However, for implementing and testing the filter later, it will be important for determining the clock of the filter and generation of our test signal.
 
-Moving forward, the next step is to compute the coefficients for the FIR filter. To do this, I developed a MATLAB script that uses Parks-McClellan algorithm to generate the filter coefficients. The following parameters were provided to the alogrithm:
+Moving forward, the next step is to compute the coefficients for the FIR filter. To do this, I developed a MATLAB script that uses Parks-McClellan algorithm to generate the filter coefficients. The following parameters were provided to the algorithm:
 
 * Number of Taps => 102
 * Start Frequency (Normalized) => 0
@@ -52,7 +52,7 @@ Moving forward, the next step is to compute the coefficients for the FIR filter.
     * Full attenuation from start to passband edge, no attenuation after stopband.
 * Stopband Attenuation Weighting -> -80dB
 
-Most parameters in this list are taken directly from the project description file. One element which I did change was the number of taps. In order to work with the parallelized filters later, I needed the nunber of taps to be a multiple of 2 and 3, but also greater than or equal to 100. 102 taps is the smallest count which fits these requirements.
+Most parameters in this list are taken directly from the project description file. One element which I did change was the number of taps. In order to work with the parallelized filters later, I needed the number of taps to be a multiple of 2 and 3, but also greater than or equal to 100. 102 taps is the smallest count which fits these requirements.
 
 From here, the built-in MATLAB function derives our filter coefficients. However, they are in floating point representation. For our implementation, we prefer fixed point representation as it is easier to perform integer math than floating point math on hardware. As such, we will convert to fixed point representation and then quantize the data. 
 
@@ -82,7 +82,7 @@ I used MATLAB's built in ```fi``` function to convert from floating point repres
 
 <br>
 
-The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1]. While it has some attenutation differences after the stopband compared to the original model, all attenuations are kept bellow -80dB.
+The 16-bit representation is more space efficient and maintains the integrity of the signal before the stop band. However, after the stop band, there are extreme attenuations that sometimes have the signal go above -80dB. While the 32-bit representation will need more space and computing resources, it is more precise. The 24-bit representation gives the best of both worlds, and is within the range traditionally used for audio processing[^1]. While it has some attenuation differences after the stopband compared to the original model, all attenuations are kept bellow -80dB.
 
 The filter coefficients are then stored into ```.mem``` files, with [decimal](fir_coeffs_decimal.mem) and [binary](fir_coeffs_binary.mem) representations. The mem files can later be loaded into the System Verilog code for the FIR filters.
 
@@ -192,12 +192,12 @@ Two schematics and Four criteria will be tested for:
 > You may need to change the simulation time to fit the full plot. To do this, before left-clicking "Run Simulation," right-click "Run Simulation" instead and select "Simulation Settings." Under "Simulation -> Simulation" set "xsim.simulate.runtime*" to your desired runtime. In this case, I am using 200ms
 * Timing
     * Question: What is critical path of the filter?
-    * Run: To find this, we run the command ```report_timing -delay_type max -path_type full``` in the tcl terminal. This will return a report with the path offending the lowest "slack" time. The slack time is the difference between the clock cycle and critical path. To find the critical path from thsi, we look for the "data path delay."
+    * Run: To find this, we run the command ```report_timing -delay_type max -path_type full``` in the tcl terminal. This will return a report with the path offending the lowest "slack" time. The slack time is the difference between the clock cycle and critical path. To find the critical path from this, we look for the "data path delay."
 * Power
     * Question: How many watts does the filter consume? What is the distribution of power consumption among components?
     * Run: In the flow navigator, run "Implementation." After the implementation completes, in the console select "Power."
 * Area / Resource Utilization
-    * Question: How many resources on the FPGA are used? Rough conversion to area using this equation: $A_{\text{FPGA}} \approx (0.0002 \times U_{\text{LUT}}) + (0.0001 \times U_{\text{FF}}) + (0.03 \times U_{\text{DSP}}) + (0.02 \times U_{\text{IO}})$ with the following sizes arbitrarly chosen by ChatGPT: 
+    * Question: How many resources on the FPGA are used? Rough conversion to area using this equation: $A_{\text{FPGA}} \approx (0.0002 \times U_{\text{LUT}}) + (0.0001 \times U_{\text{FF}}) + (0.03 \times U_{\text{DSP}}) + (0.02 \times U_{\text{IO}})$ with the following sizes arbitrarily chosen by ChatGPT: 
     * | Resource | mm^2 |
       |----------|-------:|
       | LUTs     | 0.0002 |
@@ -244,7 +244,7 @@ No major comments. Resource utilization from this device layout seems minimal, a
 
 It is evident that the filter is operating as intended. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. As the input file is from logarithmic scale, the testing output looks compressed towards the right side compared to the linear scaled MATLAB graphs from the beginning. 
 
-There is a pretty significant delay of about 204 clock cycles before the filter starts outputing data. This is due to the doubly pipelined delay line. Thus, latency with this solution is pretty high.
+There is a pretty significant delay of about 204 clock cycles before the filter starts outputting data. This is due to the doubly pipelined delay line. Thus, latency with this solution is pretty high.
 
 ### Timing
 
@@ -313,7 +313,7 @@ Slack (MET) :             22659.553ns  (required time - arrival time)
 
 <br>
 
-The critical path per the report is 8.663ns on the FPGA. A majority of this time (about 5.811ns) is due to the physical route that is taken on the FPGA. The logic only takes 2.852ns. We can also see that this occured on the accumulator pipeline @ tap 101. My implentation handles multipling the current tap by its coefficient and adding to the previous accumulations within this step/region:
+The critical path per the report is 8.663ns on the FPGA. A majority of this time (about 5.811ns) is due to the physical route that is taken on the FPGA. The logic only takes 2.852ns. We can also see that this occurred on the accumulator pipeline @ tap 101. My implementation handles multiplying the current tap by its coefficient and adding to the previous accumulations within this step/region:
 
     accumulator_pipeline[j] <= (accumulator_pipeline[j-1] + delay_pipeline[2*(j-1)+1] * coeffs[j]);
 
@@ -365,7 +365,7 @@ The high-level schematic exactly replicates the proposed implementation from ear
 
 <br>
 
-Inside any of the ```fir_filter``` in the high-level diagram, we can see the operation of the non-pipelined FIR filter. This looks as expected, and it will be interseting to see the effects of this non-pipelined implementation in the timing analysis later
+Inside any of the ```fir_filter``` in the high-level diagram, we can see the operation of the non-pipelined FIR filter. This looks as expected, and it will be interesting to see the effects of this non-pipelined implementation in the timing analysis later
 
 ### Device Layout on FPGA
 
@@ -396,7 +396,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 
 It is evident that the filter is operating as intended on both inputs/outputs. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. As the input file is from logarithmic scale, the testing output looks compressed towards the right side compared to the linear scaled MATLAB graphs from the beginning. 
 
-There is a small delay of about 51 clock cycles before the filter starts outputing data. In addition, this filter completes the operation in about half the time of the pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
+There is a small delay of about 51 clock cycles before the filter starts outputting data. In addition, this filter completes the operation in about half the time of the pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
 
 ### Timing
 
@@ -481,7 +481,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 
 It is evident that the filter is operating almost as intended on all three inputs/outputs. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. However, now we have some lack of attenuation on the lower frequency end. One of my theories as to why this occurs is because of the extreme segmentation of the filtering now, as it is parallelized into three levels. In addition, this could potentially be due to the use of 24-bit coefficients instead of 32-bit coefficients, allowing the effects of quantization of such a segmented signal to start showing.
 
-There is a small delay of about 34 clock cycles before the filter starts outputing data. In addition, this filter completes the operation in about a third of the time of the pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
+There is a small delay of about 34 clock cycles before the filter starts outputting data. In addition, this filter completes the operation in about a third of the time of the pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
 
 ### Timing
 
@@ -552,7 +552,7 @@ In comparison to the L3 Parallel FIR filter, we can immediately see two things:
 1. Higher resource utilization.
 2. Less dense, and shorter critical path.
 
-From this analysis, it is safe to say that we'll see a big increase in silicon usage, primarly from increase in registers/flip flops for the delay blocks. However, the critical path will be much shorter, either equal to or slightly greater than the pipelined filter critical path.
+From this analysis, it is safe to say that we'll see a big increase in silicon usage, primarily from increase in registers/flip flops for the delay blocks. However, the critical path will be much shorter, either equal to or slightly greater than the pipelined filter critical path.
 
 ### Behavioral Sim
 
@@ -566,7 +566,7 @@ From this analysis, it is safe to say that we'll see a big increase in silicon u
 
 It is evident that the filter is operating almost as intended on all three inputs/outputs. In the beginning, we can see the three large pulses before the pass band, and then quickly after that we get attenuated response from the filter given the input signal. However, now we have some lack of attenuation on the lower frequency end. One of my theories as to why this occurs is because of the extreme segmentation of the filtering now, as it is parallelized into three levels. In addition, this could potentially be due to the use of 24-bit coefficients instead of 32-bit coefficients, allowing the effects of quantization of such a segmented signal to start showing.
 
-There is a small delay of about 68 clock cycles before the filter starts outputing data. In addition, this filter completes the operation in about a third of the time of the pure-pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
+There is a small delay of about 68 clock cycles before the filter starts outputting data. In addition, this filter completes the operation in about a third of the time of the pure-pipelined FIR filter. Granted, both filter's have lots of slack time given their low operating frequency.
 
 ### Timing
 
@@ -728,13 +728,6 @@ While the pipelined L2 Parallel FIR filter does take a few more clock cycles to 
 
 ## Resources
 
-### Sources:
-[^1]: D. Zaucha, “How many bits do you need? A discussion of precision for digital audio filters*,” EE Times, [https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/](https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/) (accessed Mar. 18, 2025). 
-
-[^2]: S. Arar, “Pipelined direct form FIR versus the transposed structure - technical articles,” All About Circuits, [https://www.allaboutcircuits.com/technical-articles/pipelined-direct-form-fir-versus-the-transposed-structure/](https://www.allaboutcircuits.com/technical-articles/pipelined-direct-form-fir-versus-the-transposed-structure/) (accessed Mar. 18, 2025). 
-
-[^3]: K. Parhi, "Chapter 9: Algorithmic Strength Reduction in Filters and Transforms," [https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf](https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf) (accessed Mar. 18, 2025). 
-
 ### Textbook: 
 [VLSI Digital Signal Processing Systems: Design and Implementation](https://www.amazon.com/VLSI-Digital-Signal-Processing-Systems/dp/0471241865)
 
@@ -743,3 +736,10 @@ While the pipelined L2 Parallel FIR filter does take a few more clock cycles to 
 - [Pipelining Principles](https://www.youtube.com/watch?v=zPmfprtdzCE)
 - [Parallel Computing Explained in 3 Minutes](https://www.youtube.com/watch?v=q7sgzDH1cR8)
 - [Pipelining FIR Filter](https://www.youtube.com/watch?v=ClBw7TxUDM4)
+
+### Sources:
+[^1]: D. Zaucha, “How many bits do you need? A discussion of precision for digital audio filters*,” EE Times, [https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/](https://www.eetimes.com/how-many-bits-do-you-need-a-discussion-of-precision-for-digital-audio-filters/) (accessed Mar. 18, 2025). 
+
+[^2]: S. Arar, “Pipelined direct form FIR versus the transposed structure - technical articles,” All About Circuits, [https://www.allaboutcircuits.com/technical-articles/pipelined-direct-form-fir-versus-the-transposed-structure/](https://www.allaboutcircuits.com/technical-articles/pipelined-direct-form-fir-versus-the-transposed-structure/) (accessed Mar. 18, 2025). 
+
+[^3]: K. Parhi, "Chapter 9: Algorithmic Strength Reduction in Filters and Transforms," [https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf](https://people.ece.umn.edu/users/parhi/SLIDES/chap9.pdf) (accessed Mar. 18, 2025). 
