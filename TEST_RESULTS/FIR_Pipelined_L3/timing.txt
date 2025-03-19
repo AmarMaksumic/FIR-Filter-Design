@@ -1,0 +1,81 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 03:52:10 2025
+| Host         : Amars-XPS running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -path_type full
+| Design       : l3_wrapper
+| Device       : 7k70t-fbv676
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             22656.348ns  (required time - arrival time)
+  Source:                 H0/accumulator_pipeline_reg[33]/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Destination:            y_out_1[39]
+                            (output port clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Path Group:             clk
+  Path Type:              Max at Slow Process Corner
+  Requirement:            22676.000ns  (clk rise@22676.000ns - clk rise@0.000ns)
+  Data Path Delay:        11.881ns  (logic 4.324ns (36.389%)  route 7.558ns (63.611%))
+  Logic Levels:           9  (CARRY4=5 LUT2=1 LUT3=1 LUT4=1 OBUF=1)
+  Output Delay:           3.000ns
+  Clock Path Skew:        -4.736ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.000ns = ( 22676.000 - 22676.000 ) 
+    Source Clock Delay      (SCD):    4.736ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                         propagated clock network latency
+                                                      4.736     4.736    
+    DSP48_X1Y67          DSP48E1                      0.000     4.736 r  H0/accumulator_pipeline_reg[33]/CLK
+    DSP48_X1Y67          DSP48E1 (Prop_dsp48e1_CLK_P[30])
+                                                      0.383     5.119 r  H0/accumulator_pipeline_reg[33]/P[30]
+                         net (fo=2, routed)           2.124     7.243    H0/h0_out[7]
+    SLICE_X19Y123        LUT2 (Prop_lut2_I0_O)        0.053     7.296 r  H0/y_out_0_OBUF[7]_inst_i_7/O
+                         net (fo=1, routed)           0.000     7.296    H0/y_out_0_OBUF[7]_inst_i_7_n_0
+    SLICE_X19Y123        CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     7.529 r  H0/y_out_0_OBUF[7]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.000     7.529    H0/y_out_0_OBUF[7]_inst_i_2_n_0
+    SLICE_X19Y124        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     7.587 r  H0/y_out_0_OBUF[11]_inst_i_2/CO[3]
+                         net (fo=1, routed)           0.008     7.595    H0/y_out_0_OBUF[11]_inst_i_2_n_0
+    SLICE_X19Y125        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.139     7.734 f  H0/y_out_0_OBUF[15]_inst_i_2/O[0]
+                         net (fo=4, routed)           1.159     8.893    H1/y_out_1_OBUF[39]_inst_i_1_0[12]
+    SLICE_X3Y118         LUT3 (Prop_lut3_I1_O)        0.166     9.059 r  H1/y_out_1_OBUF[15]_inst_i_4/O
+                         net (fo=2, routed)           0.884     9.943    H1/y_out_1_OBUF[15]_inst_i_4_n_0
+    SLICE_X3Y118         LUT4 (Prop_lut4_I3_O)        0.170    10.113 r  H1/y_out_1_OBUF[15]_inst_i_8/O
+                         net (fo=1, routed)           0.000    10.113    H1/y_out_1_OBUF[15]_inst_i_8_n_0
+    SLICE_X3Y118         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.324    10.437 r  H1/y_out_1_OBUF[15]_inst_i_1/CO[3]
+                         net (fo=1, routed)           0.000    10.437    H1/y_out_1_OBUF[15]_inst_i_1_n_0
+    SLICE_X3Y119         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.213    10.650 r  H1/y_out_1_OBUF[39]_inst_i_1/O[1]
+                         net (fo=23, routed)          3.383    14.033    y_out_1_OBUF[17]
+    C18                  OBUF (Prop_obuf_I_O)         2.585    16.618 r  y_out_1_OBUF[39]_inst/O
+                         net (fo=0)                   0.000    16.618    y_out_1[39]
+    C18                                                               r  y_out_1[39] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)    22676.000 22676.000 r  
+                         propagated clock network latency
+                                                      0.000 22676.000    
+                         clock pessimism              0.000 22676.000    
+                         clock uncertainty           -0.035 22675.965    
+                         output delay                -3.000 22672.965    
+  -------------------------------------------------------------------
+                         required time                      22672.967    
+                         arrival time                         -16.618    
+  -------------------------------------------------------------------
+                         slack                              22656.348  

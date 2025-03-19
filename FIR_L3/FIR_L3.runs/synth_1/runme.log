@@ -1,0 +1,1541 @@
+
+*** Running vivado
+    with args -log l3_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source l3_wrapper.tcl
+
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Wed Mar 19 02:30:49 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source l3_wrapper.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/utils_1/imports/synth_1/Pipelined_FIR.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/utils_1/imports/synth_1/Pipelined_FIR.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top l3_wrapper -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 65732
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1021.566 ; gain = 466.676
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'l3_wrapper' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/l3_wrapper.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+	Parameter N bound to: 32'sb00000000000000000000000000100010 
+	Parameter IO_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter COEFF_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter COEFF_FILE bound to: l3_coeffs_h0.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'l3_coeffs_h0.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter__parameterized0' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+	Parameter N bound to: 32'sb00000000000000000000000000100010 
+	Parameter IO_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter COEFF_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter COEFF_FILE bound to: l3_coeffs_h1.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'l3_coeffs_h1.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter__parameterized0' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter__parameterized1' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+	Parameter N bound to: 32'sb00000000000000000000000000100010 
+	Parameter IO_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter COEFF_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter COEFF_FILE bound to: l3_coeffs_h2.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'l3_coeffs_h2.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter__parameterized1' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter__parameterized2' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+	Parameter N bound to: 32'sb00000000000000000000000000100010 
+	Parameter IO_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter COEFF_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter COEFF_FILE bound to: l3_coeffs_h0h1.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'l3_coeffs_h0h1.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter__parameterized2' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter__parameterized3' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+	Parameter N bound to: 32'sb00000000000000000000000000100010 
+	Parameter IO_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter COEFF_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter COEFF_FILE bound to: l3_coeffs_h1h2.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'l3_coeffs_h1h2.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter__parameterized3' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter__parameterized4' [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+	Parameter N bound to: 32'sb00000000000000000000000000100010 
+	Parameter IO_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter COEFF_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter COEFF_FILE bound to: l3_coeffs_h0h1h2.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'l3_coeffs_h0h1h2.mem' is read successfully [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter__parameterized4' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'l3_wrapper' (0#1) [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/l3_wrapper.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[33] was removed.  [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:31]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[33] was removed.  [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:31]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[33] was removed.  [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:31]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[33] was removed.  [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:31]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[33] was removed.  [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:31]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[33] was removed.  [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/sources_1/new/fir_filter.sv:31]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1139.816 ; gain = 584.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1139.816 ; gain = 584.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1139.816 ; gain = 584.926
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.178 . Memory (MB): peak = 1139.816 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/constrs_1/new/fir_filter.xdc]
+Finished Parsing XDC File [C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/constrs_1/new/fir_filter.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1226.316 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1226.316 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 1226.316 ; gain = 671.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 1226.316 ; gain = 671.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 1226.316 ; gain = 671.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.srcs/utils_1/imports/synth_1/Pipelined_FIR.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 1226.316 ; gain = 671.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 1226.316 ; gain = 671.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1226.316 ; gain = 671.426
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   40 Bit       Adders := 2     
+	   2 Input   40 Bit       Adders := 1     
+	   4 Input   40 Bit       Adders := 1     
+	   5 Input   40 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 3     
++---Registers : 
+	               41 Bit    Registers := 2     
+	               16 Bit    Registers := 200   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP H1/accumulator1, operation Mode is: A*(B:0x3e32b).
+DSP Report: operator H1/accumulator1 is absorbed into DSP H1/accumulator1.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+A*(B:0x3e32b).
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator33 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffed69f)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator2 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffc414c)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator3 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffaf014)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator4 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3fff0559)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator5 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x4fa9d)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator6 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x4311c)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator7 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3fff3353)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator8 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+A*(B:0x5d57).
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator9 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x437a6)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator10 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x11e51)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator11 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffe8461)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator12 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x397db)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator13 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x32544)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator14 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffb9123)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator15 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x350ac)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator16 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x178ca4)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator17 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x178ca4)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator18 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x350ac)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator19 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffb9123)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator20 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x32544)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator21 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x397db)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator22 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffe8461)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator23 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x11e51)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator24 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x437a6)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator25 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+A*(B:0x5d57).
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator26 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3fff3353)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator27 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x4311c)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator28 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x4fa9d)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator29 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3fff0559)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator30 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffaf014)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator31 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator0, operation Mode is: PCIN+(A:0x3ffc414c)*B.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator0.
+DSP Report: operator H1/accumulator32 is absorbed into DSP H1/accumulator0.
+DSP Report: Generating DSP H1/accumulator_reg, operation Mode is: (PCIN+(A:0x3ffed69f)*B)'.
+DSP Report: register H1/accumulator_reg is absorbed into DSP H1/accumulator_reg.
+DSP Report: operator H1/accumulator0 is absorbed into DSP H1/accumulator_reg.
+DSP Report: operator H1/accumulator33 is absorbed into DSP H1/accumulator_reg.
+DSP Report: Generating DSP H1H2/accumulator1, operation Mode is: A*(B:0x3db7b).
+DSP Report: operator H1H2/accumulator1 is absorbed into DSP H1H2/accumulator1.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+A*(B:0x39743).
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator33 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffe34c1)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator2 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff9766f)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator3 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff5d938)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator4 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffc11e7)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator5 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x85f7f)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator6 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x9969d)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator7 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+A*(B:0x3c8bb).
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator8 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3fff78c7)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator9 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x7acfb)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator10 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3f366)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator11 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffcf6d9)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator12 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x5378a)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator13 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x7e090)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator14 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff91e45)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator15 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x17b34)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator16 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x290ab0)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator17 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3288c5)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator18 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0xd8783)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator19 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff72183)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator20 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x39a92)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator21 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x86b92)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator22 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffe37e9)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator23 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x91d4)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator24 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x835d0)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator25 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x25e18)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator26 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffddcfc)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator27 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x69cf1)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator28 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0xaac2d)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator29 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+A*(B:0x4a1d).
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator30 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff694ba)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator31 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff7ac81)*B.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator0.
+DSP Report: operator H1H2/accumulator32 is absorbed into DSP H1H2/accumulator0.
+DSP Report: Generating DSP H1H2/accumulator_reg, operation Mode is: (PCIN+(A:0x3ffcf162)*B)'.
+DSP Report: register H1H2/accumulator_reg is absorbed into DSP H1H2/accumulator_reg.
+DSP Report: operator H1H2/accumulator0 is absorbed into DSP H1H2/accumulator_reg.
+DSP Report: operator H1H2/accumulator33 is absorbed into DSP H1H2/accumulator_reg.
+DSP Report: Generating DSP H2/accumulator1, operation Mode is: A*(B:0x3f850).
+DSP Report: operator H2/accumulator1 is absorbed into DSP H2/accumulator1.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+A*(B:0x3b418).
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator33 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3fff5e22)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator2 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffd3523)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator3 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffae924)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator4 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffd0c8e)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator5 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x364e2)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator6 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x56581)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator7 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x9568)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator8 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3fff1b70)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator9 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x37555)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator10 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x2d515)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator11 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffe7278)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator12 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x19faf)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator13 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x4bb4c)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator14 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffd8d22)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator15 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffe2a88)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator16 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x117e0c)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator17 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x1afc21)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator18 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0xa36d7)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator19 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffb9060)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator20 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+A*(B:0x754e).
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator21 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x4d3b7)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator22 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+A*(B:0x3b388).
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator23 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3fff7383)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator24 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3fe2a)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator25 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x200c1)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator26 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffea9a9)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator27 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x26bd5)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator28 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x5b190)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator29 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x144c4)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator30 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffba4a6)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator31 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator0, operation Mode is: PCIN+(A:0x3ffb6b35)*B.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator0.
+DSP Report: operator H2/accumulator32 is absorbed into DSP H2/accumulator0.
+DSP Report: Generating DSP H2/accumulator_reg, operation Mode is: (PCIN+(A:0x3ffe1ac3)*B)'.
+DSP Report: register H2/accumulator_reg is absorbed into DSP H2/accumulator_reg.
+DSP Report: operator H2/accumulator0 is absorbed into DSP H2/accumulator_reg.
+DSP Report: operator H2/accumulator33 is absorbed into DSP H2/accumulator_reg.
+DSP Report: Generating DSP H0/accumulator1, operation Mode is: A*(B:0x3b418).
+DSP Report: operator H0/accumulator1 is absorbed into DSP H0/accumulator1.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+A*(B:0x3f850).
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator33 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffe1ac3)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator2 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffb6b35)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator3 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffba4a6)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator4 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x144c4)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator5 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x5b190)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator6 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x26bd5)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator7 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffea9a9)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator8 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x200c1)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator9 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3fe2a)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator10 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3fff7383)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator11 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+A*(B:0x3b388).
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator12 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x4d3b7)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator13 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+A*(B:0x754e).
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator14 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffb9060)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator15 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0xa36d7)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator16 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x1afc21)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator17 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x117e0c)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator18 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffe2a88)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator19 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffd8d22)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator20 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x4bb4c)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator21 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x19faf)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator22 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffe7278)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator23 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x2d515)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator24 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x37555)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator25 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3fff1b70)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator26 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x9568)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator27 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x56581)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator28 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x364e2)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator29 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffd0c8e)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator30 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffae924)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator31 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator0, operation Mode is: PCIN+(A:0x3ffd3523)*B.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator0.
+DSP Report: operator H0/accumulator32 is absorbed into DSP H0/accumulator0.
+DSP Report: Generating DSP H0/accumulator_reg, operation Mode is: (PCIN+(A:0x3fff5e22)*B)'.
+DSP Report: register H0/accumulator_reg is absorbed into DSP H0/accumulator_reg.
+DSP Report: operator H0/accumulator0 is absorbed into DSP H0/accumulator_reg.
+DSP Report: operator H0/accumulator33 is absorbed into DSP H0/accumulator_reg.
+DSP Report: Generating DSP H0H1/accumulator1, operation Mode is: A*(B:0x39743).
+DSP Report: operator H0H1/accumulator1 is absorbed into DSP H0H1/accumulator1.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+A*(B:0x3db7b).
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator33 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ffcf162)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator2 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ff7ac81)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator3 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ff694ba)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator4 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+A*(B:0x4a1d).
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator5 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0xaac2d)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator6 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x69cf1)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator7 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ffddcfc)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator8 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x25e18)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator9 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x835d0)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator10 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x91d4)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator11 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ffe37e9)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator12 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x86b92)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator13 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x39a92)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator14 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ff72183)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator15 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0xd8783)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator16 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3288c5)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator17 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x290ab0)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator18 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x17b34)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator19 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ff91e45)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator20 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x7e090)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator21 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x5378a)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator22 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ffcf6d9)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator23 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3f366)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator24 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x7acfb)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator25 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3fff78c7)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator26 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+A*(B:0x3c8bb).
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator27 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x9969d)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator28 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x85f7f)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator29 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ffc11e7)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator30 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ff5d938)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator31 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator0, operation Mode is: PCIN+(A:0x3ff9766f)*B.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator0.
+DSP Report: operator H0H1/accumulator32 is absorbed into DSP H0H1/accumulator0.
+DSP Report: Generating DSP H0H1/accumulator_reg, operation Mode is: (PCIN+(A:0x3ffe34c1)*B)'.
+DSP Report: register H0H1/accumulator_reg is absorbed into DSP H0H1/accumulator_reg.
+DSP Report: operator H0H1/accumulator0 is absorbed into DSP H0H1/accumulator_reg.
+DSP Report: operator H0H1/accumulator33 is absorbed into DSP H0H1/accumulator_reg.
+DSP Report: Generating DSP H0H1H2/accumulator1, operation Mode is: A*(B:0x38f93).
+DSP Report: operator H0H1H2/accumulator1 is absorbed into DSP H0H1H2/accumulator1.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+A*(B:0x38f93).
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator33 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffc4f84)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator2 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff4e1a4)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator3 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff17dde)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator4 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffd56ab)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator5 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xe110f)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator6 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xc0272)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator7 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffe7264)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator8 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x17988)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator9 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xbab25)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator10 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x366e9)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator11 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffcaa61)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator12 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xa0b41)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator13 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x855de)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator14 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff4aea5)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator15 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xbb20b)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator16 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x4406d1)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator17 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x4406d1)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator18 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xbb20b)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator19 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff4aea5)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator20 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x855de)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator21 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xa0b41)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator22 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffcaa61)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator23 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x366e9)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator24 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xbab25)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator25 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x17988)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator26 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffe7264)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator27 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xc0272)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator28 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0xe110f)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator29 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ffd56ab)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator30 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff17dde)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator31 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator0, operation Mode is: PCIN+(A:0x3ff4e1a4)*B.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: operator H0H1H2/accumulator32 is absorbed into DSP H0H1H2/accumulator0.
+DSP Report: Generating DSP H0H1H2/accumulator_reg, operation Mode is: (PCIN+(A:0x3ffc4f84)*B)'.
+DSP Report: register H0H1H2/accumulator_reg is absorbed into DSP H0H1H2/accumulator_reg.
+DSP Report: operator H0H1H2/accumulator0 is absorbed into DSP H0H1H2/accumulator_reg.
+DSP Report: operator H0H1H2/accumulator33 is absorbed into DSP H0H1H2/accumulator_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1244.609 ; gain = 689.719
+---------------------------------------------------------------------------------
+ Sort Area is  H0H1H2/accumulator1_1a : 0 0 : 765 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 1 : 1033 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 2 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 3 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 4 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 5 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 6 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 7 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 8 : 1289 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 9 : 1289 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 10 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 11 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 12 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 13 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 14 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 15 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 16 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 17 : 1624 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 18 : 1624 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 19 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 20 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 21 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 22 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 23 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 24 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 25 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 26 : 1289 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 27 : 1289 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 28 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 29 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 30 : 1595 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 31 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 32 : 1826 55672 : Used 1 time 0
+ Sort Area is  H0H1H2/accumulator1_1a : 0 33 : 1437 55672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 0 : 765 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 1 : 1114 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 2 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 3 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 4 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 5 : 1132 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 6 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 7 : 1760 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 8 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 9 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 10 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 11 : 1185 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 12 : 1289 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 13 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 14 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 15 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 16 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 17 : 1637 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 18 : 1637 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 19 : 1289 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 20 : 1760 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 21 : 1760 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 22 : 1760 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 23 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 24 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 25 : 1760 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 26 : 1185 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 27 : 1124 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 28 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 29 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 30 : 1595 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 31 : 1826 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 32 : 1760 53672 : Used 1 time 0
+ Sort Area is  H0H1/accumulator1_18 : 0 33 : 1330 53672 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 0 : 990 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 1 : 1047 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 2 : 1289 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 3 : 1760 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 4 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 5 : 1595 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 6 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 7 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 8 : 1124 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 9 : 1185 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 10 : 1760 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 11 : 1595 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 12 : 1595 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 13 : 1760 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 14 : 1760 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 15 : 1760 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 16 : 1289 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 17 : 1637 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 18 : 1637 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 19 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 20 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 21 : 1595 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 22 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 23 : 1289 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 24 : 1185 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 25 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 26 : 1595 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 27 : 1595 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 28 : 1760 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 29 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 30 : 1132 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 31 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 32 : 1826 53631 : Used 1 time 0
+ Sort Area is  H1H2/accumulator1_f : 0 33 : 1437 53631 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 0 : 933 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 1 : 1057 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 2 : 1289 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 3 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 4 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 5 : 1185 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 6 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 7 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 8 : 1185 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 9 : 1132 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 10 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 11 : 1289 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 12 : 1289 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 13 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 14 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 15 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 16 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 17 : 1690 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 18 : 1690 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 19 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 20 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 21 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 22 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 23 : 1289 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 24 : 1289 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 25 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 26 : 1132 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 27 : 1185 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 28 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 29 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 30 : 1185 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 31 : 1760 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 32 : 1595 50509 : Used 1 time 0
+ Sort Area is  H1/accumulator1_15 : 0 33 : 1330 50509 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 0 : 568 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 1 : 893 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 2 : 1185 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 3 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 4 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 5 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 6 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 7 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 8 : 1185 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 9 : 1185 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 10 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 11 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 12 : 1289 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 13 : 1289 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 14 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 15 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 16 : 1289 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 17 : 1690 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 18 : 1690 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 19 : 1826 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 20 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 21 : 1132 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 22 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 23 : 1132 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 24 : 1185 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 25 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 26 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 27 : 1289 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 28 : 1595 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 29 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 30 : 1289 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 31 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 32 : 1760 49881 : Used 1 time 0
+ Sort Area is  H2/accumulator1_b : 0 33 : 1330 49881 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 0 : 765 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 1 : 695 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 2 : 1289 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 3 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 4 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 5 : 1289 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 6 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 7 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 8 : 1289 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 9 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 10 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 11 : 1185 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 12 : 1132 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 13 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 14 : 1132 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 15 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 16 : 1826 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 17 : 1690 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 18 : 1690 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 19 : 1289 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 20 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 21 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 22 : 1289 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 23 : 1289 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 24 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 25 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 26 : 1185 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 27 : 1185 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 28 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 29 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 30 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 31 : 1760 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 32 : 1595 49869 : Used 1 time 0
+ Sort Area is  H0/accumulator1_0 : 0 33 : 1215 49869 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping              | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fir_filter  | A*(B:0x3e32b)            | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3e32b)       | 16     | 14     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffed69f)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffc414c)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffaf014)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff0559)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4fa9d)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4311c)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff3353)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x5d57)        | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x437a6)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x11e51)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe8461)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x397db)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x32544)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffb9123)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x350ac)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x178ca4)*B      | 22     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x178ca4)*B      | 22     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x350ac)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffb9123)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x32544)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x397db)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe8461)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x11e51)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x437a6)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x5d57)        | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff3353)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4311c)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4fa9d)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff0559)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffaf014)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffc414c)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+(A:0x3ffed69f)*B)' | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*(B:0x3db7b)            | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x39743)       | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe34c1)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff9766f)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff5d938)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffc11e7)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x85f7f)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x9969d)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3c8bb)       | 16     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff78c7)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x7acfb)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3f366)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffcf6d9)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x5378a)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x7e090)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff91e45)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x17b34)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x290ab0)*B      | 23     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3288c5)*B      | 23     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xd8783)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff72183)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x39a92)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x86b92)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe37e9)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x91d4)*B        | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x835d0)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x25e18)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffddcfc)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x69cf1)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xaac2d)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x4a1d)        | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff694ba)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff7ac81)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+(A:0x3ffcf162)*B)' | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*(B:0x3f850)            | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3b418)       | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff5e22)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd3523)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffae924)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd0c8e)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x364e2)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x56581)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x9568)*B        | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff1b70)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x37555)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x2d515)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe7278)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x19faf)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4bb4c)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd8d22)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe2a88)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x117e0c)*B      | 22     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x1afc21)*B      | 22     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xa36d7)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffb9060)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x754e)        | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4d3b7)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3b388)       | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff7383)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fe2a)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x200c1)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffea9a9)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x26bd5)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x5b190)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x144c4)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffba4a6)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffb6b35)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+(A:0x3ffe1ac3)*B)' | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*(B:0x3b418)            | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3f850)       | 16     | 12     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe1ac3)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffb6b35)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffba4a6)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x144c4)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x5b190)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x26bd5)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffea9a9)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x200c1)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fe2a)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff7383)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3b388)       | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4d3b7)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x754e)        | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffb9060)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xa36d7)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x1afc21)*B      | 22     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x117e0c)*B      | 22     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe2a88)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd8d22)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4bb4c)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x19faf)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe7278)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x2d515)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x37555)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff1b70)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x9568)*B        | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x56581)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x364e2)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd0c8e)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffae924)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd3523)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+(A:0x3fff5e22)*B)' | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*(B:0x39743)            | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3db7b)       | 16     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffcf162)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff7ac81)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff694ba)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x4a1d)        | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xaac2d)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x69cf1)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffddcfc)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x25e18)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x835d0)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x91d4)*B        | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe37e9)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x86b92)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x39a92)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff72183)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xd8783)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3288c5)*B      | 23     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x290ab0)*B      | 23     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x17b34)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff91e45)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x7e090)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x5378a)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffcf6d9)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3f366)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x7acfb)*B       | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3fff78c7)*B    | 17     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x3c8bb)       | 16     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x9969d)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x85f7f)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffc11e7)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff5d938)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff9766f)*B    | 20     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+(A:0x3ffe34c1)*B)' | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*(B:0x38f93)            | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*(B:0x38f93)       | 16     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffc4f84)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff4e1a4)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff17dde)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd56ab)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xe110f)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xc0272)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe7264)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x17988)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xbab25)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x366e9)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffcaa61)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xa0b41)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x855de)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff4aea5)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xbb20b)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4406d1)*B      | 24     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x4406d1)*B      | 24     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xbb20b)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff4aea5)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x855de)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xa0b41)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffcaa61)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x366e9)*B       | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xbab25)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x17988)*B       | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffe7264)*B    | 18     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xc0272)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0xe110f)*B       | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ffd56ab)*B    | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff17dde)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+(A:0x3ff4e1a4)*B    | 21     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+(A:0x3ffc4f84)*B)' | 19     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 1381.461 ; gain = 826.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 1433.883 ; gain = 878.992
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 1458.070 ; gain = 903.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:01:30 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fir_filter  | A*B         | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 21     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 21     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 16     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*B         | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 16     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 22     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 22     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*B         | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 0      | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 23     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 0      | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*B         | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 0      | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 21     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 0      | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*B         | 30     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 22     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 22     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 16     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_filter  | A*B         | 30     | 18     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 16     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 21     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 21     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 20     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 15     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 18     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 19     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 17     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | PCIN+A*B    | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (PCIN+A*B)' | 30     | 18     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    56|
+|3     |DSP48E1 |   204|
+|5     |LUT1    |    15|
+|6     |LUT2    |   136|
+|7     |LUT3    |    45|
+|8     |LUT4    |    29|
+|9     |LUT5    |     1|
+|10    |LUT6    |    34|
+|11    |FDCE    |  3200|
+|12    |IBUF    |    50|
+|13    |OBUF    |   120|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:30 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:24 . Memory (MB): peak = 1654.836 ; gain = 1013.445
+Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1654.836 ; gain = 1099.945
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.144 . Memory (MB): peak = 1664.004 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 260 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1667.691 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e3a9f37a
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 7 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:47 . Memory (MB): peak = 1667.691 ; gain = 1297.109
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1667.691 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/code/FIR-Filter-Design/FIR_L3/FIR_L3.runs/synth_1/l3_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file l3_wrapper_utilization_synth.rpt -pb l3_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 19 02:32:47 2025...

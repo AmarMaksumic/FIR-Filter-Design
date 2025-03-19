@@ -1,0 +1,175 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 02:48:16 2025
+| Host         : Amars-XPS running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -path_type full
+| Design       : l3_wrapper
+| Device       : 7k70t-fbv676
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             22620.246ns  (required time - arrival time)
+  Source:                 x_in_0[3]
+                            (input port clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Destination:            H0H1H2/accumulator_reg/PCIN[0]
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@11338.000ns period=22676.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            22676.000ns  (clk rise@22676.000ns - clk rise@0.000ns)
+  Data Path Delay:        56.794ns  (logic 50.536ns (88.982%)  route 6.257ns (11.018%))
+  Logic Levels:           40  (CARRY4=5 DSP48E1=32 IBUF=1 LUT2=2)
+  Input Delay:            2.000ns
+  Clock Path Skew:        4.262ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.262ns = ( 22680.262 - 22676.000 ) 
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                         propagated clock network latency
+                                                      0.000     0.000    
+                         input delay                  2.000     2.000    
+    T17                                               0.000     2.000 r  x_in_0[3] (IN)
+                         net (fo=0)                   0.000     2.000    x_in_0[3]
+    T17                  IBUF (Prop_ibuf_I_O)         0.787     2.787 r  x_in_0_IBUF[3]_inst/O
+                         net (fo=4, routed)           3.224     6.012    H0H1/delay_line_reg[0][15]_0[3]
+    SLICE_X19Y60         LUT2 (Prop_lut2_I0_O)        0.053     6.065 r  H0H1/delay_line[0][3]_i_2__0/O
+                         net (fo=1, routed)           0.000     6.065    H0H1/delay_line[0][3]_i_2__0_n_0
+    SLICE_X19Y60         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.233     6.298 r  H0H1/delay_line_reg[0][3]_i_1__0/CO[3]
+                         net (fo=1, routed)           0.000     6.298    H0H1/delay_line_reg[0][3]_i_1__0_n_0
+    SLICE_X19Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     6.356 r  H0H1/delay_line_reg[0][7]_i_1__0/CO[3]
+                         net (fo=1, routed)           0.000     6.356    H0H1/delay_line_reg[0][7]_i_1__0_n_0
+    SLICE_X19Y62         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.220     6.576 r  H0H1/delay_line_reg[0][11]_i_1__0/O[1]
+                         net (fo=4, routed)           0.902     7.478    H0H1H2/A[9]
+    SLICE_X39Y60         LUT2 (Prop_lut2_I0_O)        0.152     7.630 r  H0H1H2/delay_line[0][11]_i_4__1/O
+                         net (fo=1, routed)           0.000     7.630    H0H1H2/delay_line[0][11]_i_4__1_n_0
+    SLICE_X39Y60         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.324     7.954 r  H0H1H2/delay_line_reg[0][11]_i_1__1/CO[3]
+                         net (fo=1, routed)           0.000     7.954    H0H1H2/delay_line_reg[0][11]_i_1__1_n_0
+    SLICE_X39Y61         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.187     8.141 r  H0H1H2/delay_line_reg[0][15]_i_1__1/O[3]
+                         net (fo=16, routed)          2.032    10.173    H0H1H2/delay_line_reg[0][15]_i_1__1_n_4
+    DSP48_X2Y7           DSP48E1 (Prop_dsp48e1_A[23]_PCOUT[47])
+                                                      3.510    13.683 r  H0H1H2/accumulator0/PCOUT[47]
+                         net (fo=1, routed)           0.000    13.683    H0H1H2/accumulator0_n_106
+    DSP48_X2Y8           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    15.135 r  H0H1H2/accumulator0__0/PCOUT[47]
+                         net (fo=1, routed)           0.000    15.135    H0H1H2/accumulator0__0_n_106
+    DSP48_X2Y9           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    16.587 r  H0H1H2/accumulator0__1/PCOUT[47]
+                         net (fo=1, routed)           0.050    16.636    H0H1H2/accumulator0__1_n_106
+    DSP48_X2Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    18.088 r  H0H1H2/accumulator0__2/PCOUT[47]
+                         net (fo=1, routed)           0.000    18.088    H0H1H2/accumulator0__2_n_106
+    DSP48_X2Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    19.540 r  H0H1H2/accumulator0__3/PCOUT[47]
+                         net (fo=1, routed)           0.000    19.540    H0H1H2/accumulator0__3_n_106
+    DSP48_X2Y12          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    20.992 r  H0H1H2/accumulator0__4/PCOUT[47]
+                         net (fo=1, routed)           0.000    20.992    H0H1H2/accumulator0__4_n_106
+    DSP48_X2Y13          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    22.444 r  H0H1H2/accumulator0__5/PCOUT[47]
+                         net (fo=1, routed)           0.000    22.444    H0H1H2/accumulator0__5_n_106
+    DSP48_X2Y14          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    23.896 r  H0H1H2/accumulator0__6/PCOUT[47]
+                         net (fo=1, routed)           0.000    23.896    H0H1H2/accumulator0__6_n_106
+    DSP48_X2Y15          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    25.348 r  H0H1H2/accumulator0__7/PCOUT[47]
+                         net (fo=1, routed)           0.000    25.348    H0H1H2/accumulator0__7_n_106
+    DSP48_X2Y16          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    26.800 r  H0H1H2/accumulator0__8/PCOUT[47]
+                         net (fo=1, routed)           0.000    26.800    H0H1H2/accumulator0__8_n_106
+    DSP48_X2Y17          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    28.252 r  H0H1H2/accumulator0__9/PCOUT[47]
+                         net (fo=1, routed)           0.000    28.252    H0H1H2/accumulator0__9_n_106
+    DSP48_X2Y18          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    29.704 r  H0H1H2/accumulator0__10/PCOUT[47]
+                         net (fo=1, routed)           0.000    29.704    H0H1H2/accumulator0__10_n_106
+    DSP48_X2Y19          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    31.156 r  H0H1H2/accumulator0__11/PCOUT[47]
+                         net (fo=1, routed)           0.000    31.156    H0H1H2/accumulator0__11_n_106
+    DSP48_X2Y20          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    32.608 r  H0H1H2/accumulator0__12/PCOUT[47]
+                         net (fo=1, routed)           0.000    32.608    H0H1H2/accumulator0__12_n_106
+    DSP48_X2Y21          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    34.060 r  H0H1H2/accumulator0__13/PCOUT[47]
+                         net (fo=1, routed)           0.000    34.060    H0H1H2/accumulator0__13_n_106
+    DSP48_X2Y22          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    35.512 r  H0H1H2/accumulator0__14/PCOUT[47]
+                         net (fo=1, routed)           0.000    35.512    H0H1H2/accumulator0__14_n_106
+    DSP48_X2Y23          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    36.964 r  H0H1H2/accumulator0__15/PCOUT[47]
+                         net (fo=1, routed)           0.000    36.964    H0H1H2/accumulator0__15_n_106
+    DSP48_X2Y24          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    38.416 r  H0H1H2/accumulator0__16/PCOUT[47]
+                         net (fo=1, routed)           0.000    38.416    H0H1H2/accumulator0__16_n_106
+    DSP48_X2Y25          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    39.868 r  H0H1H2/accumulator0__17/PCOUT[47]
+                         net (fo=1, routed)           0.000    39.868    H0H1H2/accumulator0__17_n_106
+    DSP48_X2Y26          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    41.320 r  H0H1H2/accumulator0__18/PCOUT[47]
+                         net (fo=1, routed)           0.000    41.320    H0H1H2/accumulator0__18_n_106
+    DSP48_X2Y27          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    42.772 r  H0H1H2/accumulator0__19/PCOUT[47]
+                         net (fo=1, routed)           0.000    42.772    H0H1H2/accumulator0__19_n_106
+    DSP48_X2Y28          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    44.224 r  H0H1H2/accumulator0__20/PCOUT[47]
+                         net (fo=1, routed)           0.000    44.224    H0H1H2/accumulator0__20_n_106
+    DSP48_X2Y29          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    45.676 r  H0H1H2/accumulator0__21/PCOUT[47]
+                         net (fo=1, routed)           0.050    45.726    H0H1H2/accumulator0__21_n_106
+    DSP48_X2Y30          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    47.178 r  H0H1H2/accumulator0__22/PCOUT[47]
+                         net (fo=1, routed)           0.000    47.178    H0H1H2/accumulator0__22_n_106
+    DSP48_X2Y31          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    48.630 r  H0H1H2/accumulator0__23/PCOUT[47]
+                         net (fo=1, routed)           0.000    48.630    H0H1H2/accumulator0__23_n_106
+    DSP48_X2Y32          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    50.082 r  H0H1H2/accumulator0__24/PCOUT[47]
+                         net (fo=1, routed)           0.000    50.082    H0H1H2/accumulator0__24_n_106
+    DSP48_X2Y33          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    51.534 r  H0H1H2/accumulator0__25/PCOUT[47]
+                         net (fo=1, routed)           0.000    51.534    H0H1H2/accumulator0__25_n_106
+    DSP48_X2Y34          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    52.986 r  H0H1H2/accumulator0__26/PCOUT[47]
+                         net (fo=1, routed)           0.000    52.986    H0H1H2/accumulator0__26_n_106
+    DSP48_X2Y35          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    54.438 r  H0H1H2/accumulator0__27/PCOUT[47]
+                         net (fo=1, routed)           0.000    54.438    H0H1H2/accumulator0__27_n_106
+    DSP48_X2Y36          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    55.890 r  H0H1H2/accumulator0__28/PCOUT[47]
+                         net (fo=1, routed)           0.000    55.890    H0H1H2/accumulator0__28_n_106
+    DSP48_X2Y37          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.452    57.342 r  H0H1H2/accumulator0__29/PCOUT[47]
+                         net (fo=1, routed)           0.000    57.342    H0H1H2/accumulator0__29_n_106
+    DSP48_X2Y38          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[0])
+                                                      1.452    58.794 r  H0H1H2/accumulator0__30/PCOUT[0]
+                         net (fo=1, routed)           0.000    58.794    H0H1H2/accumulator0__30_n_153
+    DSP48_X2Y39          DSP48E1                                      r  H0H1H2/accumulator_reg/PCIN[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)    22676.000 22676.000 r  
+                         propagated clock network latency
+                                                      4.262 22680.262    
+                         clock pessimism              0.000 22680.262    
+                         clock uncertainty           -0.035 22680.227    
+    DSP48_X2Y39          DSP48E1 (Setup_dsp48e1_CLK_PCIN[0])
+                                                     -1.187 22679.039    H0H1H2/accumulator_reg
+  -------------------------------------------------------------------
+                         required time                      22679.039    
+                         arrival time                         -58.794    
+  -------------------------------------------------------------------
+                         slack                              22620.246 
