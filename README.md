@@ -155,8 +155,8 @@ All filter's were developed in AMD's Vivado software using System Verilog. ```.m
     * Implementation: [fir_filter.sv](FIR_L3\FIR_L3.srcs\sources_1\new\fir_filter.sv), [l3_wrapper.sv](FIR_L3\FIR_L3.srcs\sources_1\new\l3_wrapper.sv)
     * Testbench: [fir_filter_tb.sv](FIR_L3\FIR_L3.srcs\sim_1\new\fir_filter_tb.sv)
 * Pipelined, L3 Parallel FIR [FIR_Pipelined_L3]
-    * Implementation:
-    * Testbench: 
+    * Implementation: [fir_filter.sv](FIR_Pipelined_L3\FIR_Pipelined_L3.srcs\sources_1\new\fir_filter.sv), [l3_wrapper.sv](FIR_Pipelined_L3\FIR_Pipelined_L3.srcs\sources_1\new\l3_wrapper.sv)
+    * Testbench: [fir_filter_tb.sv](FIR_Pipelined_L3\FIR_Pipelined_L3.srcs\sim_1\new\fir_filter_tb.sv)
 
 Each FIR filter processes a 16-bit input signal. The filter coefficients are 24-bit, as configured earlier. To maintain precision during filtering, each input sample is multiplied by a 24-bit coefficient, producing a 40-bit intermediate result (16-bit × 24-bit multiplication). Since multiple taps contribute to the final output, these 40-bit products are accumulated in a 40-bit register. To ensure the output remains in a 16-bit format, a 24-bit right shift is applied to remove excess precision and scale the result appropriately. This final step helps mitigate quantization effects while preserving signal integrity.
 
